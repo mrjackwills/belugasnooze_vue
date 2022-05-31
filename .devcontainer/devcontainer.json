@@ -1,11 +1,3 @@
-/**
-* wsl dns issues
-* sudo /etc//etc/docker/daemon.json
-* {
-* "dns": ["1.1.1.1", "8.8.8.8"]
-* }
-*/
-
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.202.1/containers/typescript-node
 {
@@ -14,12 +6,12 @@
 	"build": {
 		"dockerfile": "Dockerfile",
 		"args": { 
-			"VARIANT": "16",
-		},
+			"VARIANT": "16"
+		}
 	},
 
 	"mounts": [
-		"source=/etc/localtime,target=/etc/localtime,type=bind,readonly",
+		"source=/etc/localtime,target=/etc/localtime,type=bind,readonly"
 	],
 
 	// Set *default* container specific settings.json values on container create.
