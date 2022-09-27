@@ -23,7 +23,6 @@ export const wsModule = defineStore(ModuleName.Websocket, {
 			const user_store = userModule();
 			if (!user_store.authenticated) return;
 			ws.openWs(password);
-			// Think this might bt the problem
 			ws.connection?.addEventListener('open', () => {
 				this.set_connected(true);
 			});
