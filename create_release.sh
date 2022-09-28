@@ -219,72 +219,6 @@ npm_build () {
 	ask_continue
 }
 
-
-npm_test () {
-	start_time=$(date +%s)
-	npm run test:run
-	end_time=$(date +%s)
-	elapsed=$(( end_time - start_time ))
-	echo "test tooks ${elapsed}s"
-	ask_continue
-}
-
-single_package_test() {
-	ask_yn "run tests?"
-		if [[ "$(user_input)" =~ ^y$ ]]
-		then
-			npm run lint
-			npm run test
-		fi
-}
-
-# $1 all_ncu
-update_git_package() {
-	to_add=()
-	git_message="chore: npm update\n"
-	while IFS= read -r line; do
-		local trimmed_line
-		trimmed_line="$(echo -e "${line}" | sed -e 's/^[[:space:]]*//')"
-		to_add+=("$trimmed_line")
-	done <<< "$1"
-	for line in "${to_add[@]}"
-	do
-		echo -e ""
-		echo "${line}"
-		ask_yn "add line to git message"
-		if [[ "$(user_input)" =~ ^y$ ]]
-			then
-			git_message="${git_message}\n${line}"
-		fi
-	done
-	echo -e ""
-	echo -e "${git_message}"
-	ask_yn "accept message"
-	if [[ "$(user_input)" =~ ^y$ ]]
-	then
-		git add package.json
-		git add package-lock.json
-		git commit -m "$(echo -e "${git_message}")"
-	else
-		exit
-	fi
-}
-
-update() {
-	check_git_update
-	single_package_test "$DIRECTORY"
-	all_ncu=$(ncu | tail -n +3 | head -n -2)
-	echo "${all_ncu}"
-	ncu -i
-	ask_yn "npm install"
-	if [[ "$(user_input)" =~ ^y$ ]]
-	then
-		npm install
-		single_package_test
-		update_git_package "${all_ncu}"
-	fi
-}
-
 release_flow() {
 	check_git
 	get_git_remote_url
@@ -321,7 +255,6 @@ main() {
 		2 "build" off
 		3 "test" off
 		4 "release" off
-		# 5 "update" update
 	)
 	choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
 	exitStatus=$?
@@ -351,10 +284,6 @@ main() {
 			4)
 				release_flow
 				break;;
-			# 5)
-			# 	update
-			# 	main
-			# 	break;;
 		esac
 	done
 }

@@ -15,7 +15,6 @@ const wrap = <T> () => {
 				return result;
 			} catch (err) {
 				const e = <AxiosError>err;
-				// e.response
 				if (e.message === 'offline') snackError({ message: 'Server offline' });
 				else if (e.response?.status === 403) {
 					const [ user_store, ws_store ] = [ userModule(), wsModule() ];
@@ -42,8 +41,8 @@ class AxiosRequests {
 
 	constructor () {
 		this.#wsAuthAxios = Axios.create({
-			baseURL: env.domain_auth,
-			withCredentials: true,
+			baseURL: env.domain_token,
+			withCredentials: false,
 			headers: {
 				'Accept': 'application/json',
 				'Content-Type': 'application/json; charset=utf-8',
@@ -59,7 +58,7 @@ class AxiosRequests {
 
 	@wrap()
 	async wsAuth_post (password: string): Promise<boolean> {
-		const { data } = await this.#wsAuthAxios.post('/', { key: env.api_key, password });
+		const { data } = await this.#wsAuthAxios.post('', { key: env.api_key, password });
 		if (data.response) {
 			snackReset();
 			userModule().set_authenticated(true);

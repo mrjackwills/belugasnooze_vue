@@ -9,7 +9,7 @@
 <p align="center">
 	The frontend PWA for <a href='https://www.belugasnooze.com' target='_blank' rel='noopener noreferrer'>belugasnooze</a>, powered by <a href='https://www.staticpi.com' target='_blank' rel='noopener noreferrer'>staticPi.com</a>
 	<br>
-	See the backend rust source <a href='https://www.github.com/mrjackwills/belugasnooze_pi' target='_blank' rel='noopener noreferrer'>here</a>
+	See the backend Rust source <a href='https://www.github.com/mrjackwills/belugasnooze_pi' target='_blank' rel='noopener noreferrer'>here</a>
 </p>
 <p align="center">
 	Built using <a href='https://vuejs.org/' target='_blank' rel='noopener noreferrer'>Vue.js</a> and <a href='https://www.typescriptlang.org/' target='_blank' rel='noopener noreferrer'>Typescript</a>
