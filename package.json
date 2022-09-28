@@ -1,6 +1,6 @@
 {
   "name": "belugasnooze",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "scripts": {
     "serve": "vue-cli-service serve",
     "release": "node ts-builder/index.js",
@@ -50,5 +50,5 @@
   },
   "homepage": "https://github.com/mrjackwills/belugasnooze_vue",
   "license": "MIT",
-  "buildDate": "Mon 30 2022 May 21:28:57 EDT"
+  "buildDate": "Tue 27 2022 September 20:14:54 EDT"
 }
