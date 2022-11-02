@@ -14,10 +14,10 @@ self.addEventListener('activate', () => {
 	// This can "unbreak" any open windows/tabs as soon as the new
 	// service worker activates, rather than users having to manually reload.
 	self.clients.matchAll({
-	  type: 'window'
+		type: 'window'
 	}).then((windowClients) => {
-	  windowClients.forEach((windowClient) => {
+		windowClients.forEach((windowClient) => {
 			windowClient.navigate(windowClient.url);
-	  });
+		});
 	});
 });
