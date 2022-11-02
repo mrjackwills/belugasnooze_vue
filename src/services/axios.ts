@@ -1,7 +1,8 @@
 import { snackError, snackReset } from './snack';
 import { userModule, wsModule, } from '@/store';
-import Axios, { AxiosInstance, AxiosError } from 'axios';
-import { env } from '@/vanillaTS/env';
+import Axios from 'axios';
+import type { AxiosInstance, AxiosError } from 'axios';
+import { env } from '@/services/env';
 
 type ErrorData = {data: {response: number}}
 
@@ -16,19 +17,13 @@ const wrap = <T> () => {
 			} catch (err) {
 				const e = <AxiosError>err;
 				if (e.message === 'offline') snackError({ message: 'Server offline' });
-				else if (e.response?.status === 403) {
-					const [ user_store, ws_store ] = [ userModule(), wsModule() ];
-					if (user_store.authenticated) user_store.signout();
-					ws_store.closeWS();
-					snackError({ message: 'invalid password' });
-				} else if (e.response?.status === 429) {
+				else if (e.response?.status === 429) {
 					const p = <ErrorData>e.response.data;
 					const converted = Math.ceil(p.data.response / 1000);
 					const message = `too many requests - please try again in ${converted} seconds `;
 					snackError({ message });
 				} else {
-					const p = <ErrorData>e.response;
-					snackError({ message: String(p.data.response) });
+					snackError({ message: 'unable to connect' });
 				}
 			}
 		};
@@ -37,7 +32,7 @@ const wrap = <T> () => {
 
 class AxiosRequests {
 
-	#wsAuthAxios!: AxiosInstance
+	#wsAuthAxios!: AxiosInstance;
 
 	constructor () {
 		this.#wsAuthAxios = Axios.create({

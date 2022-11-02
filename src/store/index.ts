@@ -5,4 +5,5 @@ export { piStatusModule } from '@/store/modules/piStatus';
 export { settingsModule } from '@/store/modules/settings';
 export { snackbarModule } from '@/store/modules/snackbar';
 export { userModule } from '@/store/modules/user';
+export { pagetitleModule } from '@/store/modules/pagetitle';
 export { wsModule } from '@/store/modules/websocket';

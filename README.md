@@ -1,7 +1,5 @@
 <p align="center">
 	<img src='./.github/logo.svg' width='125px' />
-
-
 </p>
 
 <h1 align="center">belugasnooze website</h1>

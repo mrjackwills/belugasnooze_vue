@@ -1,22 +1,40 @@
-import './registerServiceWorker';
-import { createPinia, PiniaVuePlugin } from 'pinia';
-import { env } from './vanillaTS/env';
-import { VNode } from 'vue/types/umd';
-import App from './App.vue';
-import Meta from 'vue-meta';
-import router from '@/router';
-import Vue from 'vue';
-import vuetify from '@/plugins/vuetify';
+/**
+ * main.ts
+ *
+ * Bootstraps Vuetify and other plugins then mounts the App`
+ */
 
-Vue.use(Meta);
-Vue.use(PiniaVuePlugin);
+// Components
+import App from './App.vue';
+import { createPinia } from 'pinia';
+
+// Composables
+import { createApp } from 'vue';
+import vuetify from './plugins/vuetify';
+import router from './router';
+import { createHead } from '@vueuse/head';
+
+// import { registerSW } from 'virtual:pwa-register';
+
+// const updateSW = registerSW({
+// 	onNeedRefresh () {},
+// 	onOfflineReady () {},
+// });
+
+// if ('serviceWorker' in navigator) {
+// 	// && !/localhost/.test(window.location)) {
+// 	registerSW();
+// }
+
+const head = createHead();
+
+const app = createApp(App);
 const pinia = createPinia();
 
-Vue.config.productionTip = !!env.mode_production;
-
-new Vue({
-	router,
-	vuetify,
-	pinia,
-	render: (r): VNode => r(App)
-}).$mount('#belugasnooze');
+app
+	.use(head)
+	.use(router)
+	.use(pinia)
+// .use(VueMeta)
+	.use(vuetify)
+	.mount('#app');

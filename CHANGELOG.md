@@ -1,3 +1,9 @@
+# <a href='https://github.com/mrjackwills/belugasnooze_vue/releases/tag/v0.2.0'>v0.2.0</a>
+### 2022-11-02
+
+### Features
++ Full converstion to Vue3, Vite & Vuetify3, [df334590](https://github.com/mrjackwills/belugasnooze_vue/commit/df334590a97cb278f1ef3909e86dbd35a2fe266d),
+
 # <a href='https://github.com/mrjackwills/belugasnooze_vue/releases/tag/v0.1.0'>v0.1.0</a>
 ### 2022-09-27
 
