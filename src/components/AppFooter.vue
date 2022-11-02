@@ -1,10 +1,11 @@
 <template>
 	<v-footer
+		class='ma-0 pa-0'
 		color='transparent'
 		id='footer'
 		app
 	>
-		<v-row justify='center' align='end' class='no-gutters ma-0 pa-0'>
+		<v-row justify='center' align='end' class='no-gutters ma-0 pa-0 mt-n4'>
 
 			<v-col cols='auto' class='no-gutters unselectable ma-0 pa-0'>
 

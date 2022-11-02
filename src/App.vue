@@ -1,5 +1,5 @@
 <template>
-	<v-app  container--fluid fill-height class='ma-0 pa-0'  id='belugasnooze'>
+	<v-app class='ma-0 pa-0'  id='belugasnooze'>
 		<v-main>
 			<RouterView />
 			<AppSnackbar />
@@ -63,3 +63,10 @@ const appUpdate = (): void => {
 };
 
 </script>
+
+<style  lang="scss">
+.vh-fix ::v-deep .v-application--wrap {
+	height: 100vh;
+	/* min-height: calc(var(--vh, 100vh) * 100); */
+}
+</style>
