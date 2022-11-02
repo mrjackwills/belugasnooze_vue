@@ -259,7 +259,7 @@ release_flow() {
 	release_continue "git branch -d \"$RELEASE_BRANCH\""
 	git branch -d "$RELEASE_BRANCH"
 
-	npm_build
+	npm run build
 }
 
 main() {
