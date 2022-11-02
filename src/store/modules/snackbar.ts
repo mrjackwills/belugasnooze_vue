@@ -2,7 +2,6 @@ import { defineStore } from 'pinia';
 import { ModuleName } from '@/types/enum_module';
 
 export const snackbarModule = defineStore(ModuleName.Snackbar, {
-
 	state: () => ({
 		icon: '',
 		loading: false,
@@ -27,5 +26,5 @@ export const snackbarModule = defineStore(ModuleName.Snackbar, {
 		set_visible (value: boolean) {
 			this.visible = value;
 		},
-	}
+	},
 });

@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import { ModuleName } from '@/types/enum_module';
-import { TTime } from '@/types';
+import type { TTime } from '@/types';
 
 export const piStatusModule = defineStore(ModuleName.Pistatus, {
 

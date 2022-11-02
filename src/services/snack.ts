@@ -1,8 +1,13 @@
 import { mdiAlertCircle, mdiCheckCircleOutline } from '@mdi/js';
-import { snackbarModule } from '@/store';
-import { TSnack } from '@/types';
+import { snackbarModule } from '@/store/modules/snackbar';
+import type { TSnack } from '@/types';
 
-export const snackSuccess = ({ message = 'Success', icon = mdiCheckCircleOutline, timeout=5000, loading=false }: TSnack): void => {
+export const snackSuccess = ({
+	message = 'Success',
+	icon = mdiCheckCircleOutline,
+	timeout = 5000,
+	loading = false,
+}: TSnack): void => {
 	snackReset();
 	const snack_store = snackbarModule();
 	snack_store.set_icon(icon);
@@ -12,7 +17,11 @@ export const snackSuccess = ({ message = 'Success', icon = mdiCheckCircleOutline
 	snack_store.set_visible(true);
 };
 
-export const snackError = ({ message = 'error', icon = mdiAlertCircle, timeout=7500 }: TSnack): void =>{
+export const snackError = ({
+	message = 'error',
+	icon = mdiAlertCircle,
+	timeout = 7500,
+}: TSnack): void => {
 	snackReset();
 	const snack_store = snackbarModule();
 	snack_store.set_icon(icon);
@@ -24,5 +33,4 @@ export const snackError = ({ message = 'error', icon = mdiAlertCircle, timeout=7
 export const snackReset = (): void => {
 	const snack_store = snackbarModule();
 	snack_store.$reset();
-
 };
