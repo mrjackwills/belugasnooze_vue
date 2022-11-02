@@ -1,10 +1,8 @@
 import { defineStore } from 'pinia';
-import { IWSToServer } from '@/types';
+import type { IWSToServer } from '@/types';
 import { ModuleName } from '@/types/enum_module';
 import { userModule } from '@/store';
-import { ws } from '@/services/WS';
-
-// TODO copy leafcast
+import { ws } from '@/services/ws';
 
 export const wsModule = defineStore(ModuleName.Websocket, {
 

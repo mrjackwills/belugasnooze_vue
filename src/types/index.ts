@@ -1,4 +1,3 @@
-
 export type u<T> = T | undefined
 export type su = u<string>
 export type nu = u<number>
@@ -22,7 +21,7 @@ export type TEmitBody = {
 
 export type TSendName = 'status' | 'led_status'
 
-// export type TWifi = { [ K in 'ssid' | 'password']: string }
+// // export type TWifi = { [ K in 'ssid' | 'password']: string }
 type TLightStatus = {status: boolean}
 type TTimeZone = {zone: string}
 
@@ -50,15 +49,15 @@ export type TError = {error: {message: string, code: number}}
 export type TWSFromPi = TData | TError
 
 export type TSnack = {
-		message?: string,
-		icon?: string
-		timeout?: number,
-		loading?: boolean
-	}
+  message?: string;
+  icon?: string;
+  timeout?: number;
+  loading?: boolean;
+};
 
 export type TComputedUptime = { [ K in 'name' | 'value' ] : string } & { tooltip?: string }
 
-export type TComputedCity = { [ k in 'value' | 'text']: string }
+export type TComputedCity = { [ k in 'value' | 'title']: string }
 
 export type TComputedIp = { [ K in 'name' | 'class'] : string } & { value: su, model: boolean }
 

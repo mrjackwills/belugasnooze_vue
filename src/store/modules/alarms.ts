@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import { ModuleName } from '@/types/enum_module';
-import { TAllAlarms } from '@/types';
+import type { TAllAlarms } from '@/types';
 
 export const alarmModule = defineStore(ModuleName.Alarms, {
 

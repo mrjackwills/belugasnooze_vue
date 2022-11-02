@@ -20,12 +20,14 @@
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"dbaeumer.vscode-eslint",
-		"octref.vetur",
 		"meganrogge.template-string-converter",
 		"bungcip.better-toml",
 		"wix.vscode-import-cost",
 		"christian-kohler.path-intellisense",
-		"timonwong.shellcheck"
+		"timonwong.shellcheck",
+		"vue.volar",
+		"vue.vscode-typescript-vue-plugin"
+
 	],
 
 
