@@ -12,7 +12,7 @@
 					rounded
 					min-width='30vw'
 				>
-					<v-icon style='vertical-align: middle;' class='mr-1' small >{{ mdiRefresh }}</v-icon>
+					<v-icon style='vertical-align: middle;' class='mr-1' small :icon='mdiRefresh' />
 					refresh data
 				</v-btn>
 			</v-col>

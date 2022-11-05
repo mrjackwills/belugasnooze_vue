@@ -13,7 +13,7 @@
 							@click:append-inner='appendClick'
 							:append-inner-icon='appendIcon'
 							:disabled='loading'
-							:prepend-icon='mdiLock'
+							:prepend-inner-icon='mdiLock'
 							:type='fieldType'
 							autocomplete='password'
 							id='password'
@@ -27,11 +27,13 @@
 			<v-col cols='auto' class='ma-0 pa-0'>
 				<v-btn
 					@click='signin'
-					:disabled='loading|| !password'
+					:disabled='buttonDisabled'
+					:variant='buttonDisabled?"outlined":"flat"'
 					class='elevation-0 font-weight-bold'
 					color='primary'
+
 				>
-					<span class='text-white'>Sign In</span>
+					<span :class='{"text-white": !buttonDisabled }'>Sign In</span>
 				</v-btn>
 			</v-col>
 		</v-row>
@@ -50,6 +52,10 @@ const passwordVisible = ref(false);
 
 const appendIcon = computed(() => {
 	return password.value ? passwordVisible.value ? mdiEyeOff: mdiEye : '';
+});
+
+const buttonDisabled = computed(() => {
+	return loading.value|| !password.value;
 });
 
 const fieldType = computed(() => {

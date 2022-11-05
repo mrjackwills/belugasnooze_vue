@@ -2,7 +2,7 @@
 	<v-snackbar v-model='visible' timeout='-1'>
 		<v-row justify='center' align='center' no-gutters class='ma-0 pa-0'>
 			<v-col v-if='icon && !loading' cols='auto' class=''>
-				<v-icon color='primary'>{{ icon }}</v-icon>
+				<v-icon color='primary' :icon='icon' />
 			</v-col>
 			<v-col v-if='loading' cols='auto' class=''>
 				<v-progress-circular
