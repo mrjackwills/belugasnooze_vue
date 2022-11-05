@@ -1,6 +1,6 @@
 // Plugins
 import vue from '@vitejs/plugin-vue';
-import vuetify from 'vite-plugin-vuetify';
+import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
 import viteCompression from 'vite-plugin-compression';
 import { VitePWA } from 'vite-plugin-pwa';
 import type { VitePWAOptions } from 'vite-plugin-pwa';
@@ -35,12 +35,12 @@ const pwaOptions: Partial<VitePWAOptions> = {
 				sizes: '512x512',
 				type: 'image/png',
 			},
-			{
-				src: 'img/icons/android-chrome-512x512.png',
-				sizes: '512x512',
-				type: 'image/png',
-				purpose: 'any maskable'
-			},
+			// {
+			// 	src: 'img/icons/android-chrome-512x512.png',
+			// 	sizes: '512x512',
+			// 	type: 'image/png',
+			// 	purpose: 'any maskable'
+			// },
 		],
 	},
 	// devOptions: {
@@ -54,7 +54,9 @@ const pwaOptions: Partial<VitePWAOptions> = {
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [
-		vue(),
+		vue({
+			template: { transformAssetUrls }
+		}),
 		// https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vite-plugin
 		vuetify({
 			autoImport: true,
