@@ -79,10 +79,11 @@
 										:size='mobile ? `small`:`default`'
 										class='elevation-0'
 										color='success'
+										:variant='!updateDisabled?"outlined":"flat"'
 										rounded
 									>
-										<v-icon :color='localLoading || timeZoneCity ? "white" : "grey"' style='vertical-align: middle;' class='mr-1' :icon='mdiUpdate' />
-										<span class='text-white'>update</span>
+										<v-icon :color='!updateDisabled ? "black" : "white"' style='vertical-align: middle;' class='mr-1' :icon='mdiUpdate' />
+										<span :class='updateColor'>update</span>
 									</v-btn>
 								</v-col>
 							</v-row>
@@ -115,7 +116,12 @@ onUnmounted(() => {
 	clearTimeout(timezoneTimeout.value);
 	[ timeZoneRegion.value, timeZoneCity.value ] = [ undefined, undefined ];
 });
-
+const updateColor = computed(() => {
+	return updateDisabled.value? 'text-white':'text-black';
+});
+const updateDisabled = computed(() => {
+	return localLoading.value || timeZoneCity.value;
+});
 const infoColor = computed((): string =>{
 	return visible.value ? 'danger' : 'black';
 });
