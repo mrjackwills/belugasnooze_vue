@@ -20,6 +20,7 @@
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"dbaeumer.vscode-eslint",
+		"mutantdino.resourcemonitor",
 		"meganrogge.template-string-converter",
 		"bungcip.better-toml",
 		"wix.vscode-import-cost",
