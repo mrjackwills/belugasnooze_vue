@@ -1,12 +1,15 @@
+# <a href='https://github.com/mrjackwills/belugasnooze_vue/releases/tag/v0.2.2'>v0.2.2</a>
+### 2022-11-12
+
 ### Features
-+ text field outlined variant, [3a11f6b36b2bbec3e44458470203c9e3353acf66]
++ text field outlined variant, [3a11f6b3](https://github.com/mrjackwills/belugasnooze_vue/commit/3a11f6b36b2bbec3e44458470203c9e3353acf66)
 
 ### Fixes
-+ ip tooltip, [26a2324fca1b762ab5bc6bef3f64d1b25e185aed]
-+ create release comma duplicate, [3b30ef199a06a7cfa1c1b19bf895eaf141fd0eca]
++ ip tooltip, [26a2324f](https://github.com/mrjackwills/belugasnooze_vue/commit/26a2324fca1b762ab5bc6bef3f64d1b25e185aed)
++ create release comma duplicate, [3b30ef19](https://github.com/mrjackwills/belugasnooze_vue/commit/3b30ef199a06a7cfa1c1b19bf895eaf141fd0eca)
 
 ### Refactors
-+ dead code removed, [9c4e2fa557815c55c90064619d12cea4d198a116], [171449387adf5419ac1a69b215c8eb2bdf79bd5b], [a50f3fa9b39ab77b71aa34d309b6abbd5be0f990]
++ dead code removed, [9c4e2fa5](https://github.com/mrjackwills/belugasnooze_vue/commit/9c4e2fa557815c55c90064619d12cea4d198a116), [17144938](https://github.com/mrjackwills/belugasnooze_vue/commit/171449387adf5419ac1a69b215c8eb2bdf79bd5b), [a50f3fa9](https://github.com/mrjackwills/belugasnooze_vue/commit/a50f3fa9b39ab77b71aa34d309b6abbd5be0f990)
 
 
 # <a href='https://github.com/mrjackwills/belugasnooze_vue/releases/tag/v0.2.1'>v0.2.1</a>
