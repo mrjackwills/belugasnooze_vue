@@ -10,7 +10,7 @@
 					:variant='expandedAdd ? "outlined" : "flat"'
 					:outlined='expandedAdd'
 					class='elevation-0'
-					large
+					size='large'
 					rounded
 				>
 					<v-row fill-height align='center' justify='center' no-gutters class=''>
@@ -34,8 +34,9 @@
 									v-model='chosenHour'
 									:items='hours'
 									:messages='messagesHour'
+									color='primary'
 									label='Select Hour'
-									outline
+									variant='outlined'
 								/>
 							</v-col>
 							<v-col cols='12' md='5'>
@@ -43,8 +44,9 @@
 									v-model='chosenMinute'
 									:items='minutes'
 									:messages='messagesMinute'
+									color='primary'
 									label='Select Minute'
-									outline
+									variant='outlined'
 								/>
 							</v-col>
 						</v-row>
@@ -58,7 +60,7 @@
 								class='days mb-n3 pa-0'
 								color='primary'
 							/>
-							<v-col cols='12' sm='auto' class='mt-md-1'>
+							<v-col cols='12' sm='auto' class=''>
 								<v-btn
 									v-if='daysSelected.length < 7'
 									class='elevation-0 text-white'
@@ -77,10 +79,11 @@
 									:disabled='loading'
 									color='secondary'
 									size='small'
-									rounded
+									variant='outlined'
 									dark
+									rounded
 								>
-									<span class='text-white'>nil</span>
+									<span class=''>nil</span>
 								</v-btn>
 							</v-col>
 							<v-col cols='12' class='pa-0 ma-0'>
@@ -102,7 +105,7 @@
 							:disabled='loading || !piOnline'
 							class='elevation-0'
 							color='primary'
-							x-large
+							size='large'
 							rounded
 						>
 							<v-icon style='vertical-align: middle;' class='mr-2' :icon='mdiAlarmPlus' color='white' />
