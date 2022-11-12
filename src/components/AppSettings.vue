@@ -5,10 +5,10 @@
 				<v-col cols='auto '>
 					<v-btn
 						@click='showSettings'
-						:disabled='loading && piInit'
-						class='elevation-0 '
-						:outlined='expandedSettings'
 						:color='buttonColor'
+						:disabled='loading && piInit'
+						:outlined='expandedSettings'
+						class='elevation-0 '
 						size='large'
 						rounded
 					>

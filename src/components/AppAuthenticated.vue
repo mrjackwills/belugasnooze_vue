@@ -135,9 +135,9 @@ const dataGuard = (i: unknown): i is TData => {
 const wsDataHandler = (message: TWSFromPi): void => {
 	init.value = true;
 	initCount.value = 0;
-			
-	if (errorGuard(message)) return snackError({ message: message.error.message });
-			
+	if (errorGuard(message)) {
+		return snackError({ message: message.error.message });
+	}
 	if (dataGuard(message)) {
 		if (message.cache) piStatusStore.set_online(false);
 		else piStatusStore.set_online(true);
@@ -165,7 +165,6 @@ const wsDataHandler = (message: TWSFromPi): void => {
 
 onMounted(() => {
 	initCheck();
-
 });
 
 watch(ws_connected, (i) => {

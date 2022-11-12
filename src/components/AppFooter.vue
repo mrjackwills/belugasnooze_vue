@@ -5,7 +5,7 @@
 		absolute
 		app
 	>
-		<v-row justify='center' align='center' class='no-gutters ma-0 pa-0 mt-n9 pt-9' >
+		<v-row justify='center' align='center' class='no-gutters ma-0 pa-0' >
 
 			<v-col cols='auto' class='no-gutters unselectable ma-0 pa-0'>
 
@@ -48,7 +48,7 @@ const [ piStatusStore, userStore ] = [ piStatusModule(), userModule() ];
 const buildTimeout = ref(0);
 const showBuild = ref(false);
 
-const buildDate = env.app_version;
+const buildDate = env.build_date;
 const href = env.homepage;
 
 onUnmounted(() => {
