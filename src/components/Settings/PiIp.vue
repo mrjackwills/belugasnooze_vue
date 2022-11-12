@@ -1,10 +1,9 @@
 <template>
 	<section class='mt-4'>
 		<section v-for='(item, index) in namesAndValues' :key='index' >
-			<v-row align='center' justify='center' no-gutters @click='click(item.class)' >
-				<v-col cols='11' sm='6'>
+			<v-row align='center' justify='center' no-gutters >
+				<v-col cols='11' sm='6' class='cl'>
 					<v-row
-						
 						:class='item.class'
 						align='center'
 						justify='space-around'
@@ -15,24 +14,18 @@
 							</div>
 						</v-col>
 						<v-col cols='7'>
-							<v-tooltip
-								v-model='item.model'
-								top
-							>
-								<template v-slot:activator='{ props }'>
-									<div v-bind='props' class='text-body-1 text-right' :class='computedColor'>
-										<span :class='computedFontSize' class='mono-numbers'>{{ item.value }}</span>
-									</div>
-								</template>
-								<span>{{ item.name }} copied</span>
-							</v-tooltip>
-						
+							<div class='text-body-1 text-right cl' :class='computedColor' @click='showInternalTooltip'>
+								<span :class='computedFontSize' class='mono-numbers'>{{ item.value }}</span>
+								<v-tooltip v-model='showInternal' :open-on-hover='false' activator='parent' location='top center' class='tooltip-z'>
+									<span>ip address copied</span>
+								</v-tooltip>
+							</div>
 						</v-col>
 					</v-row>
 				</v-col>
 			</v-row>
 
-			<v-row v-if='piOnline || !piOnline && index  === 0' align='center' justify='center' no-gutters class='ma-0 pa-0' >
+			<v-row v-if='piOnline || !piOnline && index === 0' align='center' justify='center' no-gutters class='ma-0 pa-0' >
 				<v-col cols='11' sm='6' >
 					<v-divider />
 				</v-col>
@@ -84,20 +77,12 @@ const showExternalTimeout = ref(0);
 const showInternal = ref(false);
 const showInternalTimeout = ref(0);
 
-const click = (name: string): void => {
-	switch (name) {
-	case 'internal':
-		showInternalTooltip();
-		break;
-	}
-};
-
 const showInternalTooltip = (): void => {
 	if (!internalIp.value) return;
 	useClipboard().copy(internalIp.value);
 	showInternal.value = true;
 	showInternalTimeout.value = window.setTimeout (() => {
 		showInternal.value = false;
-	}, 750);
+	}, 1500);
 };
 </script>
