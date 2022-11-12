@@ -30,7 +30,7 @@
 								class='elevation-0 '
 								color='serious'
 								rounded
-								small
+								size='small'
 							>
 								<span class='text-white'>confirm restart</span>
 							</v-btn>
@@ -54,7 +54,7 @@ onBeforeUnmount(() => {
 });
 
 const computedRestartButton = computed((): string => {
-	return expandedReset ? mdiClose : mdiRestartAlert;
+	return expandedReset.value ? mdiClose : mdiRestartAlert;
 });
 
 const loading = computed({
@@ -66,7 +66,7 @@ const loading = computed({
 	}
 });
 const restartFont = computed((): string => {
-	return mobile ? 'text-caption' : 'text-h6';
+	return mobile.value ? 'text-caption' : 'text-h6';
 });
 
 const expandedReset = ref(false);
@@ -77,7 +77,6 @@ const serverRestart = async (): Promise<void> => {
 		if (loading.value) return;
 		loading.value = true;
 		wsStore.send({ name: 'restart' });
-		// $vuetify.goTo(0);
 		expandedReset.value = false;
 		wsStore.closeWS();
 		window.setTimeout(() => {

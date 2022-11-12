@@ -16,6 +16,8 @@
 							:prepend-inner-icon='mdiLock'
 							:type='fieldType'
 							autocomplete='password'
+							color='primary'
+							variant='outlined'
 							id='password'
 							label='Password'
 						/>
@@ -51,7 +53,7 @@ const password = ref('');
 const passwordVisible = ref(false);
 
 const appendIcon = computed(() => {
-	return password.value ? passwordVisible.value ? mdiEyeOff: mdiEye : '';
+	return passwordVisible.value ? mdiEyeOff: mdiEye;
 });
 
 const buttonDisabled = computed(() => {

@@ -14,7 +14,7 @@
 				>
 					<v-icon style='vertical-align: middle;' class='mr-1' size='small' :icon='mdiMapClock' />
 					time
-					<v-icon style='vertical-align: middle;' class='ml-1'  size='small' :icon='computedInfoIcon' />
+					<v-icon style='vertical-align: middle;' class='ml-1' size='small' :icon='computedInfoIcon' />
 				</v-btn>
 			</v-col>
 		</v-row>
@@ -37,7 +37,9 @@
 								v-model='timeZoneRegion'
 								:disabled='!piOnline || localLoading'
 								:items='parents'
+								color='primary'
 								label='Region'
+								variant='outlined'
 							/>
 						</v-col>
 						<v-col cols='10' sm='7' class='' >
@@ -45,10 +47,12 @@
 								v-model='timeZoneCity'
 								:disabled='!piOnline || localLoading'
 								:items='computedCity'
+								color='primary'
 								item-text='text'
 								item-value='value'
 								label='City'
 								no-data-text='Select a region first'
+								variant='outlined'
 							/>
 						</v-col>
 					</v-row>
@@ -64,10 +68,10 @@
 										class='elevation-0'
 										color='red'
 										rounded
-										outlined
+										variant='outlined'
 									>
 										<span>
-											<v-icon small style='vertical-align: middle;' class='mr-2' :icon='mdiClose' />
+											<v-icon size='small' style='vertical-align: middle;' class='mr-2' :icon='mdiClose' />
 											cancel
 										</span>
 									</v-btn>
@@ -152,10 +156,10 @@ const loading = computed({
 		loadingStore.set_loading(b);
 	}
 });
-const piOnline =computed((): boolean => {
+const piOnline = computed((): boolean => {
 	return piStatusStore.online;
 });
-const timeZone =computed((): string => {
+const timeZone = computed((): string => {
 	return piStatusStore.timeZone;
 });
 
@@ -169,8 +173,6 @@ const setTimeZone = (): void => {
 	if (!timeZoneCity.value || loading.value) return;
 	[ localLoading.value, loading.value ] = [ true, true ];
 	wsStore.send({ name: 'time_zone', body: { zone: timeZoneCity.value } });
-	// $vuetify.goTo(0);
-	// fix me
 	timezoneTimeout.value = window.setTimeout(async () => {
 		wsStore.send({ name: 'status' });
 		visible.value = false;

@@ -14,7 +14,6 @@ import AppSnackbar from '@/components/AppSnackbar.vue';
 import AppFooter from '@/components/AppFooter.vue';
 import { snackSuccess } from '@/services/snack';
 import { useHead } from '@vueuse/head';
-
 import { useRegisterSW } from 'virtual:pwa-register/vue';
 import { registerSW } from 'virtual:pwa-register';
 
@@ -65,8 +64,8 @@ const appUpdate = (): void => {
 </script>
 
 <style  lang="scss">
-.vh-fix ::v-deep .v-application--wrap {
-	height: 100vh;
+// .vh-fix ::v-deep .v-application--wrap {
+	// height: 100vh;
 	/* min-height: calc(var(--vh, 100vh) * 100); */
-}
+// }
 </style>
