@@ -9,7 +9,7 @@
 			class='fill-height'
 		>
 			<v-col cols='10' md='8' >
-				<v-card transition='fade-transition' class='mb-4' >
+				<v-card transition='fade-transition' class='' >
 					<AppToolbar />
 					<v-card-text class=''>
 						<v-fade-transition group hide-on-leave>

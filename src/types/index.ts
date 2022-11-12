@@ -21,7 +21,6 @@ export type TEmitBody = {
 
 export type TSendName = 'status' | 'led_status'
 
-// // export type TWifi = { [ K in 'ssid' | 'password']: string }
 type TLightStatus = {status: boolean}
 type TTimeZone = {zone: string}
 

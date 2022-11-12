@@ -35,20 +35,8 @@ const pwaOptions: Partial<VitePWAOptions> = {
 				sizes: '512x512',
 				type: 'image/png',
 			},
-			// {
-			// 	src: 'img/icons/android-chrome-512x512.png',
-			// 	sizes: '512x512',
-			// 	type: 'image/png',
-			// 	purpose: 'any maskable'
-			// },
 		],
 	},
-	// devOptions: {
-	// 	enabled: true,
-	// 	/* when using generateSW the PWA plugin will switch to classic */
-	// 	type: 'module',
-	// 	navigateFallback: 'index.html',
-	// },
 };
   
 // https://vitejs.dev/config/
@@ -84,7 +72,8 @@ export default defineConfig({
 		viteCompression({ algorithm: 'brotliCompress' }),
 		viteCompression({ algorithm: 'gzip' }),
 	],
-	define: { 'process.env': {},
+	define: {
+		'process.env': {},
 		'import.meta.env.BUILD_DATE': Date.now(),
 		'import.meta.env.VERSION': JSON.stringify(process.env.npm_package_version),
 	},
