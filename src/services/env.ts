@@ -3,7 +3,7 @@ class Env {
 	readonly #app_version = String(import.meta.env.VERSION);
 	readonly #domain_token = String(import.meta.env.VITE_APP_TOKEN_DOMAIN);
 	readonly #domain_wss = String(import.meta.env.VITE_APP_WSS_DOMAIN);
-	readonly #build_date = String(import.meta.env.BUILD_DATE);
+	readonly #build_date = new Date(import.meta.env.BUILD_DATE);
 	readonly #homepage = String(import.meta.env.VITE_GITHUB_HOMEPAGE);
 	readonly #mode_production = import.meta.env.PROD ;
 
@@ -16,7 +16,7 @@ class Env {
 	}
 
 	get build_date (): string {
-		return this.#build_date;
+		return this.#build_date.toISOString();
 	}
 
 	get domain_token (): string {

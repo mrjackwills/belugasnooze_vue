@@ -17,9 +17,9 @@
 					min-width='30vw'
 					rounded
 				>
-					<v-icon style='vertical-align: middle;' class='mr-1' small :icon='mdiIpNetwork' />
+					<v-icon style='vertical-align: middle;' class='mr-1' size='small' :icon='mdiIpNetwork' />
 					info
-					<v-icon style='vertical-align: middle;' class='ml-1' small :icon='computedInfoIcon' />
+					<v-icon style='vertical-align: middle;' class='ml-1' size='small' :icon='computedInfoIcon' />
 				</v-btn>
 			</v-col>
 		</v-row>

@@ -2,10 +2,9 @@
 	<v-toolbar
 		:height='toolbarHeight'
 		color='primary'
-		flat
 	>
 
-		<v-img src='@/assets/logo.svg' :eager='true' max-width='40px' class='ml-2' />
+		<v-img src='@/assets/logo.svg' :eager='true' max-width='3rem' class='ml-2' />
 
 		<v-toolbar-title
 			:class='spacing'
@@ -46,10 +45,6 @@ const authenticated = computed(() => {
 const loading = computed(() => {
 	return loadingStore.loading;
 });
-
-// const logoWidth = computed(() => {
-// 	return mobile.value ? '40px' : '55px';
-// });
 
 const progressHeight = computed(() => {
 	return mobile.value ? '8' : '4';

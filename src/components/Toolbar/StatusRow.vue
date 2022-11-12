@@ -13,12 +13,12 @@
 
 			<v-col cols='auto' class='pa-0 mx-2'>
 				<v-icon
-					style='vertical-align: middle;'
 					:class='computedAnimation'
 					:color='computedIconColor'
 					:icon='computedIcon'
 					:size='breakpoint.xs.value ? `small`:`default`'
 					class='mb-1'
+					style='vertical-align: middle;'
 
 				/>
 			</v-col>
@@ -33,7 +33,7 @@ import { useDisplay } from 'vuetify';
 
 const piStatusStore = piStatusModule();
 const breakpoint = useDisplay();
-		
+
 const computedAnimation = computed(() => {
 	return piOnline.value ? '' : 'pulse-animation';
 });

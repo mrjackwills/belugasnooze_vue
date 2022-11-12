@@ -7,9 +7,9 @@
 						<v-list-item
 							v-for='(item, index) in alarms'
 							:key='index'
-							class='list-item'
-							dense
 							active-color='primary'
+							class='list-item'
+							density='compact'
 							rounded
 						>
 							<v-row class='ma-1 pa-0' align='center' justify='space-between'>
@@ -20,7 +20,7 @@
 									<span class='clock-font'>{{ zeroPad(item.minute) }}</span>
 								</v-col>
 								<v-col cols='auto' class='ma-0 pa-0'>
-									<v-icon @click='sender({name: `delete_one`, body: {alarm_id: item.alarm_id}})' small :color='color' style='vertical-align: middle;' :icon='mdiCloseCircle' />
+									<v-icon @click='sender({name: `delete_one`, body: {alarm_id: item.alarm_id}})' size='small' :color='color' style='vertical-align: middle;' :icon='mdiCloseCircle' />
 								</v-col>
 							</v-row>
 						</v-list-item>

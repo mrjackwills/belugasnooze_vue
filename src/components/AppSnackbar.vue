@@ -6,10 +6,10 @@
 			</v-col>
 			<v-col v-if='loading' cols='auto' class=''>
 				<v-progress-circular
-					indeterminate
 					:size='18'
 					:width='3'
 					color='white'
+					indeterminate
 				/>
 			</v-col>
 			<v-col cols='auto' class='mx-3 ma-0 pa-0'>

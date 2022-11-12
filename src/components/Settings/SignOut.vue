@@ -7,7 +7,7 @@
 				color='red'
 				variant='outlined'
 			>
-				<v-icon style='vertical-align: middle;' class='mr-2' small dark :icon='mdiLogoutVariant' />
+				<v-icon style='vertical-align: middle;' class='mr-2' size='small' dark :icon='mdiLogoutVariant' />
 				<span>signout</span>
 			</v-btn>
 		</v-col>

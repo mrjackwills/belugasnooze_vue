@@ -4,13 +4,13 @@
 			<v-col cols='auto' class=''>
 				<v-btn
 					@click='piStatus'
-					color='success'
-					:disabled='loading'
 					:dark='!loading'
+					:disabled='loading'
 					:size='mobile ? `small`:`default`'
 					class='fab-fix elevation-0'
-					rounded
+					color='success'
 					min-width='30vw'
+					rounded
 				>
 					<v-icon style='vertical-align: middle;' class='mr-1' small :icon='mdiRefresh' />
 					refresh data
@@ -24,16 +24,15 @@
 import { mdiRefresh, } from '@mdi/js';
 import { useDisplay } from 'vuetify';
 
-const loadingStore = loadingModule();
 const { mobile } = useDisplay();
 const emit = defineEmits([ 'piStatus' ]);
 
 const loading = computed({
 	get (): boolean {
-		return loadingStore.loading;
+		return loadingModule().loading;
 	},
 	set (b: boolean): void {
-		loadingStore.set_loading(b);
+		loadingModule().set_loading(b);
 	}
 });
 
