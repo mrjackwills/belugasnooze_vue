@@ -1,13 +1,12 @@
-### 2022-11-12
+### 2022-12-15
 
-### Features
-+ text field outlined variant, [3a11f6b36b2bbec3e44458470203c9e3353acf66]
+### Chores
++ dependencies updated, [0b8707368d706835b714cf8dd2ed79a2e7d50ec7]
+
+### Docs
++ screenshot updated, [5e8154e74f0256d05eb0e6adf427aa7ac38db92e]
 
 ### Fixes
-+ ip tooltip, [26a2324fca1b762ab5bc6bef3f64d1b25e185aed]
-+ create release comma duplicate, [3b30ef199a06a7cfa1c1b19bf895eaf141fd0eca]
-
-### Refactors
-+ dead code removed, [9c4e2fa557815c55c90064619d12cea4d198a116], [171449387adf5419ac1a69b215c8eb2bdf79bd5b], [a50f3fa9b39ab77b71aa34d309b6abbd5be0f990]
++ name standardised as `Beluga Snooze`, [227efa3738b0f657be81aad9208770adbc8b69c0]
 
 see <a href='https://github.com/mrjackwills/belugasnooze_vue/blob/main/CHANGELOG.md'>CHANGELOG.md</a> for more details
