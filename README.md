@@ -2,10 +2,10 @@
 	<img src='./.github/logo.svg' width='125px' />
 </p>
 
-<h1 align="center">belugasnooze website</h1>
+<h1 align="center">Beluga Snooze website</h1>
 
 <p align="center">
-	The frontend PWA for <a href='https://www.belugasnooze.com' target='_blank' rel='noopener noreferrer'>belugasnooze</a>, powered by <a href='https://www.staticpi.com' target='_blank' rel='noopener noreferrer'>staticPi.com</a>
+	The frontend PWA for <a href='https://www.belugasnooze.com' target='_blank' rel='noopener noreferrer'>Beluga Snooze</a>, powered by <a href='https://www.staticpi.com' target='_blank' rel='noopener noreferrer'>staticPi.com</a>
 	<br>
 	See the backend Rust source <a href='https://www.github.com/mrjackwills/belugasnooze_pi' target='_blank' rel='noopener noreferrer'>here</a>
 </p>
@@ -26,7 +26,7 @@
 1) <a href='https://www.staticpi.com/' target='_blank' rel='noopener noreferrer'>staticPi</a> - the simple and secure messaging service
 
 
-File that are required by belugasnooze
+File that are required by Beluga Snooze
 | file | reason |
 |---|---|
 |```./.env.development```	| development enviromental variables|

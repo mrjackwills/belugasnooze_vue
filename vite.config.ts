@@ -19,9 +19,9 @@ const pwaOptions: Partial<VitePWAOptions> = {
 	},
 	manifest: {
 		display: 'standalone',
-		name: 'belugasnooze',
+		name: 'Beluga Snooze',
 		description: 'Those in the know - know',
-		short_name: 'belugasnooze',
+		short_name: 'Beluga Snooze',
 		theme_color: '#FFFBBC',
 		background_color: '#FFFBBC',
 		icons: [

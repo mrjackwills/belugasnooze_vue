@@ -2,6 +2,7 @@
 	font-family: 'B612 Mono';
 	font-style: normal;
 	font-weight: 400;
+	font-display: swap;
 	src: local(''),
 	url('@/assets/fonts/b612-mono-v5-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
 	url('@/assets/fonts/b612-mono-v5-latin-regular.woff') format('woff'), /* Modern Browsers */
@@ -12,6 +13,7 @@
 @font-face {
 	font-family: 'Maven Pro';
 	font-style: normal;
+	font-display: swap;
 	font-weight: 400;
 	src: local(''),
 		 url('@/assets/fonts/maven-pro-v32-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
@@ -33,7 +35,7 @@ html {
 
 html .v-snackbar__content, [class*='text-']{
 	font-family: 'Maven Pro', sans-serif !important;
-	font-display: 'swap';
+	font-display: swap;
 }
 
 .cl{
@@ -42,7 +44,7 @@ html .v-snackbar__content, [class*='text-']{
 
 .clock-font{
 	font-family: 'B612 Mono', monospace !important;
-	font-display: 'swap';
+	font-display: swap;
 }
 
 .mono-numbers{

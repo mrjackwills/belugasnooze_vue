@@ -1,3 +1,15 @@
+# <a href='https://github.com/mrjackwills/belugasnooze_vue/releases/tag/v0.2.3'>v0.2.3</a>
+### 2022-12-15
+
+### Chores
++ dependencies updated, [0b870736](https://github.com/mrjackwills/belugasnooze_vue/commit/0b8707368d706835b714cf8dd2ed79a2e7d50ec7)
+
+### Docs
++ screenshot updated, [5e8154e7](https://github.com/mrjackwills/belugasnooze_vue/commit/5e8154e74f0256d05eb0e6adf427aa7ac38db92e)
+
+### Fixes
++ name standardised as `Beluga Snooze`, [227efa37](https://github.com/mrjackwills/belugasnooze_vue/commit/227efa3738b0f657be81aad9208770adbc8b69c0)
+
 # <a href='https://github.com/mrjackwills/belugasnooze_vue/releases/tag/v0.2.2'>v0.2.2</a>
 ### 2022-11-12
 

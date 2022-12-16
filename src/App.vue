@@ -36,9 +36,9 @@ const title = computed(() => {
 useHead({
 	title: () => {
 		if (title.value.length > 0) {
-			return `Belugasnooze - ${title.value}`;
+			return `Beluga Snooze - ${title.value}`;
 		} else {
-			return `Belugasnooze`;
+			return `Beluga Snooze`;
 		}
 	},
 
