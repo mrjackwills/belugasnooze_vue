@@ -1,7 +1,7 @@
 <template>
 	<section>
 		<v-row class='ma-0 pa-0' align='center' justify='center'>
-			<v-col cols='11' md='8' lg='4' class='ma-0 pa-0'>
+			<v-col cols='11' md='8' lg='6' class='ma-0 pa-0'>
 				<v-card-text>
 					<v-form
 						v-on:submit.prevent
