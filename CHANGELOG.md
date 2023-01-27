@@ -1,3 +1,10 @@
+### Chores
++ dev container remove docker, [f272aeece969614f9b53f384fd11e3870fe00623]
++ dependencies updated, [df15b2b7244805a1bb8a020d5764a43c69c23fcc], [57cc34a3c6f1c95ffbd43384349d0e3390a52641]
+
+### Fixes
++ AppToolbar loading fix, [023e6112fdd6716e15c547ae1d827c57f348dad7]
+
 # <a href='https://github.com/mrjackwills/belugasnooze_vue/releases/tag/v0.2.3'>v0.2.3</a>
 ### 2022-12-15
 
