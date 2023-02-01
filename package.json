@@ -19,7 +19,7 @@
     "secure-json-parse": "^2.7.0",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6",
-    "vuetify": "^3.1.2"
+    "vuetify": "^3.1.3"
   },
   "devDependencies": {
     "@mdi/js": "^7.1.96",
