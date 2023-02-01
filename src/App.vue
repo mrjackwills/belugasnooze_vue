@@ -63,9 +63,8 @@ const appUpdate = (): void => {
 
 </script>
 
-<style  lang="scss">
-// .vh-fix ::v-deep .v-application--wrap {
-	// height: 100vh;
-	/* min-height: calc(var(--vh, 100vh) * 100); */
-// }
+<style>
+.v-application__wrap {
+  min-height: 100dvh !important;
+}
 </style>
