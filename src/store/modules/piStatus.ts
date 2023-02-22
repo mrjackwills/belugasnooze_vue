@@ -12,8 +12,6 @@ export const piStatusModule = defineStore(ModuleName.Pistatus, {
 		piAppUptime: 0,
 		piUptime: 0,
 		piVersion: '',
-		serverNodeUptime: 0,
-		serverUptime: 0,
 		time: { hours: 0, minutes: 0, seconds: 0 } as TTime,
 		timeZone: '',
 	}),
@@ -40,12 +38,6 @@ export const piStatusModule = defineStore(ModuleName.Pistatus, {
 		},
 		set_piVersion (su: string): void {
 			this.piVersion = su;
-		},
-		set_serverNodeUptime (nu: number): void {
-			this.serverNodeUptime = nu;
-		},
-		set_serverUptime (nu: number): void {
-			this.serverUptime = nu;
 		},
 		set_time (t: TTime): void {
 			this.time = t;
