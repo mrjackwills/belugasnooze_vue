@@ -115,12 +115,12 @@ const cacheTime = (timezone: string): TTimeAndTimeZone => {
 		hour12: false
 	};
 	const tempDate = new Intl.DateTimeFormat([], tzOptions);
-	const formatedDate = tempDate.format(new Date());
+	const formattedDate = tempDate.format(new Date());
 	return {
 		time: {
-			hours: Number(formatedDate.toString().substring(0, 2)),
-			minutes: Number(formatedDate.toString().substring(3, 5)),
-			seconds: Number(formatedDate.toString().substring(6, 8)),
+			hours: Number(formattedDate.toString().substring(0, 2)),
+			minutes: Number(formattedDate.toString().substring(3, 5)),
+			seconds: Number(formattedDate.toString().substring(6, 8)),
 		},
 		timezone
 	};

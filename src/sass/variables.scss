@@ -42,14 +42,13 @@ html .v-snackbar__content, [class*='text-']{
 	cursor: pointer;
 }
 
-.clock-font{
+.clock-font {
 	font-family: 'B612 Mono', monospace !important;
 	font-display: swap;
 }
 
 .mono-numbers{
 	font-feature-settings: 'tnum' 1;
-	font-feature-settings: "tnum";
 	font-family: 'Maven Pro', monospace !important;
 }
 
