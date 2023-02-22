@@ -91,6 +91,7 @@ const setPiTime = (): void => {
 	clearInterval(piTimeInterval.value);
 	if (!piTime.value) return;
 	piTimeInterval.value = window.setInterval(() => {
+		piStatusModule().increment_timers();
 		piTime.value.seconds = Number(piTime.value.seconds) + 1;
 		if (piTime.value.seconds === 60) {
 			piTime.value.seconds = 0;

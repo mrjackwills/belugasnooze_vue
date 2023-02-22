@@ -17,6 +17,11 @@ export const piStatusModule = defineStore(ModuleName.Pistatus, {
 	}),
 
 	actions: {
+		increment_timers(): void  {
+			this.connectedFor ++;
+			this.piAppUptime ++;
+			this.piUptime ++;
+		},
 		set_connectedFor (n: number): void {
 			this.connectedFor = n;
 		},
