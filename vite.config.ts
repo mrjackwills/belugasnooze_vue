@@ -5,10 +5,16 @@ import viteCompression from 'vite-plugin-compression';
 import { VitePWA } from 'vite-plugin-pwa';
 import type { VitePWAOptions } from 'vite-plugin-pwa';
 import AutoImport from 'unplugin-auto-import/vite';
+import { FontaineTransform } from 'fontaine';
 
 // Utilities
 import { defineConfig } from 'vite';
 import { fileURLToPath, URL } from 'node:url';
+
+const fontaine_options = {
+	fallbacks: [ 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'Arial', 'Noto Sans' ],
+	resolvePath: (id: string): string => './src/assets/fonts' + id,
+};
 
 const pwaOptions: Partial<VitePWAOptions> = {
 	base: '/',
@@ -68,6 +74,7 @@ export default defineConfig({
 			],
 			vueTemplate: false,
 		}),
+		FontaineTransform.vite(fontaine_options),
 		VitePWA(pwaOptions),
 		viteCompression({ algorithm: 'brotliCompress' }),
 		viteCompression({ algorithm: 'gzip' }),

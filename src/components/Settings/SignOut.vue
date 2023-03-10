@@ -6,6 +6,7 @@
 				class='elevation-0'
 				color='red'
 				variant='outlined'
+				size='small'
 			>
 				<v-icon style='vertical-align: middle;' class='mr-2' size='small' dark :icon='mdiLogoutVariant' />
 				<span>signout</span>

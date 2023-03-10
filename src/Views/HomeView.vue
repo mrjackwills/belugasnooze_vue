@@ -12,9 +12,8 @@
 				<v-card transition='fade-transition' class='' >
 					<AppToolbar />
 					<v-card-text class=''>
-						<v-fade-transition group hide-on-leave>
+						<v-fade-transition hide-on-leave>
 							<component
-
 								:is='computedComponent'
 								:key='computedComponent'
 							/>

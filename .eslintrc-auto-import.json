@@ -1,6 +1,13 @@
 {
   "globals": {
+    "Component": true,
+    "ComponentPublicInstance": true,
+    "ComputedRef": true,
     "EffectScope": true,
+    "InjectionKey": true,
+    "PropType": true,
+    "Ref": true,
+    "VNode": true,
     "alarmModule": true,
     "computed": true,
     "createApp": true,
@@ -42,7 +49,6 @@
     "readonly": true,
     "ref": true,
     "resolveComponent": true,
-    "resolveDirective": true,
     "settingsModule": true,
     "shallowReactive": true,
     "shallowReadonly": true,
