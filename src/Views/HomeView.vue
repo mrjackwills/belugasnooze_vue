@@ -15,7 +15,7 @@
 						<v-fade-transition hide-on-leave>
 							<component
 								:is='computedComponent'
-								:key='computedComponent'
+								:key='key'
 							/>
 						</v-fade-transition>
 					</v-card-text>
@@ -36,6 +36,10 @@ const authenticated = computed(() => {
 });
 const computedComponent = computed(() => {
 	return authenticated.value ? AppAuthenticated : AppSignin;
+});
+
+const key = computed(() => {
+	return authenticated.value ? 'AppAuthenticated' : 'AppSignin';
 });
 
 const lightOn = computed((): boolean =>{
