@@ -62,9 +62,3 @@ const appUpdate = (): void => {
 };
 
 </script>
-
-<style>
-.v-application__wrap {
-  min-height: 100dvh !important;
-}
-</style>

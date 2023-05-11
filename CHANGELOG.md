@@ -1,3 +1,9 @@
+### Chores
++ dependencies updated, [e5e4695c1e9199957e10e010fbf7d762dc59c581], [af020ea1a430a3a1274224a18cace392b5112f0e]
+
+### Fixes
++ invalid types, [bcec20f8f1413d9cc076f9a4cf2488d588319651]
+
 # <a href='https://github.com/mrjackwills/belugasnooze_vue/releases/tag/v0.2.4'>v0.2.4</a>
 ### 2023-03-10
 
