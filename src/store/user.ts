@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia';
 import { ModuleName } from '@/types/enum_module';
-import { alarmModule, piStatusModule, settingsModule } from '@/store';
 
 export const userModule = defineStore(ModuleName.User, {
 

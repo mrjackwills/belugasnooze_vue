@@ -1,5 +1,4 @@
 import { mdiAlertCircle, mdiCheckCircleOutline } from '@mdi/js';
-import { snackbarModule } from '@/store/modules/snackbar';
 import type { TSnack } from '@/types';
 
 export const snackSuccess = ({

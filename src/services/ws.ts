@@ -1,4 +1,3 @@
-import { userModule } from '@/store';
 import { env } from '@/services/env';
 
 class CreateWs {
