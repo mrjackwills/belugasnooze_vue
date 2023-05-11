@@ -125,7 +125,7 @@
 import type { Ref } from 'vue';
 import { dayOptions } from '@/services/dayOptions';
 import { mdiAlarmPlus, mdiAlert, mdiClose, mdiPlus } from '@mdi/js';
-import type { nu, su } from '@/types';
+import type { su } from '@/types';
 import { snackError } from '@/services/snack';
 
 const [ alarmStore, piStatusStore, wsStore ] = [ alarmModule(), piStatusModule(), wsModule() ];
@@ -156,8 +156,8 @@ const piOnline = computed(() => {
 	return piStatusStore.online;
 });
 
-const chosenHour: Ref<nu> = ref(undefined);
-const chosenMinute: Ref<nu> = ref(undefined);
+const chosenHour: Ref<su> = ref(undefined);
+const chosenMinute: Ref<su> = ref(undefined);
 const loading = ref(false);
 const daysSelected: Ref<Array<number>> = ref([]);
 const expandedAdd = ref(false);

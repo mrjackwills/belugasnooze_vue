@@ -1,5 +1,4 @@
 import { snackError, snackReset } from './snack';
-import { userModule, wsModule, } from '@/store';
 import Axios from 'axios';
 import type { AxiosInstance, AxiosError } from 'axios';
 import { env } from '@/services/env';

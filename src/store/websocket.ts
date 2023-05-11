@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia';
 import type { IWSToServer } from '@/types';
 import { ModuleName } from '@/types/enum_module';
-import { userModule } from '@/store';
 import { ws } from '@/services/ws';
 
 export const wsModule = defineStore(ModuleName.Websocket, {
