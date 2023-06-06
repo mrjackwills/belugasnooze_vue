@@ -71,6 +71,7 @@
     "watchEffect": true,
     "watchPostEffect": true,
     "watchSyncEffect": true,
-    "wsModule": true
+    "wsModule": true,
+    "toValue": true
   }
 }

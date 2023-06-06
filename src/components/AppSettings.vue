@@ -40,11 +40,6 @@
 <script setup lang='ts'>
 
 import { mdiClose, mdiCog } from '@mdi/js';
-import SignOut from '@/components/Settings/SignOut.vue';
-import RefreshData from '@/components/Settings/RefreshData.vue';
-import TimeZone from '@/components/Settings/TimeZone.vue';
-import PiInfo from '@/components/Settings/PiInfo.vue';
-import PiRestart from '@/components/Settings/PiRestart.vue';
 
 const [ loadingStore, piStatusStore, settingsStore, wsStore ] =[ loadingModule(), piStatusModule(), settingsModule(), wsModule() ];
 		

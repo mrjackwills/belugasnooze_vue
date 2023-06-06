@@ -38,8 +38,6 @@
 
 <script setup lang='ts'>
 import { mdiChevronDown, mdiChevronUp, mdiIpNetwork } from '@mdi/js';
-import PiIp from '@/components/Settings/PiIp.vue';
-import PiUptime from '@/components/Settings/PiUptime.vue';
 import { useDisplay } from 'vuetify';
 
 const { mdAndUp, mobile } = useDisplay();

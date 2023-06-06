@@ -10,8 +10,6 @@
 </template>
 
 <script setup lang="ts">
-import AppSnackbar from '@/components/AppSnackbar.vue';
-import AppFooter from '@/components/AppFooter.vue';
 import { snackSuccess } from '@/services/snack';
 import { useHead } from '@vueuse/head';
 import { useRegisterSW } from 'virtual:pwa-register/vue';
