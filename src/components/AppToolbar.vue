@@ -27,8 +27,6 @@
 </template>
 
 <script setup lang='ts'>
-import StatusRow from '@/components/Toolbar/StatusRow.vue';
-
 import { useDisplay } from 'vuetify';
 const { mobile } = useDisplay();
 

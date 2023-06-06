@@ -7,7 +7,7 @@
 						<v-list-item
 							v-for='(item, index) in alarms'
 							:key='index'
-							active-color='primary'
+							color='primary'
 							class='list-item'
 							density='compact'
 							rounded

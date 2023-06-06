@@ -18,10 +18,6 @@
 import { parse } from 'secure-json-parse';
 import { snackError } from '@/services/snack';
 import { ws } from '@/services/ws';
-import AddAlarm from '@/components/Authenticated/AddAlarm.vue';
-import AlarmList from '@/components/Authenticated/AlarmList.vue';
-import LightControl from '@/components/Authenticated/LightControl.vue';
-import AppSettings from '@/components/AppSettings.vue';
 import type { TWSFromPi, TTime, TTimeAndTimeZone, TError, TData } from '@/types';
 
 onUnmounted(() => {
