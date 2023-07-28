@@ -1,3 +1,10 @@
+# <a href='https://github.com/mrjackwills/belugasnooze_vue/releases/tag/v0.2.7'>v0.2.7</a>
+### 2023-07-28
+
+### Chores
++ create_release 0.2.0, [acd20e25](https://github.com/mrjackwills/belugasnooze_vue/commit/acd20e258c6073d1a0f261674afba42857e3f1e3)
++ dependencies updated, [1cdb046b](https://github.com/mrjackwills/belugasnooze_vue/commit/1cdb046bc828f8f17d5206e95af3270c22302695)
+
 # <a href='https://github.com/mrjackwills/belugasnooze_vue/releases/tag/v0.2.6'>v0.2.6</a>
 ### 2023-06-06
 
