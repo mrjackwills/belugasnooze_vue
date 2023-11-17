@@ -72,6 +72,10 @@
     "watchPostEffect": true,
     "watchSyncEffect": true,
     "wsModule": true,
-    "toValue": true
+    "toValue": true,
+    "ExtractDefaultPropTypes": true,
+    "ExtractPropTypes": true,
+    "ExtractPublicPropTypes": true,
+    "WritableComputedRef": true
   }
 }
