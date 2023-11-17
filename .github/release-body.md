@@ -1,7 +1,8 @@
-### 2023-07-28
+### 2023-11-17
 
 ### Chores
-+ create_release 0.2.0, [acd20e258c6073d1a0f261674afba42857e3f1e3]
-+ dependencies updated, [1cdb046bc828f8f17d5206e95af3270c22302695]
++ dependencies updated, [5e0a3fa6811f2eb2c26145dadb9b6b4783157479], [c81af6eb7352a99ab46660283cabfaceb2ffad20], [b483c0c95077d1d90fb9c2f0e5f0a75831ab3280]
++ .devcontainer updated, [39c61f12078978c3a8ec28157cf0c45ca0918705], [d758f94030971b32ae7b48485075a1ce7bdf459a]
++ GitHub workflow updated, [9eadfcd0693a069781c34d2da0e5baa6857212e0]
 
 see <a href='https://github.com/mrjackwills/belugasnooze_vue/blob/main/CHANGELOG.md'>CHANGELOG.md</a> for more details
