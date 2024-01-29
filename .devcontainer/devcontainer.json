@@ -3,7 +3,10 @@
 {
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"name": "Node.js & TypeScript",
-	"runArgs": ["--init"],
+	"runArgs": [
+		"--init",
+		"--network=host"
+	],
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
