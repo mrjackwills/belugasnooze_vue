@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Vue release
-# v0.2.0
+# v0.2.1
 
 PACKAGE_NAME='belugasnooze_vue'
 
@@ -247,6 +247,9 @@ release_flow() {
 
 	release_continue "git checkout main"
 	git checkout main
+
+	echo -e "${PURPLE}git pull origin main${RESET}"
+	git pull origin main
 
 	release_continue "git merge --no-ff \"${RELEASE_BRANCH}\" -m \"chore: merge ${RELEASE_BRANCH} into main\"" 
 	git merge --no-ff "$RELEASE_BRANCH" -m "chore: merge ${RELEASE_BRANCH} into main"
