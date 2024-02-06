@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Vue release
-# v0.2.1
+# v0.2.2
 
 PACKAGE_NAME='belugasnooze_vue'
 
@@ -23,6 +23,11 @@ error_close() {
 	echo -e "\n${RED}ERROR - EXITED: ${YELLOW}$1${RESET}\n";
 	exit 1
 }
+
+# Check that dialog is installed
+if ! [ -x "$(command -v dialog)" ]; then
+	error_close "dialog is not installed"
+fi
 
 if [ -z "$PACKAGE_NAME" ]
 then
@@ -82,20 +87,6 @@ check_git() {
 		error_close "not on dev branch"
 	fi
 }
-
-check_git_update() {
-	CURRENT_GIT_BRANCH=$(git branch --show-current)
-	GIT_CLEAN=$(git status --porcelain)
-	if [[ -n $GIT_CLEAN ]]
-	then
-		error_close "git dirty"
-	fi
-	if [[ ! "$CURRENT_GIT_BRANCH" =~ ^chore/npm_update$ ]]
-	then
-		error_close "not on chore/npm_update branch"
-	fi
-}
-
 
 ask_changelog_update() {
 	echo "${STAR_LINE}"
@@ -203,7 +194,6 @@ npm_build () {
 release_continue () {
 	echo -e "\n${PURPLE}$1${RESET}"
 	ask_continue
-
 }
 
 # Check repository for typos
