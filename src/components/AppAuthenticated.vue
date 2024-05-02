@@ -25,7 +25,7 @@ onUnmounted(() => {
 });
 	
 const [ alarmStore, lightStore, piStatusStore, settingsStore, userStore, wsStore ] = [ alarmModule(), lightModule(), piStatusModule(), settingsModule(), userModule(), wsModule() ];
-		
+
 const expandedSettings = computed(() => {
 	return settingsStore.expanded;
 });
