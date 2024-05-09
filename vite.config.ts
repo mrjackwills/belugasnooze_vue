@@ -9,7 +9,7 @@ import { FontaineTransform } from 'fontaine';
 import Components from 'unplugin-vue-components/vite';
 
 // Utilities
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 import { fileURLToPath, URL } from 'node:url';
 
 const fontaine_options = {
@@ -45,55 +45,63 @@ const pwaOptions: Partial<VitePWAOptions> = {
 		],
 	},
 };
-  
+
 // https://vitejs.dev/config/
-export default defineConfig({
-	plugins: [
-		vue({
-			template: { transformAssetUrls }
-		}),
-		// https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vite-plugin
-		vuetify({
-			autoImport: true,
-		}),
-		Components(),
-		AutoImport({
-			include: [
-				/\.[tj]sx?$/,
-				/\.vue$/, /\.vue\?vue/,
-				/\.md$/,
-			],
-			imports: [
-				'vue',
-				'vue-router',
-			],
-			dts: 'src/auto-imports.d.ts',
-			eslintrc: {
-				enabled: true,
-			},
-			dirs: [
-				'src/store',
-			],
-			vueTemplate: false,
-		}),
-		FontaineTransform.vite(fontaine_options),
-		VitePWA(pwaOptions),
-		viteCompression({ algorithm: 'brotliCompress' }),
-		viteCompression({ algorithm: 'gzip' }),
-	],
-	define: {
-		'process.env': {},
-		'import.meta.env.BUILD_DATE': Date.now(),
-		'import.meta.env.VERSION': JSON.stringify(process.env.npm_package_version),
-	},
-	resolve: {
-		alias: {
-			'@': fileURLToPath(new URL('./src', import.meta.url)),
+export default defineConfig(({ mode }) => {
+
+	const env = loadEnv(mode, process.cwd());
+
+	return {
+		plugins: [
+			vue({
+				template: { transformAssetUrls }
+			}),
+			// https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vite-plugin
+			vuetify({
+				autoImport: true,
+			}),
+			Components(),
+			AutoImport({
+				include: [
+					/\.[tj]sx?$/,
+					/\.vue$/, /\.vue\?vue/,
+					/\.md$/,
+				],
+				imports: [
+					'vue',
+					'vue-router',
+				],
+				dts: 'src/auto-imports.d.ts',
+				eslintrc: {
+					enabled: true,
+				},
+				dirs: [
+					'src/store',
+				],
+				vueTemplate: false,
+			}),
+			FontaineTransform.vite(fontaine_options),
+			VitePWA(pwaOptions),
+			viteCompression({ algorithm: 'brotliCompress', filter: /\.(js|mjs|json|css)$/i }),
+			viteCompression({ algorithm: 'gzip', filter: /\.(js|mjs|json|css)$/i }),
+		],
+		define: {
+			'process.env': {},
+			'import.meta.env.BUILD_DATE': Date.now(),
+			'import.meta.env.VERSION': JSON.stringify(process.env.npm_package_version),
 		},
-		extensions: [ '.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue' ],
-	},
-	server: {
-		port: 8002,
-		host: '127.0.0.1'
-	},
+		resolve: {
+			alias: {
+				'@': fileURLToPath(new URL('./src', import.meta.url)),
+			},
+			extensions: [ '.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue' ],
+		},
+		html: {
+			cspNonce: env.VITE_CSP_NONCE,
+		},
+		server: {
+			port: 8002,
+			host: '127.0.0.1'
+		},
+	};
 });
