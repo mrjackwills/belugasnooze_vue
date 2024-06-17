@@ -45,55 +45,60 @@ const pwaOptions: Partial<VitePWAOptions> = {
 		],
 	},
 };
-  
+
 // https://vitejs.dev/config/
-export default defineConfig({
-	plugins: [
-		vue({
-			template: { transformAssetUrls }
-		}),
-		// https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vite-plugin
-		vuetify({
-			autoImport: true,
-		}),
-		Components(),
-		AutoImport({
-			include: [
-				/\.[tj]sx?$/,
-				/\.vue$/, /\.vue\?vue/,
-				/\.md$/,
-			],
-			imports: [
-				'vue',
-				'vue-router',
-			],
-			dts: 'src/auto-imports.d.ts',
-			eslintrc: {
-				enabled: true,
-			},
-			dirs: [
-				'src/store',
-			],
-			vueTemplate: false,
-		}),
-		FontaineTransform.vite(fontaine_options),
-		VitePWA(pwaOptions),
-		viteCompression({ algorithm: 'brotliCompress' }),
-		viteCompression({ algorithm: 'gzip' }),
-	],
-	define: {
-		'process.env': {},
-		'import.meta.env.BUILD_DATE': Date.now(),
-		'import.meta.env.VERSION': JSON.stringify(process.env.npm_package_version),
-	},
-	resolve: {
-		alias: {
-			'@': fileURLToPath(new URL('./src', import.meta.url)),
+export default defineConfig(({ mode: _mode }) => {
+
+	// const env = loadEnv(mode, process.cwd());
+
+	return {
+		plugins: [
+			vue({
+				template: { transformAssetUrls }
+			}),
+			// https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vite-plugin
+			vuetify({
+				autoImport: true,
+			}),
+			Components(),
+			AutoImport({
+				include: [
+					/\.[tj]sx?$/,
+					/\.vue$/, /\.vue\?vue/,
+					/\.md$/,
+				],
+				imports: [
+					'vue',
+					'vue-router',
+				],
+				dts: 'src/auto-imports.d.ts',
+				eslintrc: {
+					enabled: true,
+				},
+				dirs: [
+					'src/store',
+				],
+				vueTemplate: false,
+			}),
+			FontaineTransform.vite(fontaine_options),
+			VitePWA(pwaOptions),
+			viteCompression({ algorithm: 'brotliCompress' }),
+			viteCompression({ algorithm: 'gzip' }),
+		],
+		define: {
+			'process.env': {},
+			'import.meta.env.BUILD_DATE': Date.now(),
+			'import.meta.env.VERSION': JSON.stringify(process.env.npm_package_version),
 		},
-		extensions: [ '.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue' ],
-	},
-	server: {
-		port: 8002,
-		host: '127.0.0.1'
-	},
+		resolve: {
+			alias: {
+				'@': fileURLToPath(new URL('./src', import.meta.url)),
+			},
+			extensions: [ '.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue' ],
+		},
+		server: {
+			port: 8002,
+			host: '127.0.0.1'
+		},
+	};
 });

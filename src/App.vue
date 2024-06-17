@@ -22,7 +22,6 @@ if ('serviceWorker' in navigator) {
 	registerSW({
 		onNeedRefresh () {
 			appUpdate();
-
 		}
 	});
 }
