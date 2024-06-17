@@ -1,10 +1,9 @@
-### 2024-05-06
+### 2024-06-17
 
 ### Chores
-+ dependencies updated, [aa3c06cba1523c4e73d7b051641eece642de65a3], [1913eb66f97f46294afe26c0643fe1fee30af663]
++ dependencies updated, [02be95c3ee5fde63023401cd46cf73b030bf55cd], [4869e8e395743802c5a0833ebc21d718a54558c8]
 
-### Fixes
-+ vite.config.ts set host, [62d40af909ead9530a9df4212341f9a5de504c3a]
-+ snackbar padding, [e6a5b2d2fc83fe832f0c62242a8af7e7fd7f45b7]
+### Refactors
++ dead code removed, [73a9f4b25ba5f462175b6cd9ed20acd482f4118d]
 
 see <a href='https://github.com/mrjackwills/belugasnooze_vue/blob/main/CHANGELOG.md'>CHANGELOG.md</a> for more details
