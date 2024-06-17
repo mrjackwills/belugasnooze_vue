@@ -9,7 +9,7 @@ import { FontaineTransform } from 'fontaine';
 import Components from 'unplugin-vue-components/vite';
 
 // Utilities
-import { defineConfig, loadEnv } from 'vite';
+import { defineConfig } from 'vite';
 import { fileURLToPath, URL } from 'node:url';
 
 const fontaine_options = {
@@ -47,9 +47,9 @@ const pwaOptions: Partial<VitePWAOptions> = {
 };
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ mode: _mode }) => {
 
-	const env = loadEnv(mode, process.cwd());
+	// const env = loadEnv(mode, process.cwd());
 
 	return {
 		plugins: [
@@ -82,8 +82,8 @@ export default defineConfig(({ mode }) => {
 			}),
 			FontaineTransform.vite(fontaine_options),
 			VitePWA(pwaOptions),
-			viteCompression({ algorithm: 'brotliCompress', filter: /\.(js|mjs|json|css)$/i }),
-			viteCompression({ algorithm: 'gzip', filter: /\.(js|mjs|json|css)$/i }),
+			viteCompression({ algorithm: 'brotliCompress' }),
+			viteCompression({ algorithm: 'gzip' }),
 		],
 		define: {
 			'process.env': {},
@@ -95,9 +95,6 @@ export default defineConfig(({ mode }) => {
 				'@': fileURLToPath(new URL('./src', import.meta.url)),
 			},
 			extensions: [ '.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue' ],
-		},
-		html: {
-			cspNonce: env.VITE_CSP_NONCE,
 		},
 		server: {
 			port: 8002,
