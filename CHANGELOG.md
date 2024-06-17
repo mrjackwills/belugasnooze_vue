@@ -1,8 +1,11 @@
+# <a href='https://github.com/mrjackwills/belugasnooze_vue/releases/tag/v0.2.14'>v0.2.14</a>
+### 2024-06-17
+
 ### Chores
-+ dependencies updated, [02be95c3ee5fde63023401cd46cf73b030bf55cd], [4869e8e395743802c5a0833ebc21d718a54558c8]
++ dependencies updated, [02be95c3](https://github.com/mrjackwills/belugasnooze_vue/commit/02be95c3ee5fde63023401cd46cf73b030bf55cd), [4869e8e3](https://github.com/mrjackwills/belugasnooze_vue/commit/4869e8e395743802c5a0833ebc21d718a54558c8)
 
 ### Refactors
-+ dead code removed, [73a9f4b25ba5f462175b6cd9ed20acd482f4118d]
++ dead code removed, [73a9f4b2](https://github.com/mrjackwills/belugasnooze_vue/commit/73a9f4b25ba5f462175b6cd9ed20acd482f4118d)
 
 # <a href='https://github.com/mrjackwills/belugasnooze_vue/releases/tag/v0.2.13'>v0.2.13</a>
 ### 2024-05-06
