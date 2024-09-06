@@ -1,3 +1,6 @@
+### Chores
++ dependencies updated, [ac22b29c748448704c02b1758d620945c219f9ef]
+
 # <a href='https://github.com/mrjackwills/belugasnooze_vue/releases/tag/v0.2.14'>v0.2.14</a>
 ### 2024-06-17
 
