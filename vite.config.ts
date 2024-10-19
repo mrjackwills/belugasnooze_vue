@@ -48,15 +48,11 @@ const pwaOptions: Partial<VitePWAOptions> = {
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode: _mode }) => {
-
-	// const env = loadEnv(mode, process.cwd());
-
 	return {
 		plugins: [
 			vue({
 				template: { transformAssetUrls }
 			}),
-			// https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vite-plugin
 			vuetify({
 				autoImport: true,
 			}),
@@ -84,7 +80,15 @@ export default defineConfig(({ mode: _mode }) => {
 			VitePWA(pwaOptions),
 			viteCompression({ algorithm: 'brotliCompress' }),
 			viteCompression({ algorithm: 'gzip' }),
+				
 		],
+		css: {
+			preprocessorOptions: {
+				scss: {
+					api: 'modern-compiler',
+				},
+			},
+		},
 		define: {
 			'process.env': {},
 			'import.meta.env.BUILD_DATE': Date.now(),
