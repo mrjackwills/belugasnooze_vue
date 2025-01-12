@@ -1,6 +1,9 @@
 ### Chores
 + dependencies updated, [2036e2612cde58f9cbca93fe9196e2a9d36148b6]
 
+### Fixes
++ remove dangling ref, [2b77ceb267f1ac762d0fbc1082a05a06bea25858]
+
 # <a href='https://github.com/mrjackwills/belugasnooze_vue/releases/tag/v0.2.17'>v0.2.17</a>
 ### 2024-11-29
 
