@@ -6,7 +6,6 @@
 				:color='expandedReset? "red" : "primary"'
 				:disabled='localLoading || loading'
 				class='elevation-0'
-				ref='resetButton'
 				rounded
 			>
 				<v-icon color='white' small style='vertical-align: middle;' class='mr-1' :icon='computedRestartButton' />
