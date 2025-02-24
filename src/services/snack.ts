@@ -5,7 +5,7 @@ export const snackSuccess = ({
 	message = 'Success',
 	icon = mdiCheckCircleOutline,
 	timeout = 5000,
-	loading = false,
+	loading = false
 }: TSnack): void => {
 	snackReset();
 	const snack_store = snackbarModule();
@@ -19,7 +19,7 @@ export const snackSuccess = ({
 export const snackError = ({
 	message = 'error',
 	icon = mdiAlertCircle,
-	timeout = 7500,
+	timeout = 7500
 }: TSnack): void => {
 	snackReset();
 	const snack_store = snackbarModule();

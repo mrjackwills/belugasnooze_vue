@@ -1,8 +1,9 @@
 import { defineStore } from 'pinia';
-import { ModuleName } from '@/types/enum_module';
-import type { TTime } from '@/types';
+import type { TTime, PiniaModuleName } from '@/types';
 
-export const piStatusModule = defineStore(ModuleName.Pistatus, {
+const name: PiniaModuleName = 'piStatus';
+
+export const piStatusModule = defineStore(name, {
 
 	state: () => ({
 		init: false,
@@ -12,8 +13,12 @@ export const piStatusModule = defineStore(ModuleName.Pistatus, {
 		piAppUptime: 0,
 		piUptime: 0,
 		piVersion: '',
-		time: { hours: 0, minutes: 0, seconds: 0 } as TTime,
-		timeZone: '',
+		time: {
+			hours: 0,
+			minutes: 0,
+			seconds: 0
+		} as TTime,
+		timeZone: ''
 	}),
 
 	actions: {

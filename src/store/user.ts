@@ -1,11 +1,9 @@
+import type { PiniaModuleName } from '@/types';
 import { defineStore } from 'pinia';
-import { ModuleName } from '@/types/enum_module';
+const name: PiniaModuleName = 'user';
+export const userModule = defineStore(name, {
 
-export const userModule = defineStore(ModuleName.User, {
-
-	state: () => ({
-		authenticated: false,
-	}),
+	state: () => ({ authenticated: false }),
 
 	actions: {
 		set_authenticated (value: boolean) {

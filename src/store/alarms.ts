@@ -1,12 +1,11 @@
 import { defineStore } from 'pinia';
-import { ModuleName } from '@/types/enum_module';
-import type { TAllAlarms } from '@/types';
+import type { PiniaModuleName, TAllAlarms } from '@/types';
 
-export const alarmModule = defineStore(ModuleName.Alarms, {
+const name: PiniaModuleName = 'alarms';
 
-	state: () => ({
-		alarms: [] as TAllAlarms
-	}),
+export const alarmModule = defineStore(name, {
+
+	state: () => ({ alarms: [] as TAllAlarms }),
 
 	getters: {
 		get_alarms (): TAllAlarms {
@@ -17,6 +16,6 @@ export const alarmModule = defineStore(ModuleName.Alarms, {
 	actions: {
 		set_alarms (a: TAllAlarms): void {
 			this.alarms = a;
-		},
+		}
 	}
 });

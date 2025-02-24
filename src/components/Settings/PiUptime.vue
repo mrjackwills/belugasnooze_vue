@@ -64,13 +64,13 @@ const uptimeNameAndValues = computed((): Array<TComputedUptime> => {
 		},
 		{
 			name: 'client version',
-			value: String(piStatusStore.piVersion),
-		},
+			value: String(piStatusStore.piVersion)
+		}
 	];
 
 });
 const computedColor = computed((): string =>{
-	return piOnline.value ? '': 'serious--text';
+	return piOnline.value ? '' : 'serious--text';
 });
 const computedFontSize = computed((): string =>{
 	return mobile.value ? 'small-text' : '';
@@ -81,14 +81,14 @@ const piOnline = computed((): boolean =>{
 
 const visible = ref(false);
 
-const uptimeToString = (time: number|undefined) : string => {
+const uptimeToString = (time: number | undefined): string => {
 	if (!time || isNaN(time)) return 'NULL';
-	const now = Math.trunc(Date.now()/1000);
+	const now = Math.trunc(Date.now() / 1000);
 	const t = (now - time) * 1000;
 	return new Date(t).toString();
 };
 
-const secondsToDays = (s: number|undefined): string => {
+const secondsToDays = (s: number | undefined): string => {
 	if (isNaN(Number(s))) return 'NULL';
 	return secondsToText(Number(s), mobile.value);
 };

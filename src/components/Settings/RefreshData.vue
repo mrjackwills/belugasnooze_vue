@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang='ts'>
-import { mdiRefresh, } from '@mdi/js';
+import { mdiRefresh } from '@mdi/js';
 import { useDisplay } from 'vuetify';
 
 const { mobile } = useDisplay();

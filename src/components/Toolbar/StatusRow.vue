@@ -38,16 +38,16 @@ const computedAnimation = computed(() => {
 	return piOnline.value ? '' : 'pulse-animation';
 });
 const computedFontSize = computed(() => {
-	return breakpoint.xs.value? 'text-subtitle-2' : 'text-h5';
+	return breakpoint.xs.value ? 'text-subtitle-2' : 'text-h5';
 });
 const computedIcon = computed(() => {
-	return piOnline.value ? mdiWifi: mdiWifiOff;
+	return piOnline.value ? mdiWifi : mdiWifiOff;
 });
 const computedIconColor = computed(() => {
-	return piOnline.value ? 'white': 'serious';
+	return piOnline.value ? 'white' : 'serious';
 });
 const computedTextColor = computed(() => {
-	return piOnline.value ? 'text-white': 'serious--text';
+	return piOnline.value ? 'text-white' : 'serious--text';
 });
 
 const piOnline = computed(() => {
@@ -67,7 +67,7 @@ const hourExtractor = (i: TTime): string => {
 	return i ? `${String(i.hours).padStart(2, '0')}` : '';
 };
 const minuteExtractor = (i: TTime): string => {
-	return i ? `${String(i.minutes).padStart(2, '0')}`: '';
+	return i ? `${String(i.minutes).padStart(2, '0')}` : '';
 };
 const secondExtractor = (i: TTime): string => {
 	return i ? `${String(i.seconds).padStart(2, '0')}` : '';
