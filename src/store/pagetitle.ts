@@ -1,14 +1,15 @@
+import type { PiniaModuleName } from '@/types';
 import { defineStore } from 'pinia';
-import { ModuleName } from '@/types/enum_module';
 
-export const pagetitleModule = defineStore(ModuleName.PageTitle, {
-	state: () => ({
-		title: '',
-	}),
+const name: PiniaModuleName = 'pageTitle';
+
+
+export const pagetitleModule = defineStore(name, {
+	state: () => ({ title: '' }),
 
 	actions: {
 		set_title (value: string) {
 			this.title = value;
-		},
-	},
+		}
+	}
 });

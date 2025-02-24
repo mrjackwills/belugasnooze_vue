@@ -5,7 +5,7 @@
 			<AppSnackbar />
 			<AppFooter />
 		</v-main>
-  
+
 	</v-app>
 </template>
 
@@ -42,20 +42,23 @@ useHead({
 	meta: [
 		{
 			name: `description`,
-			content: `Beluga Snooze - Those in the know - know, everybody else, well I guess that's just tough luck`,
-		},
+			content: `Beluga Snooze - Those in the know - know, everybody else, well I guess that's just tough luck`
+		}   
 	],
-	link: [ { rel: 'canonical', href: `https://www.belugasnooze.com` } ],
+	link: [{
+		rel: 'canonical',
+		href: `https://www.belugasnooze.com` 
+	}]
 });
 
 const appUpdate = (): void => {
 	snackSuccess({
 		message: 'Downloading Updates',
 		loading: true,
-		timeout: 4500,
+		timeout: 4500
 	});
 	window.setTimeout(() => updateServiceWorker(), 5000);
-	
+
 };
 
 </script>

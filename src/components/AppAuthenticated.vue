@@ -49,10 +49,13 @@ const piTimeInterval = ref(0);
 
 const addHandlers = (): void => {
 	ws?.connection?.addEventListener('message', (data) => {
-		wsDataHandler(parse(data.data, undefined, { protoAction: 'remove', constructorAction: 'remove' }));
+		wsDataHandler(parse(data.data, undefined, {
+			protoAction: 'remove',
+			constructorAction: 'remove' 
+		}));
 	});
 	send_init();
-	ws?.connection?.addEventListener('close', (_event) => {
+	ws?.connection?.addEventListener('close', () => {
 		userStore.signout();
 		wsStore.closeWS();
 	});
@@ -67,15 +70,14 @@ const clearAllIntervals = (): void => {
 	clearInterval(piTimeInterval.value);
 };
 
-const initCheck = () : void => {
+const initCheck = (): void => {
 	initCount.value ++;
 	initTimeout.value = window.setTimeout(() => {
 		if (init.value) clearInterval(initTimeout.value);
 		else if (initCount.value < 4) {
 			send_init();
 			initCheck();
-		}
-		else {
+		} else {
 			snackError({ message: 'unable to contact pi' });
 			wsStore.closeWS();
 			userStore.signout();
@@ -116,7 +118,7 @@ const cacheTime = (timezone: string): TTimeAndTimeZone => {
 		time: {
 			hours: Number(formattedDate.toString().substring(0, 2)),
 			minutes: Number(formattedDate.toString().substring(3, 5)),
-			seconds: Number(formattedDate.toString().substring(6, 8)),
+			seconds: Number(formattedDate.toString().substring(6, 8))
 		},
 		timezone
 	};
@@ -139,23 +141,23 @@ const wsDataHandler = (message: TWSFromPi): void => {
 		if (message.cache) piStatusStore.set_online(false);
 		else piStatusStore.set_online(true);
 		switch (message.data.name) {
-		case 'status': {
-			const formattedTimeAndTimeZone = cacheTime(message.data.data.time_zone);
-			piStatusStore.set_internalIp(message.data.data.internal_ip);
-			piStatusStore.set_piVersion(message.data.data.version);
-			piStatusStore.set_piAppUptime(message.data.data.uptime_app);
-			piStatusStore.set_piUptime(message.data.data.uptime);
-			piStatusStore.set_time(formattedTimeAndTimeZone.time);
-			piStatusStore.set_timeZone(message.data.data.time_zone);
-			piStatusStore.set_connectedFor(message.data.data.connected_for);
-			setPiTime();
-			piStatusStore.set_init(true);
-			alarmStore.set_alarms(message.data.data.alarms);
-			break;
-		}
-		case 'led_status':
-			lightStore.set_on(message.data.data.status);
-			break;
+			case 'status': {
+				const formattedTimeAndTimeZone = cacheTime(message.data.data.time_zone);
+				piStatusStore.set_internalIp(message.data.data.internal_ip);
+				piStatusStore.set_piVersion(message.data.data.version);
+				piStatusStore.set_piAppUptime(message.data.data.uptime_app);
+				piStatusStore.set_piUptime(message.data.data.uptime);
+				piStatusStore.set_time(formattedTimeAndTimeZone.time);
+				piStatusStore.set_timeZone(message.data.data.time_zone);
+				piStatusStore.set_connectedFor(message.data.data.connected_for);
+				setPiTime();
+				piStatusStore.set_init(true);
+				alarmStore.set_alarms(message.data.data.alarms);
+				break;
+			}
+			case 'led_status':
+				lightStore.set_on(message.data.data.status);
+				break;
 		}
 	}
 };

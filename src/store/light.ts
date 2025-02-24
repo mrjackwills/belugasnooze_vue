@@ -1,15 +1,15 @@
+import type { PiniaModuleName } from '@/types';
 import { defineStore } from 'pinia';
-import { ModuleName } from '@/types/enum_module';
 
-export const lightModule = defineStore(ModuleName.Light, {
+const name: PiniaModuleName = 'light';
 
-	state: () => ({
-		on: false,
-	}),
+export const lightModule = defineStore(name, {
+
+	state: () => ({ on: false }),
 
 	actions: {
 		set_on (value: boolean) {
 			this.on = value;
-		},
+		}
 	}
 });

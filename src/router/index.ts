@@ -7,10 +7,14 @@ const router = createRouter({
 		{
 			path: '/',
 			name: 'home',
-			component: Home,
+			component: Home
 		},
-		{ path: '/:pathMatch(.*)*', name: 'not-found', redirect: { name: 'home' } },
-	],
+		{ 
+			path: '/:pathMatch(.*)*',
+			name: 'not-found',
+			redirect: { name: 'home' } 
+		}
+	]
 });
 
 export default router;

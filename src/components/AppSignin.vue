@@ -53,11 +53,11 @@ const password = ref('');
 const passwordVisible = ref(false);
 
 const appendIcon = computed(() => {
-	return passwordVisible.value ? mdiEyeOff: mdiEye;
+	return passwordVisible.value ? mdiEyeOff : mdiEye;
 });
 
 const buttonDisabled = computed(() => {
-	return loading.value|| !password.value;
+	return loading.value || !password.value;
 });
 
 const fieldType = computed(() => {
@@ -70,7 +70,7 @@ const loading = computed({
 	},
 	set (b: boolean) {
 		loadingStore.set_loading(b);
-	},
+	}
 });
 
 const appendClick = (): void => {
@@ -83,7 +83,6 @@ const signin = async (): Promise<void> => {
 	passwordVisible.value = false;
 	loading.value = true;
 	const response = await axiosRequests.wsAuth_post(password.value);
-	// eslint-disable-next-line require-atomic-updates
 	password.value = '';
 	loading.value = false;
 	if (response) snackReset();

@@ -47,7 +47,7 @@ const lightOn = computed((): boolean =>{
 });
 
 watch(lightOn, (i) => {
-	let title = i ? 'light on 💡' : '';
+	const title = i ? 'light on 💡' : '';
 	pagetitleModule().set_title(title);
 });
 

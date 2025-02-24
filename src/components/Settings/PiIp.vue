@@ -36,7 +36,7 @@
 </template>
 
 <script setup lang='ts'>
-import type { TComputedIp, } from '@/types';
+import type { TComputedIp } from '@/types';
 import { useClipboard } from '@vueuse/core';
 import { useDisplay } from 'vuetify';
 
@@ -46,11 +46,11 @@ const piStatusStore = piStatusModule();
 onUnmounted(() => {
 	clearTimeout(showInternalTimeout.value);
 	clearTimeout(showExternalTimeout.value);
-	[ showExternal.value, showInternal.value, ] = [ false, false ];
+	[ showExternal.value, showInternal.value ] = [ false, false ];
 });
 
 const computedColor = computed(() => {
-	return piOnline.value ? '': 'serious--text';
+	return piOnline.value ? '' : 'serious--text';
 });
 const computedFontSize = computed((): string =>{
 	return mobile.value ? 'small-text' : '';
@@ -68,7 +68,7 @@ const namesAndValues = computed((): Array<TComputedIp> => {
 			model: showInternal.value,
 			name: 'internal ip',
 			value: internalIp.value
-		},
+		}
 	];
 });
 
@@ -81,7 +81,7 @@ const showInternalTooltip = (): void => {
 	if (!internalIp.value) return;
 	useClipboard().copy(internalIp.value);
 	showInternal.value = true;
-	showInternalTimeout.value = window.setTimeout (() => {
+	showInternalTimeout.value = window.setTimeout(() => {
 		showInternal.value = false;
 	}, 1500);
 };
