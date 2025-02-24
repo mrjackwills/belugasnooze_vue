@@ -27,7 +27,7 @@ const loading = computed({
 	},
 	set (b: boolean) {
 		snackStore.set_loading(b);
-	},
+	}
 });
 
 const message = computed({
@@ -36,7 +36,7 @@ const message = computed({
 	},
 	set (b: string) {
 		snackStore.set_message(b);
-	},
+	}
 });
 
 const snackTimeout = computed({
@@ -45,7 +45,7 @@ const snackTimeout = computed({
 	},
 	set (n: number) {
 		snackStore.set_timeout(n);
-	},
+	}
 });
 
 const visible = computed({
@@ -54,7 +54,7 @@ const visible = computed({
 	},
 	set (b: boolean) {
 		snackStore.set_visible(b);
-	},
+	}
 });
 
 const timeout = ref(0);
@@ -65,7 +65,7 @@ const icon = computed(() => {
 
 const closeSnackbar = (): void => {
 	visible.value = false;
-	snackStore.$reset;
+	snackStore.$reset();
 	clearTimeout(timeout.value);
 	timeout.value = 0;
 };

@@ -108,10 +108,10 @@ import {
 	mdiChevronUp,
 	mdiClose,
 	mdiMapClock,
-	mdiUpdate,
+	mdiUpdate
 } from '@mdi/js';
 
-import { useDisplay, } from 'vuetify';
+import { useDisplay } from 'vuetify';
 
 const { mobile } = useDisplay();
 const [ loadingStore, piStatusStore, wsStore ] = [ loadingModule(), piStatusModule(), wsModule() ];
@@ -121,7 +121,7 @@ onUnmounted(() => {
 	[ timeZoneRegion.value, timeZoneCity.value ] = [ undefined, undefined ];
 });
 const updateColor = computed(() => {
-	return updateDisabled.value? 'text-white':'text-black';
+	return updateDisabled.value ? 'text-white' : 'text-black';
 });
 const updateDisabled = computed(() => {
 	return localLoading.value || timeZoneCity.value;
@@ -139,11 +139,14 @@ const computedTimeZone = computed((): string =>{
 const computedCity = computed((): Array<TComputedCity> =>{
 	if (!timeZoneRegion.value) return [];
 	const data = [];
-	for (const i of zones) if (i.startsWith(timeZoneRegion.value)) data.push({ value: i, title: i.substring(timeZoneRegion.value.length + 1).replace('_', ' ') });
+	for (const i of zones) if (i.startsWith(timeZoneRegion.value)) data.push({
+		value: i,
+		title: i.substring(timeZoneRegion.value.length + 1).replace('_', ' ') 
+	});
 	return data;
 });
 const computedTimezoneText = computed((): string =>{
-	return !timeZoneRegion.value ? 'To change time zone, first select a region' : !timeZoneCity.value? 'Now select a city' : `Change to : ${timeZoneCity.value} ${computedTimeZone.value}`;
+	return !timeZoneRegion.value ? 'To change time zone, first select a region' : !timeZoneCity.value ? 'Now select a city' : `Change to : ${timeZoneCity.value} ${computedTimeZone.value}`;
 });
 const confirmFont = computed((): string =>{
 	return mobile.value ? 'text-caption' : 'text-body-1';
@@ -172,7 +175,10 @@ const visible = ref(false);
 const setTimeZone = (): void => {
 	if (!timeZoneCity.value || loading.value) return;
 	[ localLoading.value, loading.value ] = [ true, true ];
-	wsStore.send({ name: 'time_zone', body: { zone: timeZoneCity.value } });
+	wsStore.send({
+		name: 'time_zone',
+		body: { zone: timeZoneCity.value } 
+	});
 	timezoneTimeout.value = window.setTimeout(async () => {
 		wsStore.send({ name: 'status' });
 		visible.value = false;
@@ -184,7 +190,7 @@ const clear = (): void => {
 	localLoading.value = false;
 	loading.value = false;
 	timeZoneRegion.value = undefined;
-	timeZoneCity.value = undefined ;
+	timeZoneCity.value = undefined;
 };
 
 const visibility = (): void => {

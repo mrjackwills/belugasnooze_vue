@@ -2,22 +2,15 @@
 	<v-card-text class='text-center'>
 		<v-row no-gutters align='center' justify='center' class='mb-2'>
 			<v-col cols='auto'>
-				<v-btn
-					@click='expandMethod'
-					:color='buttonColor'
-					:dark='expandedAdd'
-					:disabled='loading && piInit || !piOnline && piInit'
-					:variant='expandedAdd ? "outlined" : "flat"'
-					:outlined='expandedAdd'
-					class='elevation-0'
-					size='large'
-					rounded
-				>
+				<v-btn @click='expandMethod' :color='buttonColor' :dark='expandedAdd'
+					:disabled='loading && piInit || !piOnline && piInit' :variant='expandedAdd ? "outlined" : "flat"'
+					:outlined='expandedAdd' class='elevation-0' size='large' rounded>
 					<v-row fill-height align='center' justify='center' no-gutters class=''>
 						<v-col cols='auto'>
-							<v-icon style='vertical-align: middle;' class='mr-2' :icon='buttonIcon' :color='expandedAdd ? "":"white"' />
+							<v-icon style='vertical-align: middle;' class='mr-2' :icon='buttonIcon'
+								:color='expandedAdd ? "" : "white"' />
 						</v-col>
-						<v-col cols='auto' :class='expandedAdd ? "":"text-white"'>
+						<v-col cols='auto' :class='expandedAdd ? "" : "text-white"'>
 							{{ buttontext }}
 						</v-col>
 					</v-row>
@@ -26,63 +19,29 @@
 		</v-row>
 		<v-expand-transition>
 			<div v-if='expandedAdd' class=''>
-				<v-row justify='center' fill-height >
+				<v-row justify='center' fill-height>
 					<v-col cols='12' class=''>
 						<v-row justify='center'>
 							<v-col cols='12' md='5'>
-								<v-select
-									v-model='chosenHour'
-									:items='hours'
-									:messages='messagesHour'
-									color='primary'
-									label='Select Hour'
-									variant='outlined'
-								/>
+								<v-select v-model='chosenHour' :items='hours' :messages='messagesHour' color='primary'
+									label='Select Hour' variant='outlined' />
 							</v-col>
 							<v-col cols='12' md='5'>
-								<v-select
-									v-model='chosenMinute'
-									:items='minutes'
-									:messages='messagesMinute'
-									color='primary'
-									label='Select Minute'
-									variant='outlined'
-								/>
+								<v-select v-model='chosenMinute' :items='minutes' :messages='messagesMinute'
+									color='primary' label='Select Minute' variant='outlined' />
 							</v-col>
 						</v-row>
 						<v-row justify='space-around' align='center'>
-							<v-checkbox
-								v-for='i in dayOptions'
-								v-model='daysSelected'
-								:key='i.value'
-								:label='i.text'
-								:value='i.value'
-								class='days mb-n3 pa-0'
-								color='primary'
-							/>
+							<v-checkbox v-for='i in dayOptions' v-model='daysSelected' :key='i.value' :label='i.text'
+								:value='i.value' class='days mb-n3 pa-0' color='primary' />
 							<v-col cols='12' sm='auto' class=''>
-								<v-btn
-									v-if='daysSelected.length < 7'
-									class='elevation-0 text-white'
-									@click='daysSelected=[0,1,2,3,4,5,6]'
-									:disabled='loading'
-									color='secondary'
-									size='small'
-									rounded
-								>
+								<v-btn v-if='daysSelected.length < 7' class='elevation-0 text-white'
+									@click='daysSelected = [0, 1, 2, 3, 4, 5, 6]' :disabled='loading' color='secondary'
+									size='small' rounded>
 									<span class='text-white'>all</span>
 								</v-btn>
-								<v-btn
-									v-else
-									class='elevation-0 text-white'
-									@click='daysSelected=[]'
-									:disabled='loading'
-									color='secondary'
-									size='small'
-									variant='outlined'
-									dark
-									rounded
-								>
+								<v-btn v-else class='elevation-0 text-white' @click='daysSelected = []'
+									:disabled='loading' color='secondary' size='small' variant='outlined' dark rounded>
 									<span class=''>nil</span>
 								</v-btn>
 							</v-col>
@@ -100,14 +59,8 @@
 				</v-row>
 				<v-row justify='center' align='center' class=''>
 					<v-col class=''>
-						<v-btn
-							@click='addAlarm'
-							:disabled='loading || !piOnline'
-							class='elevation-0'
-							color='primary'
-							size='large'
-							rounded
-						>
+						<v-btn @click='addAlarm' :disabled='loading || !piOnline' class='elevation-0' color='primary'
+							size='large' rounded>
 							<v-icon style='vertical-align: middle;' class='mr-2' :icon='mdiAlarmPlus' color='white' />
 							<span class='text-white'>Add</span>
 						</v-btn>
@@ -128,28 +81,28 @@ import { mdiAlarmPlus, mdiAlert, mdiClose, mdiPlus } from '@mdi/js';
 import type { su } from '@/types';
 import { snackError } from '@/services/snack';
 
-const [ alarmStore, piStatusStore, wsStore ] = [ alarmModule(), piStatusModule(), wsModule() ];
+const [alarmStore, piStatusStore, wsStore] = [alarmModule(), piStatusModule(), wsModule()];
 
-const buttonColor = computed(() =>{
-	return expandedAdd.value ? 'red': 'primary';
+const buttonColor = computed(() => {
+	return expandedAdd.value ? 'red' : 'primary';
 });
 const buttonIcon = computed(() => {
-	return expandedAdd.value ? mdiClose: mdiPlus;
+	return expandedAdd.value ? mdiClose : mdiPlus;
 });
-const buttontext = computed(() =>{
+const buttontext = computed(() => {
 	return expandedAdd.value ? 'cancel' : 'new alarm';
 });
 const hours = computed((): Array<string> => {
 	const hours = [];
-	for (const [ index, _item ] of new Array(24).entries()) hours.push(String(index).padStart(2, '0'));
+	for (const [index] of new Array(24).entries()) hours.push(String(index).padStart(2, '0'));
 	return hours;
 });
 const minutes = computed((): Array<string> => {
 	const minutes = [];
-	for (const [ index, _item ] of new Array(60).entries()) minutes.push(String(index).padStart(2, '0'));
+	for (const [index] of new Array(60).entries()) minutes.push(String(index).padStart(2, '0'));
 	return minutes;
 });
-const piInit = computed(() =>{
+const piInit = computed(() => {
 	return piStatusStore.init;
 });
 const piOnline = computed(() => {
@@ -179,7 +132,7 @@ const expandMethod = (): void => {
 	clearSelections();
 };
 
-const addAlarm = () : void => {
+const addAlarm = (): void => {
 	let alarmClash = false;
 	if (!chosenHour.value) messagesHour.value = 'You need to select an hour';
 	if (!chosenMinute.value) messagesMinute.value = 'You need to select an minute';
@@ -195,12 +148,21 @@ const addAlarm = () : void => {
 		}
 	}
 	if (alarmClash) {
-		snackError({ message: 'An alarm is already set for that time & day', icon: mdiAlert });
+		snackError({
+			message: 'An alarm is already set for that time & day',
+			icon: mdiAlert
+		});
 		clearSelections();
-	}
-	else {
-		const wsBody = { hour: Number(chosenHour.value), minute: Number(chosenMinute.value), days: daysSelected.value };
-		wsStore.send({ name: 'add_alarm', body: wsBody });
+	} else {
+		const wsBody = {
+			hour: Number(chosenHour.value),
+			minute: Number(chosenMinute.value),
+			days: daysSelected.value
+		};
+		wsStore.send({
+			name: 'add_alarm',
+			body: wsBody
+		});
 		expandMethod();
 	}
 };
@@ -221,6 +183,6 @@ watch(daysSelected, (i) => {
 
 <style scoped>
 .days .v-label {
-	font-size: .9rem!important;
+	font-size: .9rem !important;
 }
 </style>

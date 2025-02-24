@@ -31,10 +31,10 @@ import { mdiLightbulbOn, mdiLightbulbOff } from '@mdi/js';
 const [ lightStore, piStatusStore, wsStore ] = [ lightModule(), piStatusModule(), wsModule() ];
 
 const buttonColor = computed((): string => {
-	return piOnline.value? lightOn.value ? '#f9ce48' : '#000000' : '';
+	return piOnline.value ? lightOn.value ? '#f9ce48' : '#000000' : '';
 });
 const icon = computed((): string => {
-	return lightOn.value ? mdiLightbulbOn : mdiLightbulbOff ;
+	return lightOn.value ? mdiLightbulbOn : mdiLightbulbOff;
 });
 const iconColor = computed((): string => {
 	return lightOn.value ? 'black' : 'white';
@@ -46,6 +46,9 @@ const piOnline = computed((): boolean => {
 	return piStatusStore.online;
 });
 const lightSwitch = (): void => {
-	wsStore.send({ name: 'light', body: { status: !lightOn.value } });
+	wsStore.send({
+		name: 'light',
+		body: { status: !lightOn.value } 
+	});
 };
 </script>

@@ -82,7 +82,7 @@ const serverRestart = async (): Promise<void> => {
 			userStore.signout();
 			loading.value = false;
 		}, 5000);
-	} catch (e) {
+	} catch  {
 		userStore.signout();
 		wsStore.closeWS();
 		loading.value = false;

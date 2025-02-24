@@ -56,7 +56,7 @@ const alarms = computed((): TAllAlarms => {
 	return alarmStore.get_alarms;
 });
 const computedColor = computed((): string => {
-	return piOnline.value ? 'white': '';
+	return piOnline.value ? 'white' : '';
 });
 
 const color = computed(() => {

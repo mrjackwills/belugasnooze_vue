@@ -3,7 +3,7 @@ import Axios from 'axios';
 import type { AxiosInstance, AxiosError } from 'axios';
 import { env } from '@/services/env';
 
-type ErrorData = {data: {response: number}}
+type ErrorData = { data: { response: number } };
 
 // Error handling is a mess due to axios 0.27.1
 const wrap = <T> () => {
@@ -14,10 +14,10 @@ const wrap = <T> () => {
 				const result = await original.call(this, t);
 				return result;
 			} catch (err) {
-				const e = <AxiosError>err;
+				const e = err as AxiosError;
 				if (e.message === 'offline') snackError({ message: 'Server offline' });
 				else if (e.response?.status === 429) {
-					const p = <ErrorData>e.response.data;
+					const p = e.response.data as ErrorData;
 					const converted = Math.ceil(p.data.response / 1000);
 					const message = `too many requests - please try again in ${converted} seconds `;
 					snackError({ message });
@@ -38,10 +38,10 @@ class AxiosRequests {
 			baseURL: env.domain_token,
 			withCredentials: false,
 			headers: {
-				'Accept': 'application/json',
+				Accept: 'application/json',
 				'Content-Type': 'application/json; charset=utf-8',
 				'Cache-control': 'no-cache'
-			},
+			}
 		});
 	
 		this.#wsAuthAxios.interceptors.response.use(
@@ -52,7 +52,10 @@ class AxiosRequests {
 
 	@wrap()
 	async wsAuth_post (password: string): Promise<boolean> {
-		const { data } = await this.#wsAuthAxios.post('', { key: env.api_key, password });
+		const { data } = await this.#wsAuthAxios.post('', {
+			key: env.api_key,
+			password 
+		});
 		if (data.response) {
 			snackReset();
 			userModule().set_authenticated(true);

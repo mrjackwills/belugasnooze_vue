@@ -64,7 +64,7 @@ const authenticated = computed(() => {
 });
 
 const buildInfo = (): void => {
-	if (!authenticated.value|| showBuild.value) return;
+	if (!authenticated.value || showBuild.value) return;
 	showBuild.value = !showBuild.value;
 	clearTimeout(buildTimeout.value);
 	buildTimeout.value = window.setTimeout(() => {

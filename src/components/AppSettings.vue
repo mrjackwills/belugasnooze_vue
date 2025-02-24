@@ -41,13 +41,13 @@
 
 import { mdiClose, mdiCog } from '@mdi/js';
 
-const [ loadingStore, piStatusStore, settingsStore, wsStore ] =[ loadingModule(), piStatusModule(), settingsModule(), wsModule() ];
+const [ loadingStore, piStatusStore, settingsStore, wsStore ] = [ loadingModule(), piStatusModule(), settingsModule(), wsModule() ];
 		
-const buttonColor = computed((): string => {
-	return expandedSettings.value ? 'red': 'primary';
+const buttonColor = computed(() => {
+	return expandedSettings.value ? 'red' : 'primary';
 });
-const buttonIcon = computed(() : string =>{
-	return expandedSettings.value ? mdiClose: mdiCog;
+const buttonIcon = computed((): string =>{
+	return expandedSettings.value ? mdiClose : mdiCog;
 });
 const buttonText = computed((): string =>{
 	return expandedSettings.value ? 'close settings' : 'Settings';

@@ -1,15 +1,15 @@
+import type { PiniaModuleName } from '@/types';
 import { defineStore } from 'pinia';
-import { ModuleName } from '@/types/enum_module';
 
-export const settingsModule = defineStore(ModuleName.Settings, {
+const name: PiniaModuleName = 'settings';
 
-	state: () => ({
-		expanded: false,
-	}),
+export const settingsModule = defineStore(name, {
+
+	state: () => ({ expanded: false }),
 
 	actions: {
 		set_expanded (value: boolean) {
 			this.expanded = value;
-		},
+		}
 	}
 });

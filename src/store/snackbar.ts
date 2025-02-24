@@ -1,13 +1,14 @@
+import type { PiniaModuleName } from '@/types';
 import { defineStore } from 'pinia';
-import { ModuleName } from '@/types/enum_module';
 
-export const snackbarModule = defineStore(ModuleName.Snackbar, {
+const name: PiniaModuleName = 'snackbar';
+export const snackbarModule = defineStore(name, {
 	state: () => ({
 		icon: '',
 		loading: false,
 		message: '',
 		timeout: 0,
-		visible: false,
+		visible: false
 	}),
 
 	actions: {
@@ -25,6 +26,6 @@ export const snackbarModule = defineStore(ModuleName.Snackbar, {
 		},
 		set_visible (value: boolean) {
 			this.visible = value;
-		},
-	},
+		}
+	}
 });
