@@ -3,7 +3,6 @@ import { defineStore } from 'pinia';
 
 const name: PiniaModuleName = 'pageTitle';
 
-
 export const pagetitleModule = defineStore(name, {
 	state: () => ({ title: '' }),
 
