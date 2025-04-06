@@ -85,7 +85,6 @@ export type TDayOptions = {
 	text: string; 
 };
 
-
 export type PiniaModuleName = 'alarms' |
 	'light' |
 	'loading' |

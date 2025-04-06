@@ -1,13 +1,9 @@
 <template>
 	<section class='mt-4'>
-		<section v-for='(item, index) in namesAndValues' :key='index' >
-			<v-row align='center' justify='center' no-gutters >
-				<v-col cols='11' sm='6' class='cl'>
-					<v-row
-						:class='item.class'
-						align='center'
-						justify='space-around'
-					>
+		<section v-for='(item, index) in namesAndValues' :key='index'>
+			<v-row align='center' justify='center' no-gutters>
+				<v-col cols='11' sm='8' class='cl'>
+					<v-row :class='item.class' align='center' justify='space-around'>
 						<v-col cols='5' class=' '>
 							<div class='text-overline font-weight-bold text-left unselectable' :class='computedColor'>
 								<span :class='computedFontSize'>{{ item.name }}</span>
@@ -16,7 +12,8 @@
 						<v-col cols='7'>
 							<div class='text-body-1 text-right cl' :class='computedColor' @click='showInternalTooltip'>
 								<span :class='computedFontSize' class='mono-numbers'>{{ item.value }}</span>
-								<v-tooltip v-model='showInternal' :open-on-hover='false' activator='parent' location='top center' class='tooltip-z'>
+								<v-tooltip v-model='showInternal' :open-on-hover='false' activator='parent'
+									location='top center' class='tooltip-z'>
 									<span>ip address copied</span>
 								</v-tooltip>
 							</div>
@@ -25,8 +22,9 @@
 				</v-col>
 			</v-row>
 
-			<v-row v-if='piOnline || !piOnline && index === 0' align='center' justify='center' no-gutters class='ma-0 pa-0' >
-				<v-col cols='11' sm='6' >
+			<v-row v-if='piOnline || !piOnline && index === 0' align='center' justify='center' no-gutters
+				class='ma-0 pa-0'>
+				<v-col cols='11' sm='8'>
 					<v-divider />
 				</v-col>
 			</v-row>
@@ -46,31 +44,21 @@ const piStatusStore = piStatusModule();
 onUnmounted(() => {
 	clearTimeout(showInternalTimeout.value);
 	clearTimeout(showExternalTimeout.value);
-	[ showExternal.value, showInternal.value ] = [ false, false ];
+	[showExternal.value, showInternal.value] = [false, false];
 });
 
-const computedColor = computed(() => {
-	return piOnline.value ? '' : 'serious--text';
-});
-const computedFontSize = computed((): string =>{
-	return mobile.value ? 'small-text' : '';
-});
-const internalIp = computed(() => {
-	return piStatusStore.internalIp;
-});
-const piOnline = computed(() => {
-	return piStatusStore.online;
-});
-const namesAndValues = computed((): Array<TComputedIp> => {
-	return [
-		{
-			class: 'internal',
-			model: showInternal.value,
-			name: 'internal ip',
-			value: internalIp.value
-		}
-	];
-});
+const computedColor = computed(() => piOnline.value ? '' : 'serious--text');
+const computedFontSize = computed(() => mobile.value ? 'small-text' : '');
+const internalIp = computed(() => piStatusStore.internalIp);
+const piOnline = computed(() => piStatusStore.online);
+const namesAndValues = computed((): Array<TComputedIp> => [
+	{
+		class: 'internal',
+		model: showInternal.value,
+		name: 'internal ip',
+		value: internalIp.value
+	}
+]);
 
 const showExternal = ref(false);
 const showExternalTimeout = ref(0);

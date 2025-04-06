@@ -31,20 +31,10 @@ import AppAuthenticated from '@/components/AppAuthenticated.vue';
 import AppToolbar from '@/components/AppToolbar.vue';
 const [ lightStore, userStore ] = [ lightModule(), userModule() ];
 
-const authenticated = computed(() => {
-	return userStore.authenticated;
-});
-const computedComponent = computed(() => {
-	return authenticated.value ? AppAuthenticated : AppSignin;
-});
-
-const key = computed(() => {
-	return authenticated.value ? 'AppAuthenticated' : 'AppSignin';
-});
-
-const lightOn = computed((): boolean =>{
-	return lightStore.on;
-});
+const authenticated = computed(() => userStore.authenticated);
+const computedComponent = computed(() => authenticated.value ? AppAuthenticated : AppSignin);
+const key = computed(() => authenticated.value ? 'AppAuthenticated' : 'AppSignin');
+const lightOn = computed((): boolean => lightStore.on);
 
 watch(lightOn, (i) => {
 	const title = i ? 'light on 💡' : '';

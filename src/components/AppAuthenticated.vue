@@ -23,12 +23,10 @@ import type { TWSFromPi, TTime, TTimeAndTimeZone, TError, TData } from '@/types'
 onUnmounted(() => {
 	clearAllIntervals();
 });
-	
-const [ alarmStore, lightStore, piStatusStore, settingsStore, userStore, wsStore ] = [ alarmModule(), lightModule(), piStatusModule(), settingsModule(), userModule(), wsModule() ];
 
-const expandedSettings = computed(() => {
-	return settingsStore.expanded;
-});
+const [alarmStore, lightStore, piStatusStore, settingsStore, userStore, wsStore] = [alarmModule(), lightModule(), piStatusModule(), settingsModule(), userModule(), wsModule()];
+
+const expandedSettings = computed(() => settingsStore.expanded);
 
 const piTime = computed({
 	get (): TTime {
@@ -38,9 +36,7 @@ const piTime = computed({
 		piStatusStore.set_time(s);
 	}
 });
-const ws_connected = computed(() => {
-	return wsStore.connected;
-});
+const ws_connected = computed(() => wsStore.connected);
 
 const init = ref(false);
 const initCount = ref(0);
@@ -51,7 +47,7 @@ const addHandlers = (): void => {
 	ws?.connection?.addEventListener('message', (data) => {
 		wsDataHandler(parse(data.data, undefined, {
 			protoAction: 'remove',
-			constructorAction: 'remove' 
+			constructorAction: 'remove'
 		}));
 	});
 	send_init();
@@ -71,7 +67,7 @@ const clearAllIntervals = (): void => {
 };
 
 const initCheck = (): void => {
-	initCount.value ++;
+	initCount.value++;
 	initTimeout.value = window.setTimeout(() => {
 		if (init.value) clearInterval(initTimeout.value);
 		else if (initCount.value < 4) {
@@ -104,7 +100,6 @@ const setPiTime = (): void => {
 };
 
 const cacheTime = (timezone: string): TTimeAndTimeZone => {
-
 	const tzOptions: Intl.DateTimeFormatOptions = {
 		timeZone: timezone,
 		hour: 'numeric',
@@ -124,13 +119,9 @@ const cacheTime = (timezone: string): TTimeAndTimeZone => {
 	};
 };
 
-const errorGuard = (i: unknown): i is TError => {
-	return Object.prototype.hasOwnProperty.call(i, 'error');
-};
-const dataGuard = (i: unknown): i is TData => {
-	return Object.prototype.hasOwnProperty.call(i, 'data');
-};
-		
+const errorGuard = (i: unknown): i is TError => Object.prototype.hasOwnProperty.call(i, 'error');
+const dataGuard = (i: unknown): i is TData => Object.prototype.hasOwnProperty.call(i, 'data');
+
 const wsDataHandler = (message: TWSFromPi): void => {
 	init.value = true;
 	initCount.value = 0;
