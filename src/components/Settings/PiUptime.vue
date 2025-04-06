@@ -1,14 +1,9 @@
 <template>
 	<section>
-		<section v-for='(item, index) in uptimeNameAndValues' :key='index' >
-			<v-row align='center' justify='center' no-gutters >
-				<v-col cols='11' sm='6' class=' '>
-					<v-row
-						align='center'
-						class='unselectable'
-						justify='space-around'
-						no-gutters
-					>
+		<section v-for='(item, index) in uptimeNameAndValues' :key='index'>
+			<v-row align='center' justify='center' no-gutters>
+				<v-col cols='11' sm='8' class=' '>
+					<v-row align='center' class='unselectable' justify='space-around' no-gutters>
 						<v-col cols='5' class=' ma-0 pa-0'>
 							<div class='text-overline font-weight-bold text-left' :class='computedColor'>
 								<span :class='computedFontSize'>{{ item.name }}</span>
@@ -23,8 +18,9 @@
 				</v-col>
 			</v-row>
 
-			<v-row v-if='index +1 !== uptimeNameAndValues.length' align='center' justify='center' no-gutters class='ma-0 pa-0' >
-				<v-col cols='11' sm='6' ckass='ma-0 pa-0'>
+			<v-row v-if='index + 1 !== uptimeNameAndValues.length' align='center' justify='center' no-gutters
+				class='ma-0 pa-0'>
+				<v-col cols='11' sm='8' ckass='ma-0 pa-0'>
 					<v-divider />
 				</v-col>
 			</v-row>
@@ -45,39 +41,31 @@ onBeforeMount(() => {
 	if (mobile.value) visible.value = true;
 });
 
-const uptimeNameAndValues = computed((): Array<TComputedUptime> => {
-	return [
-		{
-			name: 'app uptime',
-			tooltip: uptimeToString(piStatusStore.piAppUptime),
-			value: secondsToDays(piStatusStore.piAppUptime)
-		},
-		{
-			name: 'pi uptime',
-			tooltip: uptimeToString(piStatusStore.piUptime),
-			value: secondsToDays(piStatusStore.piUptime)
-		},
-		{
-			name: 'websocket',
-			tooltip: uptimeToString(piStatusStore.connectedFor),
-			value: secondsToDays(piStatusStore.connectedFor)
-		},
-		{
-			name: 'client version',
-			value: String(piStatusStore.piVersion)
-		}
-	];
+const uptimeNameAndValues = computed((): Array<TComputedUptime> => [
+	{
+		name: 'app uptime',
+		tooltip: uptimeToString(piStatusStore.piAppUptime),
+		value: secondsToDays(piStatusStore.piAppUptime)
+	},
+	{
+		name: 'pi uptime',
+		tooltip: uptimeToString(piStatusStore.piUptime),
+		value: secondsToDays(piStatusStore.piUptime)
+	},
+	{
+		name: 'websocket',
+		tooltip: uptimeToString(piStatusStore.connectedFor),
+		value: secondsToDays(piStatusStore.connectedFor)
+	},
+	{
+		name: 'client version',
+		value: String(piStatusStore.piVersion)
+	}
+]);
 
-});
-const computedColor = computed((): string =>{
-	return piOnline.value ? '' : 'serious--text';
-});
-const computedFontSize = computed((): string =>{
-	return mobile.value ? 'small-text' : '';
-});
-const piOnline = computed((): boolean =>{
-	return piStatusStore.online;
-});
+const computedColor = computed(() => piOnline.value ? '' : 'serious--text');
+const computedFontSize = computed(() => mobile.value ? 'small-text' : '');
+const piOnline = computed(() => piStatusStore.online);
 
 const visible = ref(false);
 

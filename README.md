@@ -32,7 +32,6 @@
 
 1) <a href='https://www.staticpi.com/' target='_blank' rel='noopener noreferrer'>staticPi</a> - the simple and secure messaging service
 
-
 File that are required by Beluga Snooze
 | file | reason |
 |---|---|

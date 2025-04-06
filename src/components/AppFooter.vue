@@ -1,22 +1,10 @@
 <template>
-	<v-footer
-		color='transparent'
-		id='footer'
-		absolute
-		app
-	>
-		<v-row justify='center' align='center' class='no-gutters ma-0 pa-0' >
+	<v-footer color='transparent' id='footer' absolute app>
+		<v-row justify='center' align='center' class='no-gutters ma-0 pa-0'>
 
 			<v-col cols='auto' class='no-gutters unselectable ma-0 pa-0'>
 
-				<v-chip
-					:ripple='false'
-					color='offwhite'
-					text-color='black'
-					variant='flat'
-					outlined
-					pill
-				>
+				<v-chip :ripple='false' color='offwhite' text-color='black' variant='flat' outlined pill>
 					<section v-if='showBuild' class='' @click='buildInfo'>
 						<span>site version: {{ appVersion }}</span>
 						<span class='ml-3 '>built: {{ buildDate }}</span>
@@ -30,11 +18,11 @@
 							mrjackwills 2021 -
 						</span>
 					</section>
-					
+
 				</v-chip>
 			</v-col>
 		</v-row>
-			
+
 	</v-footer>
 </template>
 
@@ -43,7 +31,7 @@
 import { env } from '@/services/env';
 import { mdiGithub } from '@mdi/js';
 
-const [ piStatusStore, userStore ] = [ piStatusModule(), userModule() ];
+const [piStatusStore, userStore] = [piStatusModule(), userModule()];
 
 const buildTimeout = ref(0);
 const showBuild = ref(false);
@@ -55,13 +43,8 @@ onUnmounted(() => {
 	clearTimeout(buildTimeout.value);
 });
 
-const appVersion = computed(() => {
-	return piStatusStore.piVersion;
-});
-
-const authenticated = computed(() => {
-	return userStore.authenticated;
-});
+const appVersion = computed(() => piStatusStore.piVersion);
+const authenticated = computed(() => userStore.authenticated);
 
 const buildInfo = (): void => {
 	if (!authenticated.value || showBuild.value) return;
@@ -78,12 +61,12 @@ watch(authenticated, (i) => {
 </script>
 
 <style scoped>
-.lowercase-button{
+.lowercase-button {
 	text-transform: lowercase;
 }
 
 a {
-	color: #000000!important;
+	color: #000000 !important;
 	text-decoration: none;
 }
 </style>

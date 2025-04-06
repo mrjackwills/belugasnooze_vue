@@ -5,7 +5,6 @@
 			<AppSnackbar />
 			<AppFooter />
 		</v-main>
-
 	</v-app>
 </template>
 
@@ -26,9 +25,7 @@ if ('serviceWorker' in navigator) {
 	});
 }
 
-const title = computed(() => {
-	return store.title;
-});
+const title = computed(() => store.title);
 
 useHead({
 	title: () => {
@@ -43,11 +40,11 @@ useHead({
 		{
 			name: `description`,
 			content: `Beluga Snooze - Those in the know - know, everybody else, well I guess that's just tough luck`
-		}   
+		}
 	],
 	link: [{
 		rel: 'canonical',
-		href: `https://www.belugasnooze.com` 
+		href: `https://www.belugasnooze.com`
 	}]
 });
 
@@ -58,7 +55,6 @@ const appUpdate = (): void => {
 		timeout: 4500
 	});
 	window.setTimeout(() => updateServiceWorker(), 5000);
-
 };
 
 </script>

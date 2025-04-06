@@ -1,14 +1,10 @@
 <template>
 	<v-col cols='12' class=''>
 		<div class='text-center' id='restartserver'>
-			<v-btn
-				@click='expandedReset = !expandedReset'
-				:color='expandedReset? "red" : "primary"'
-				:disabled='localLoading || loading'
-				class='elevation-0'
-				rounded
-			>
-				<v-icon color='white' small style='vertical-align: middle;' class='mr-1' :icon='computedRestartButton' />
+			<v-btn @click='expandedReset = !expandedReset' :color='expandedReset ? "red" : "primary"'
+				:disabled='localLoading || loading' class='elevation-0' rounded>
+				<v-icon color='white' small style='vertical-align: middle;' class='mr-1'
+					:icon='computedRestartButton' />
 				<span class='text-white' v-if='!expandedReset'>restart server</span>
 				<span class='text-white' v-else>cancel</span>
 			</v-btn>
@@ -23,14 +19,8 @@
 					</v-row>
 					<v-row justify='center' class=''>
 						<v-col cols='auto' class=''>
-							<v-btn
-								@click='serverRestart'
-								:disabled='localLoading'
-								class='elevation-0 '
-								color='serious'
-								rounded
-								size='small'
-							>
+							<v-btn @click='serverRestart' :disabled='localLoading' class='elevation-0 ' color='serious'
+								rounded size='small'>
 								<span class='text-white'>confirm restart</span>
 							</v-btn>
 						</v-col>
@@ -46,15 +36,13 @@ import { mdiClose, mdiRestartAlert } from '@mdi/js';
 import { useDisplay } from 'vuetify';
 const { mobile } = useDisplay();
 
-const [ loadingStore, userStore, wsStore ] = [ loadingModule(), userModule(), wsModule() ];
+const [loadingStore, userStore, wsStore] = [loadingModule(), userModule(), wsModule()];
 
 onBeforeUnmount(() => {
 	expandedReset.value = false;
 });
 
-const computedRestartButton = computed((): string => {
-	return expandedReset.value ? mdiClose : mdiRestartAlert;
-});
+const computedRestartButton = computed(() => expandedReset.value ? mdiClose : mdiRestartAlert);
 
 const loading = computed({
 	get (): boolean {
@@ -64,9 +52,7 @@ const loading = computed({
 		loadingStore.set_loading(b);
 	}
 });
-const restartFont = computed((): string => {
-	return mobile.value ? 'text-caption' : 'text-h6';
-});
+const restartFont = computed(() => mobile.value ? 'text-caption' : 'text-h6');
 
 const expandedReset = ref(false);
 const localLoading = ref(false);
@@ -82,7 +68,7 @@ const serverRestart = async (): Promise<void> => {
 			userStore.signout();
 			loading.value = false;
 		}, 5000);
-	} catch  {
+	} catch {
 		userStore.signout();
 		wsStore.closeWS();
 		loading.value = false;

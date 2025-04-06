@@ -3,31 +3,31 @@ import type { TDayOptions } from '@/types';
 export const dayOptions: ReadonlyArray<TDayOptions> = [
 	{
 		value: 0,
-		text: 'Mon' 
+		text: 'Mon'
 	},
 	{
 		value: 1,
-		text: 'Tue' 
+		text: 'Tue'
 	},
 	{
 		value: 2,
-		text: 'Wed' 
+		text: 'Wed'
 	},
 	{
 		value: 3,
-		text: 'Thu' 
+		text: 'Thu'
 	},
 	{
 		value: 4,
-		text: 'Fri' 
+		text: 'Fri'
 	},
 	{
 		value: 5,
-		text: 'Sat' 
+		text: 'Sat'
 	},
 	{
 		value: 6,
-		text: 'Sun' 
+		text: 'Sun'
 	}
 ];
 

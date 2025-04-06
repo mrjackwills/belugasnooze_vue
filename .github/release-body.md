@@ -1,9 +1,10 @@
-### 2025-02-24
+### 2025-04-06
 
 ### Chores
-+ dependencies updated, [84973efc7d6d03127a7d6ed8d2cdd21e1cebb47b], [e7fe84dd486ee209ef9452d9f16c2a91d96942b2]
++ dependencies updated, [3acc210dadcfef1f499419215dd41cfec5b84d2f]
 
-### Features
-+ upgrade to eslint v9, [5e866dbf35fe1bb8f24d1ff61cec6885ce94412e]
+### Refactors
++ empty lines removed, [350ff6fe59684436247b30d9aab3271118e93031]
++ computed refactored, [e3ffdd60468eba9658795774164813a5d61aec3e]
 
 see <a href='https://github.com/mrjackwills/belugasnooze_vue/blob/main/CHANGELOG.md'>CHANGELOG.md</a> for more details

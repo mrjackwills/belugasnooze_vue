@@ -1,17 +1,10 @@
 <template>
-	<v-row align='center' justify='center' class='' >
+	<v-row align='center' justify='center' class=''>
 		<v-col cols='12'>
 			<v-row align='center' justify='center'>
 				<v-col cols='auto '>
-					<v-btn
-						@click='showSettings'
-						:color='buttonColor'
-						:disabled='loading && piInit'
-						:outlined='expandedSettings'
-						class='elevation-0 '
-						size='large'
-						rounded
-					>
+					<v-btn @click='showSettings' :color='buttonColor' :disabled='loading && piInit'
+						:outlined='expandedSettings' class='elevation-0 ' size='large' rounded>
 						<v-icon color='white' style='vertical-align: middle;' class='mr-1' :icon='buttonIcon' />
 						<span class='text-white'> {{ buttonText }} </span>
 					</v-btn>
@@ -20,7 +13,7 @@
 		</v-col>
 		<v-col cols='12'>
 			<v-expand-transition>
-				<section  v-if='expandedSettings'>
+				<section v-if='expandedSettings'>
 					<v-row justify='center'>
 
 						<RefreshData @piStatus='piStatus' />
@@ -41,22 +34,17 @@
 
 import { mdiClose, mdiCog } from '@mdi/js';
 
-const [ loadingStore, piStatusStore, settingsStore, wsStore ] = [ loadingModule(), piStatusModule(), settingsModule(), wsModule() ];
-		
-const buttonColor = computed(() => {
-	return expandedSettings.value ? 'red' : 'primary';
-});
-const buttonIcon = computed((): string =>{
-	return expandedSettings.value ? mdiClose : mdiCog;
-});
-const buttonText = computed((): string =>{
-	return expandedSettings.value ? 'close settings' : 'Settings';
-});
+const [loadingStore, piStatusStore, settingsStore, wsStore] = [loadingModule(), piStatusModule(), settingsModule(), wsModule()];
+
+const buttonColor = computed(() => expandedSettings.value ? 'red' : 'primary');
+const buttonIcon = computed(() => expandedSettings.value ? mdiClose : mdiCog);
+const buttonText = computed(() => expandedSettings.value ? 'close settings' : 'Settings');
+
 const expandedSettings = computed({
-	get: function (): boolean {
+	get (): boolean {
 		return settingsStore.expanded;
 	},
-	set: function (b: boolean): void {
+	set (b: boolean): void {
 		settingsStore.set_expanded(b);
 	}
 });
@@ -68,9 +56,7 @@ const loading = computed({
 		loadingStore.set_loading(b);
 	}
 });
-const piInit = computed((): boolean =>{
-	return piStatusStore.init;
-});
+const piInit = computed(() => piStatusStore.init);
 
 const expandedReset = ref(false);
 

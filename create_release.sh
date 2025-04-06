@@ -10,11 +10,9 @@ YELLOW='\033[0;33m'
 PURPLE='\033[0;35m'
 RESET='\033[0m'
 
-
 STAR_LINE='****************************************'
 CWD=$(pwd)
 BUILD_DATE=$(date "+%a %d %Y %B %T %Z")
-
 
 # $1 string - error message
 error_close() {
@@ -26,7 +24,6 @@ error_close() {
 if ! [ -x "$(command -v dialog)" ]; then
 	error_close "dialog is not installed"
 fi
-
 
 # $1 string - question to ask
 # Ask a yes no question, only accepts `y` or `n` as a valid answer, returns 0 for yes, 1 for no
@@ -50,7 +47,6 @@ ask_continue () {
 		exit
 	fi
 }
-
 
 # semver major update
 update_major() {

@@ -1,3 +1,13 @@
+# <a href='https://github.com/mrjackwills/belugasnooze_vue/releases/tag/v0.3.1'>v0.3.1</a>
+### 2025-04-06
+
+### Chores
++ dependencies updated, [3acc210d](https://github.com/mrjackwills/belugasnooze_vue/commit/3acc210dadcfef1f499419215dd41cfec5b84d2f)
+
+### Refactors
++ empty lines removed, [350ff6fe](https://github.com/mrjackwills/belugasnooze_vue/commit/350ff6fe59684436247b30d9aab3271118e93031)
++ computed refactored, [e3ffdd60](https://github.com/mrjackwills/belugasnooze_vue/commit/e3ffdd60468eba9658795774164813a5d61aec3e)
+
 # <a href='https://github.com/mrjackwills/belugasnooze_vue/releases/tag/v0.3.0'>v0.3.0</a>
 ### 2025-02-24
 
@@ -128,7 +138,6 @@
 # <a href='https://github.com/mrjackwills/belugasnooze_vue/releases/tag/v0.2.4'>v0.2.4</a>
 ### 2023-03-10
 
-
 ### Chores
 + create_release updated, [354aba0b](https://github.com/mrjackwills/belugasnooze_vue/commit/354aba0b8c22bf22e1984dd248df029ae579bd0d)
 + dev container updated, [cb9b557a](https://github.com/mrjackwills/belugasnooze_vue/commit/cb9b557a324d2be856732910d62c389f04b2be24)
@@ -178,7 +187,6 @@
 
 ### Refactors
 + dead code removed, [9c4e2fa5](https://github.com/mrjackwills/belugasnooze_vue/commit/9c4e2fa557815c55c90064619d12cea4d198a116), [17144938](https://github.com/mrjackwills/belugasnooze_vue/commit/171449387adf5419ac1a69b215c8eb2bdf79bd5b), [a50f3fa9](https://github.com/mrjackwills/belugasnooze_vue/commit/a50f3fa9b39ab77b71aa34d309b6abbd5be0f990)
-
 
 # <a href='https://github.com/mrjackwills/belugasnooze_vue/releases/tag/v0.2.1'>v0.2.1</a>
 ### 2022-11-05

@@ -83,15 +83,9 @@ import { snackError } from '@/services/snack';
 
 const [alarmStore, piStatusStore, wsStore] = [alarmModule(), piStatusModule(), wsModule()];
 
-const buttonColor = computed(() => {
-	return expandedAdd.value ? 'red' : 'primary';
-});
-const buttonIcon = computed(() => {
-	return expandedAdd.value ? mdiClose : mdiPlus;
-});
-const buttontext = computed(() => {
-	return expandedAdd.value ? 'cancel' : 'new alarm';
-});
+const buttonColor = computed(() => expandedAdd.value ? 'red' : 'primary');
+const buttonIcon = computed(() => expandedAdd.value ? mdiClose : mdiPlus);
+const buttontext = computed(() => expandedAdd.value ? 'cancel' : 'new alarm');
 const hours = computed((): Array<string> => {
 	const hours = [];
 	for (const [index] of new Array(24).entries()) hours.push(String(index).padStart(2, '0'));
@@ -102,12 +96,8 @@ const minutes = computed((): Array<string> => {
 	for (const [index] of new Array(60).entries()) minutes.push(String(index).padStart(2, '0'));
 	return minutes;
 });
-const piInit = computed(() => {
-	return piStatusStore.init;
-});
-const piOnline = computed(() => {
-	return piStatusStore.online;
-});
+const piInit = computed(() => piStatusStore.init);
+const piOnline = computed(() => piStatusStore.online);
 
 const chosenHour: Ref<su> = ref(undefined);
 const chosenMinute: Ref<su> = ref(undefined);
