@@ -83,6 +83,8 @@
     "onWatcherCleanup": true,
     "useId": true,
     "useModel": true,
-    "useTemplateRef": true
+    "useTemplateRef": true,
+    "Slot": true,
+    "Slots": true
   }
 }

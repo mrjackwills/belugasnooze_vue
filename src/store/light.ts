@@ -1,9 +1,7 @@
-import type { PiniaModuleName } from '@/types';
+import { ModuleName } from '@/types/const_module';
 import { defineStore } from 'pinia';
 
-const name: PiniaModuleName = 'light';
-
-export const lightModule = defineStore(name, {
+export const lightModule = defineStore(ModuleName.Light, {
 
 	state: () => ({ on: false }),
 

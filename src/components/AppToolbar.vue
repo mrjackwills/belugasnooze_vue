@@ -1,9 +1,9 @@
 <template>
 	<v-toolbar :height='toolbarHeight' color='primary'>
 
-		<v-img src='@/assets/logo.svg' :eager='true' max-width='3rem' class='ml-2' />
+		<v-img src='@/assets/logo.svg' :eager='true' :max-width='maxWidth' class='mx-2' />
 
-		<v-toolbar-title :class='spacing' class='font-weight-bold'>
+		<v-toolbar-title :class='fontSize' class='ma-0 pa-0 font-weight-bold'>
 			<span class='text-white text-no-wrap'>Beluga Snooze</span>
 		</v-toolbar-title>
 
@@ -22,8 +22,9 @@ const [loadingStore, userStore] = [loadingModule(), userModule()];
 
 const authenticated = computed(() => userStore.authenticated);
 const loading = computed(() => loadingStore.loading);
+const maxWidth = computed(() => mobile.value ? '2rem' : '3rem');
 const progressHeight = computed(() => mobile.value ? '4' : '8');
-const spacing = computed(() => mobile.value ? 'text-h6 py-2' : 'text-h5 my-1');
+const fontSize = computed(() => mobile.value ? 'text-subtitle-1' : 'text-h5');
 const toolbarHeight = computed(() => mobile.value ? '56' : '70');
 
 </script>

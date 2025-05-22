@@ -1,9 +1,8 @@
 import { defineStore } from 'pinia';
-import type { PiniaModuleName, TAllAlarms } from '@/types';
+import type { TAllAlarms } from '@/types';
+import { ModuleName } from '@/types/const_module';
 
-const name: PiniaModuleName = 'alarms';
-
-export const alarmModule = defineStore(name, {
+export const alarmModule = defineStore(ModuleName.Alarms, {
 
 	state: () => ({ alarms: [] as TAllAlarms }),
 

@@ -1,9 +1,8 @@
 import { defineStore } from 'pinia';
-import type { TTime, PiniaModuleName } from '@/types';
+import type { TTime } from '@/types';
+import { ModuleName } from '@/types/const_module';
 
-const name: PiniaModuleName = 'piStatus';
-
-export const piStatusModule = defineStore(name, {
+export const piStatusModule = defineStore(ModuleName.PiStatus, {
 
 	state: () => ({
 		init: false,
@@ -23,9 +22,9 @@ export const piStatusModule = defineStore(name, {
 
 	actions: {
 		increment_timers (): void {
-			this.connectedFor ++;
-			this.piAppUptime ++;
-			this.piUptime ++;
+			this.connectedFor++;
+			this.piAppUptime++;
+			this.piUptime++;
 		},
 		set_connectedFor (n: number): void {
 			this.connectedFor = n;

@@ -1,7 +1,7 @@
-import type { PiniaModuleName } from '@/types';
+import { ModuleName } from '@/types/const_module';
 import { defineStore } from 'pinia';
-const name: PiniaModuleName = 'user';
-export const userModule = defineStore(name, {
+
+export const userModule = defineStore(ModuleName.User, {
 
 	state: () => ({ authenticated: false }),
 

@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia';
-import type { IWSToServer, PiniaModuleName } from '@/types';
+import { ModuleName } from '@/types/const_module';
 import { ws } from '@/services/ws';
+import type { IWSToServer } from '@/types';
 
-const name: PiniaModuleName = 'websocket';
-export const wsModule = defineStore(name, {
+export const wsModule = defineStore(ModuleName.Websocket, {
 
 	state: () => ({ connected: false }),
 
@@ -30,6 +30,6 @@ export const wsModule = defineStore(name, {
 		set_connected (value: boolean) {
 			this.connected = value;
 		}
-		
+
 	}
 });

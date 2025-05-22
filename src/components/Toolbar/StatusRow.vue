@@ -16,7 +16,7 @@
 
 			<v-col cols='auto' class='pa-0 mx-2'>
 				<v-icon :class='computedAnimation' :color='computedIconColor' :icon='computedIcon'
-					:size='breakpoint.xs.value ? `small` : `default`' class='mb-1' style='vertical-align: middle;' />
+					:size='mobile ? `small` : `default`' class='mb-1' style='vertical-align: middle;' />
 			</v-col>
 		</v-row>
 	</section>
@@ -27,11 +27,12 @@ import { mdiWifi, mdiWifiOff } from '@mdi/js';
 import type { TTime } from '@/types';
 import { useDisplay } from 'vuetify';
 
+const { mobile } = useDisplay();
+
 const piStatusStore = piStatusModule();
-const breakpoint = useDisplay();
 
 const computedAnimation = computed(() => piOnline.value ? '' : 'pulse-animation');
-const computedFontSize = computed(() => breakpoint.xs.value ? 'text-subtitle-2' : 'text-h5');
+const computedFontSize = computed(() => mobile.value ? 'text-subtitle-1' : 'text-h5');
 const computedIcon = computed(() => piOnline.value ? mdiWifi : mdiWifiOff);
 const computedIconColor = computed(() => piOnline.value ? 'white' : 'serious');
 const computedTextColor = computed(() => piOnline.value ? 'text-white' : 'text-serious');
