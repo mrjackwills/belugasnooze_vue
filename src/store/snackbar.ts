@@ -1,8 +1,8 @@
-import type { PiniaModuleName } from '@/types';
+
+import { ModuleName } from '@/types/const_module';
 import { defineStore } from 'pinia';
 
-const name: PiniaModuleName = 'snackbar';
-export const snackbarModule = defineStore(name, {
+export const snackbarModule = defineStore(ModuleName.Snackbar, {
 	state: () => ({
 		icon: '',
 		loading: false,

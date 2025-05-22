@@ -1,9 +1,7 @@
-import type { PiniaModuleName } from '@/types';
+import { ModuleName } from '@/types/const_module';
 import { defineStore } from 'pinia';
 
-const name: PiniaModuleName = 'pageTitle';
-
-export const pagetitleModule = defineStore(name, {
+export const pagetitleModule = defineStore(ModuleName.PageTitle, {
 	state: () => ({ title: '' }),
 
 	actions: {

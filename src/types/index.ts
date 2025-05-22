@@ -85,12 +85,14 @@ export type TDayOptions = {
 	text: string; 
 };
 
-export type PiniaModuleName = 'alarms' |
-	'light' |
-	'loading' |
-	'piStatus' |
-	'settings' |
-	'snackbar' |
-	'user' |
-	'websocket' |
-	'pageTitle';
+export type ConstT<T> = T[keyof T];
+
+// export type PiniaModuleName = 'alarms' |
+// 	'light' |
+// 	'loading' |
+// 	'piStatus' |
+// 	'settings' |
+// 	'snackbar' |
+// 	'user' |
+// 	'websocket' |
+// 	'pageTitle';
