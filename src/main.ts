@@ -10,9 +10,9 @@ const head = createHead();
 const app = createApp(App);
 const pinia = createPinia();
 
-app
-	.use(head)
-	.use(router)
-	.use(pinia)
-	.use(vuetify)
-	.mount('#app');
+app.
+	use(head).
+	use(router).
+	use(pinia).
+	use(vuetify).
+	mount('#app');

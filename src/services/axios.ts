@@ -30,7 +30,6 @@ const wrap = <T> () => {
 };
 
 class AxiosRequests {
-
 	#wsAuthAxios!: AxiosInstance;
 
 	constructor () {
@@ -43,18 +42,15 @@ class AxiosRequests {
 				'Cache-control': 'no-cache'
 			}
 		});
-	
-		this.#wsAuthAxios.interceptors.response.use(
-			(config) => Promise.resolve(config),
-			(error) => error.response ? Promise.reject(error) : Promise.reject(new Error('offline'))
-		);
+
+		this.#wsAuthAxios.interceptors.response.use((config) => Promise.resolve(config), (error) => error.response ? Promise.reject(error) : Promise.reject(new Error('offline')));
 	}
 
 	@wrap()
 	async wsAuth_post (password: string): Promise<boolean> {
 		const { data } = await this.#wsAuthAxios.post('', {
 			key: env.api_key,
-			password 
+			password
 		});
 		if (data.response) {
 			snackReset();

@@ -10,8 +10,8 @@ type TDayHourMinute = THourMinute & { day: number };
 type TEmitName = 'delete_one' | 'delete_all';
 type TStatus = {
 	name: 'status';
-	data: TStatusAndAlarms; 
-} | { 
+	data: TStatusAndAlarms;
+} | {
 	name: 'led_status';
 	data: TLightStatus;
 };
@@ -20,7 +20,7 @@ export type TTime = Record<'hours' | 'minutes' | 'seconds', number | undefined>;
 
 export type TTimeAndTimeZone = {
 	time: TTime;
-	timezone: string; 
+	timezone: string;
 };
 
 export type TEmitBody = {
@@ -52,14 +52,14 @@ export type TStatusAndAlarms = TPiStatus & { alarms: TAllAlarms };
 
 export type TData = {
 	data: TStatus;
-	cache?: boolean; 
+	cache?: boolean;
 };
 
 export type TError = {
 	error: {
 		message: string;
-		code: number; 
-	}; 
+		code: number;
+	};
 };
 
 export type TWSFromPi = TData | TError;
@@ -77,22 +77,12 @@ export type TComputedCity = Record<'value' | 'title', string>;
 
 export type TComputedIp = Record<'name' | 'class', string> & {
 	value: su;
-	model: boolean; 
+	model: boolean;
 };
 
 export type TDayOptions = {
 	value: number;
-	text: string; 
+	text: string;
 };
 
 export type ConstT<T> = T[keyof T];
-
-// export type PiniaModuleName = 'alarms' |
-// 	'light' |
-// 	'loading' |
-// 	'piStatus' |
-// 	'settings' |
-// 	'snackbar' |
-// 	'user' |
-// 	'websocket' |
-// 	'pageTitle';

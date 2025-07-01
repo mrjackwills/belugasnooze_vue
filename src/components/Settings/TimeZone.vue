@@ -85,12 +85,20 @@ onUnmounted(() => {
 	clearTimeout(timezoneTimeout.value);
 	[timeZoneRegion.value, timeZoneCity.value] = [undefined, undefined];
 });
-const updateColor = computed(() => updateDisabled.value ? 'text-white' : 'text-black');
+const updateColor = computed(() => updateDisabled.value
+	? 'text-white'
+	: 'text-black');
 const updateDisabled = computed(() => localLoading.value || timeZoneCity.value);
-const infoColor = computed(() => visible.value ? 'danger' : 'black');
-const computedInfoIcon = computed(() => visible.value ? mdiChevronUp : mdiChevronDown);
+const infoColor = computed(() => visible.value
+	? 'danger'
+	: 'black');
+const computedInfoIcon = computed(() => visible.value
+	? mdiChevronUp
+	: mdiChevronDown);
 
-const computedTimeZone = computed(() => !timeZoneCity.value ? '' : new Date().toLocaleString('en-GB', { timeZone: timeZoneCity.value }));
+const computedTimeZone = computed(() => !timeZoneCity.value
+	? ''
+	: new Date().toLocaleString('en-GB', { timeZone: timeZoneCity.value }));
 const computedCity = computed((): Array<TComputedCity> => {
 	if (!timeZoneRegion.value) return [];
 	const data = [];
@@ -101,9 +109,14 @@ const computedCity = computed((): Array<TComputedCity> => {
 	return data;
 });
 
-const computedTimezoneText = computed(() => !timeZoneRegion.value ? 'To change time zone, first select a region' : !timeZoneCity.value ?
-	'Now select a city' : `Change to : ${timeZoneCity.value} ${computedTimeZone.value}`);
-const confirmFont = computed(() => mobile.value ? 'text-caption' : 'text-body-1');
+const computedTimezoneText = computed(() => !timeZoneRegion.value
+	? 'To change time zone, first select a region'
+	: !timeZoneCity.value
+		? 'Now select a city'
+		: `Change to : ${timeZoneCity.value} ${computedTimeZone.value}`);
+const confirmFont = computed(() => mobile.value
+	? 'text-caption'
+	: 'text-body-1');
 
 const loading = computed({
 	get (): boolean {

@@ -42,10 +42,12 @@ useHead({
 			content: `Beluga Snooze - Those in the know - know, everybody else, well I guess that's just tough luck`
 		}
 	],
-	link: [{
-		rel: 'canonical',
-		href: `https://www.belugasnooze.com`
-	}]
+	link: [
+		{
+			rel: 'canonical',
+			href: `https://www.belugasnooze.com`
+		}
+	]
 });
 
 const appUpdate = (): void => {

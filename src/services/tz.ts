@@ -11,10 +11,10 @@ const Pacific = 'Pacific';
 
 const _parents = [];
 
-for (const i of [ Africa, America, Antarctica, Arctic, Asia, Atlantic, Australia, Europe, Indian, Pacific ]) {
+for (const i of [Africa, America, Antarctica, Arctic, Asia, Atlantic, Australia, Europe, Indian, Pacific]) {
 	_parents.push(i);
 }
-export const parents: ReadonlyArray<string> = [ ..._parents ];
+export const parents: ReadonlyArray<string> = [..._parents];
 
 const africaZones = [
 	'Abidjan',
@@ -460,4 +460,4 @@ for (const i of europeZones) _zones.push(`${Europe}/${i}`);
 for (const i of indianZones) _zones.push(`${Indian}/${i}`);
 for (const i of pacificZones) _zones.push(`${Pacific}/${i}`);
 
-export const zones: ReadonlyArray<string> = [ ..._zones ];
+export const zones: ReadonlyArray<string> = [..._zones];

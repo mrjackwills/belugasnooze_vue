@@ -41,6 +41,7 @@ const piInit = computed(() => piStatusStore.init);
 const piTime = computed(() => piStatusStore.time);
 const piTimeValid = computed(() => !isNaN(Number(piStatusStore.time.hours)));
 
+
 const hourExtractor = (i: TTime): string => i ? `${String(i.hours).padStart(2, '0')}` : '';
 const minuteExtractor = (i: TTime): string => i ? `${String(i.minutes).padStart(2, '0')}` : '';
 const secondExtractor = (i: TTime): string => i ? `${String(i.seconds).padStart(2, '0')}` : '';

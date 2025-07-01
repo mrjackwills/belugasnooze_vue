@@ -36,5 +36,4 @@ export const numToDay = (num: number): string => {
 	const data = num === 7 ? 0 : num;
 	const index = dayOptions.findIndex((i) => i.value === data);
 	return dayOptions[index]?.text ?? 'NULL';
-
 };
