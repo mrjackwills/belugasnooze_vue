@@ -1,3 +1,7 @@
+### Chores
++ create_release.sh updated, [daa42a4fbfff838df9ce69ec4a931d31f79dfdb8]
++ dependencies updated, [6db39efb0391f73420a42127d161f338caa0f39b]
+
 # <a href='https://github.com/mrjackwills/belugasnooze_vue/releases/tag/v0.3.2'>v0.3.2</a>
 ### 2025-05-22
 
