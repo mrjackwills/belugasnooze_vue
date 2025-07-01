@@ -13,6 +13,7 @@
   "homepage": "https://github.com/mrjackwills/belugasnooze_vue",
   "dependencies": {
     "@mdi/font": "7.4.47",
+    "@stylistic/eslint-plugin": "^5.1.0",
     "@vueuse/core": "^13.4.0",
     "@vueuse/head": "^2.0.0",
     "axios": "^1.10.0",
@@ -24,7 +25,6 @@
   },
   "devDependencies": {
     "@mdi/js": "^7.4.47",
-    "@stylistic/eslint-plugin-ts": "^4.4.1",
     "@types/node": "^24.0.8",
     "@types/secure-json-parse": "^2.4.0",
     "@vitejs/plugin-vue": "^6.0.0",
