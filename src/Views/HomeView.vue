@@ -29,7 +29,7 @@
 import AppSignin from '@/components/AppSignin.vue';
 import AppAuthenticated from '@/components/AppAuthenticated.vue';
 import AppToolbar from '@/components/AppToolbar.vue';
-const [ lightStore, userStore ] = [ lightModule(), userModule() ];
+const [lightStore, userStore] = [lightModule(), userModule()];
 
 const authenticated = computed(() => userStore.authenticated);
 const computedComponent = computed(() => authenticated.value ? AppAuthenticated : AppSignin);

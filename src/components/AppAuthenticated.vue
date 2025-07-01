@@ -24,7 +24,14 @@ onUnmounted(() => {
 	clearAllIntervals();
 });
 
-const [alarmStore, lightStore, piStatusStore, settingsStore, userStore, wsStore] = [alarmModule(), lightModule(), piStatusModule(), settingsModule(), userModule(), wsModule()];
+const [
+	alarmStore,
+	lightStore,
+	piStatusStore,
+	settingsStore,
+	userStore,
+	wsStore
+] = [alarmModule(), lightModule(), piStatusModule(), settingsModule(), userModule(), wsModule()];
 
 const expandedSettings = computed(() => settingsStore.expanded);
 
