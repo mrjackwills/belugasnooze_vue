@@ -83,6 +83,7 @@ export default defineConfigWithVueTs(...configs, {
 			'error',
 			{ code: 200 }
 		],
+		'no-console': 'error',
 		semi: [
 			'error',
 			'always'
