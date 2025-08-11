@@ -61,7 +61,7 @@ export default defineConfigWithVueTs(...configs, {
 		'@stylistic/quotes': [
 			'error',
 			'single',
-			{ allowTemplateLiterals: true }
+			{ allowTemplateLiterals: 'always' }
 		],
 		'@typescript-eslint/array-type': [
 			'error',
@@ -83,6 +83,7 @@ export default defineConfigWithVueTs(...configs, {
 			'error',
 			{ code: 200 }
 		],
+		'no-console': 'error',
 		semi: [
 			'error',
 			'always'
