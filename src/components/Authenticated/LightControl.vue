@@ -6,7 +6,7 @@
 					<v-col cols='auto' class='pt-0'>
 						<v-btn @click='lightSwitch' :class='{ "pulse-animation": lightOn }' :color='buttonColor'
 							:disabled='!piOnline' class='elevation-0' icon>
-							<v-icon :color='iconColor' :icon='icon' style='vertical-align: middle;' />
+							<v-icon :color='iconColor' :icon style='vertical-align: middle;' />
 						</v-btn>
 					</v-col>
 				</v-row>

@@ -15,7 +15,7 @@
 						<v-fade-transition hide-on-leave>
 							<component
 								:is='computedComponent'
-								:key='key'
+								:key
 							/>
 						</v-fade-transition>
 					</v-card-text>
