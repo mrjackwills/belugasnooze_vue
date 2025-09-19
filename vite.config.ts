@@ -72,7 +72,7 @@ export default defineConfig({
 		viteCompression({ algorithm: 'gzip' })
 
 	],
-	css: { preprocessorOptions: { scss: { api: 'modern-compiler' } } },
+
 	define: {
 		'process.env': {},
 		'import.meta.env.BUILD_DATE': Date.now(),
