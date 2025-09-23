@@ -1,6 +1,6 @@
 {
   "name": "belugasnooze",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@mdi/js": "^7.4.47",
-	"@stylistic/eslint-plugin": "^5.4.0",
+    "@stylistic/eslint-plugin": "^5.4.0",
     "@types/node": "^24.5.2",
     "@types/secure-json-parse": "^2.4.0",
     "@vitejs/plugin-vue": "^6.0.1",
@@ -43,5 +43,5 @@
     "vite-plugin-vuetify": "^2.1.2",
     "vue-tsc": "^3.0.8"
   },
-  "buildDate": "Mon 11 2025 August 23:26:32 BST"
+  "buildDate": "Tue 23 2025 September 16:46:00 BST"
 }
