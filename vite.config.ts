@@ -13,17 +13,15 @@ import { defineConfig } from 'vite';
 import { fileURLToPath, URL } from 'node:url';
 
 const fontaine_options = {
-	fallbacks: [ 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'Arial', 'Noto Sans' ],
-	resolvePath: (id: string): string => './src/assets/fonts' + id,
+	fallbacks: ['BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'Arial', 'Noto Sans'],
+	resolvePath: (id: string): string => './src/assets/fonts' + id
 };
 
 const pwaOptions: Partial<VitePWAOptions> = {
 	base: '/',
 	registerType: 'prompt',
-	includeAssets: [ 'favicon.ico' ],
-	workbox: {
-		cleanupOutdatedCaches: true
-	},
+	includeAssets: ['favicon.ico'],
+	workbox: { cleanupOutdatedCaches: true },
 	manifest: {
 		display: 'standalone',
 		name: 'Beluga Snooze',
@@ -35,74 +33,57 @@ const pwaOptions: Partial<VitePWAOptions> = {
 			{
 				src: 'img/icons/android-chrome-192x192.png',
 				sizes: '192x192',
-				type: 'image/png',
+				type: 'image/png'
 			},
 			{
 				src: 'img/icons/android-chrome-512x512.png',
 				sizes: '512x512',
-				type: 'image/png',
-			},
-		],
-	},
+				type: 'image/png'
+			}
+		]
+	}
 };
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode: _mode }) => {
-	return {
-		plugins: [
-			vue({
-				template: { transformAssetUrls }
-			}),
-			vuetify({
-				autoImport: true,
-			}),
-			Components(),
-			AutoImport({
-				include: [
-					/\.[tj]sx?$/,
-					/\.vue$/, /\.vue\?vue/,
-					/\.md$/,
-				],
-				imports: [
-					'vue',
-					'vue-router',
-				],
-				dts: 'src/auto-imports.d.ts',
-				eslintrc: {
-					enabled: true,
-				},
-				dirs: [
-					'src/store',
-				],
-				vueTemplate: false,
-			}),
-			FontaineTransform.vite(fontaine_options),
-			VitePWA(pwaOptions),
-			viteCompression({ algorithm: 'brotliCompress' }),
-			viteCompression({ algorithm: 'gzip' }),
-				
-		],
-		css: {
-			preprocessorOptions: {
-				scss: {
-					api: 'modern-compiler',
-				},
-			},
-		},
-		define: {
-			'process.env': {},
-			'import.meta.env.BUILD_DATE': Date.now(),
-			'import.meta.env.VERSION': JSON.stringify(process.env.npm_package_version),
-		},
-		resolve: {
-			alias: {
-				'@': fileURLToPath(new URL('./src', import.meta.url)),
-			},
-			extensions: [ '.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue' ],
-		},
-		server: {
-			port: 8002,
-			host: '127.0.0.1'
-		},
-	};
+export default defineConfig({
+	plugins: [
+		vue({ template: { transformAssetUrls } }),
+		vuetify({ autoImport: true }),
+		Components(),
+		AutoImport({
+			include: [
+				/\.[tj]sx?$/,
+				/\.vue$/,
+				/\.vue\?vue/,
+				/\.md$/
+			],
+			imports: [
+				'vue',
+				'vue-router'
+			],
+			dts: 'src/auto-imports.d.ts',
+			eslintrc: { enabled: true },
+			dirs: ['src/store'],
+			vueTemplate: false
+		}),
+		FontaineTransform.vite(fontaine_options),
+		VitePWA(pwaOptions),
+		viteCompression({ algorithm: 'brotliCompress' }),
+		viteCompression({ algorithm: 'gzip' })
+
+	],
+
+	define: {
+		'process.env': {},
+		'import.meta.env.BUILD_DATE': Date.now(),
+		'import.meta.env.VERSION': JSON.stringify(process.env.npm_package_version)
+	},
+	resolve: {
+		alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
+		extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue']
+	},
+	server: {
+		port: 8002,
+		host: '127.0.0.1'
+	}
 });

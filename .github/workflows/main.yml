@@ -1,13 +1,18 @@
 name: Release CI
+
+permissions:
+  contents: write
+
 on:
   push:
     tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'
+      - "v[0-9]+.[0-9]+.[0-9]+"
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Release
         uses: softprops/action-gh-release@v2

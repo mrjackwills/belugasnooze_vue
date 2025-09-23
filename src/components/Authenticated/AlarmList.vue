@@ -15,7 +15,7 @@
 								</v-col>
 								<v-col cols='auto' class='ma-0 pa-0'>
 									<v-icon @click='sender({ name: `delete_one`, body: { alarm_id: item.alarm_id } })'
-										size='small' :color='color' style='vertical-align: middle;'
+										size='small' :color style='vertical-align: middle;'
 										:icon='mdiCloseCircle' />
 								</v-col>
 							</v-row>

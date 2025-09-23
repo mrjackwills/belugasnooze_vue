@@ -4,4 +4,4 @@ RUN printf "alias cls='clear'\nalias ll='ls -l --human-readable --color=auto --g
 
 RUN su node -c "source /usr/local/share/nvm/nvm.sh && nvm install --lts"
 
-RUN su node -c "npm install -g jest ts-node-dev npm-check-updates npm@latest"
+RUN su node -c "npm install -g ts-node-dev npm-check-updates npm@latest"
