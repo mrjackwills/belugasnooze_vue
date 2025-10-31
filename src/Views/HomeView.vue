@@ -9,9 +9,9 @@
 			class='fill-height'
 		>
 			<v-col cols='10' md='8' >
-				<v-card transition='fade-transition' class='' >
+				<v-card transition='fade-transition' >
 					<AppToolbar />
-					<v-card-text class=''>
+					<v-card-text >
 						<v-fade-transition hide-on-leave>
 							<component
 								:is='computedComponent'
