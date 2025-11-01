@@ -1,5 +1,5 @@
-import { ModuleName } from '@/types/const_module';
-import { defineStore } from 'pinia';
+import { defineStore } from 'pinia'
+import { ModuleName } from '@/types'
 
 export const lightModule = defineStore(ModuleName.Light, {
 
@@ -7,7 +7,7 @@ export const lightModule = defineStore(ModuleName.Light, {
 
 	actions: {
 		set_on (value: boolean) {
-			this.on = value;
-		}
-	}
-});
+			this.on = value
+		},
+	},
+})

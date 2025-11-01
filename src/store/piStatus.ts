@@ -1,6 +1,6 @@
-import { defineStore } from 'pinia';
-import type { TTime } from '@/types';
-import { ModuleName } from '@/types/const_module';
+import type { TTime } from '@/types'
+import { defineStore } from 'pinia'
+import { ModuleName } from '@/types'
 
 export const piStatusModule = defineStore(ModuleName.PiStatus, {
 
@@ -15,44 +15,44 @@ export const piStatusModule = defineStore(ModuleName.PiStatus, {
 		time: {
 			hours: 0,
 			minutes: 0,
-			seconds: 0
+			seconds: 0,
 		} as TTime,
-		timeZone: ''
+		timeZone: '',
 	}),
 
 	actions: {
 		increment_timers (): void {
-			this.connectedFor++;
-			this.piAppUptime++;
-			this.piUptime++;
+			this.connectedFor++
+			this.piAppUptime++
+			this.piUptime++
 		},
 		set_connectedFor (n: number): void {
-			this.connectedFor = n;
+			this.connectedFor = n
 		},
 		set_init (b: boolean): void {
-			this.init = b;
+			this.init = b
 		},
 		set_internalIp (su: string): void {
-			this.internalIp = su;
+			this.internalIp = su
 		},
 		set_online (b: boolean): void {
-			this.online = b;
-			this.init = true;
+			this.online = b
+			this.init = true
 		},
 		set_piAppUptime (nu: number): void {
-			this.piAppUptime = nu;
+			this.piAppUptime = nu
 		},
 		set_piUptime (nu: number): void {
-			this.piUptime = nu;
+			this.piUptime = nu
 		},
 		set_piVersion (su: string): void {
-			this.piVersion = su;
+			this.piVersion = su
 		},
 		set_time (t: TTime): void {
-			this.time = t;
+			this.time = t
 		},
 		set_timeZone (t: string): void {
-			this.timeZone = t;
-		}
-	}
-});
+			this.timeZone = t
+		},
+	},
+})

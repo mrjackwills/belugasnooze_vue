@@ -1,5 +1,5 @@
-import { ModuleName } from '@/types/const_module';
-import { defineStore } from 'pinia';
+import { defineStore } from 'pinia'
+import { ModuleName } from '@/types'
 
 export const userModule = defineStore(ModuleName.User, {
 
@@ -7,13 +7,13 @@ export const userModule = defineStore(ModuleName.User, {
 
 	actions: {
 		set_authenticated (value: boolean) {
-			this.authenticated = value;
+			this.authenticated = value
 		},
 		signout () {
-			this.set_authenticated(false);
-			alarmModule().$reset();
-			piStatusModule().$reset();
-			settingsModule().$reset();
-		}
-	}
-});
+			this.set_authenticated(false)
+			alarmModule().$reset()
+			piStatusModule().$reset()
+			settingsModule().$reset()
+		},
+	},
+})

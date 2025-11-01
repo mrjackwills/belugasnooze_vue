@@ -1,101 +1,33 @@
-// eslint.config.mjs
-import pluginVue from 'eslint-plugin-vue';
-import stylistic from '@stylistic/eslint-plugin';
+import vuetify from 'eslint-config-vuetify'
+import vue from 'eslint-plugin-vue';
 
-import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
-
-import {
-	defineConfigWithVueTs,
-	vueTsConfigs
-} from '@vue/eslint-config-typescript';
-
-const configs = [
-	eslint.configs.recommended,
-	pluginVue.configs['flat/essential'],
-	tseslint.configs.strict,
-	stylistic.configs.all,
-	tseslint.configs.stylistic,
-	vueTsConfigs.recommended
-];
-
-export default defineConfigWithVueTs(...configs, {
+export default vuetify({
+	plugins: { vue },
 	rules: {
-
-		'@stylistic/array-element-newline': [
-			'error', {
-				ArrayExpression: 'consistent',
-				ArrayPattern: { minItems: 5 }
-			}
-		],
-		'@stylistic/function-call-argument-newline': [
-			'error',
-			'never'
-		],
 		'@stylistic/indent': [
 			'error',
-			'tab'
+			'tab',
 		],
-		'@stylistic/multiline-ternary': [
-			'error',
-			'always-multiline'
-		],
-		'@stylistic/no-confusing-arrow': ['off'],
-
-		'@stylistic/object-curly-newline': [
-			'error',
-			{ multiline: true }
-		],
-		'@stylistic/object-curly-spacing': [
-			'error',
-			'always'
-		],
-		'@stylistic/padded-blocks': [
-			'error',
-			'never'
-		],
+		'@stylistic/no-tabs': ["error", { allowIndentationTabs: true }],
 		'@stylistic/quote-props': [
 			'error',
-			'as-needed'
+			'as-needed',
 		],
 		'@stylistic/quotes': [
 			'error',
 			'single',
-			{ allowTemplateLiterals: 'always' }
-		],
-		'@typescript-eslint/array-type': [
-			'error',
-			{ default: 'generic' }
+			{ allowTemplateLiterals: 'always' },
 		],
 		'@typescript-eslint/consistent-type-definitions': [
 			'error',
 			'type'
 		],
-		'@typescript-eslint/explicit-function-return-type': ['error'],
-		'comma-spacing': [
-			'error',
-			{
-				before: false,
-				after: true
-			}
-		],
-		'max-len': [
-			'error',
-			{ code: 200 }
-		],
 		'no-console': 'error',
-		semi: [
-			'error',
-			'always'
-		],
-		'space-before-blocks': [
-			'error',
-			{
-				functions: 'always',
-				keywords: 'always',
-				classes: 'always'
-			}
-		],
+		'vue/script-indent': ['error', 'tab', {
+			baseIndent: 0,
+			switchCase: 0,
+			ignores: [],
+		}],
 		'vue/html-indent': [
 			'error',
 			'tab',
@@ -103,17 +35,13 @@ export default defineConfigWithVueTs(...configs, {
 				attribute: 1,
 				closeBracket: 0,
 				alignAttributesVertically: true,
-				ignores: []
-			}
+				ignores: [],
+			},
 		],
 		'vue/html-quotes': [
 			'error',
 			'single'
 		],
-		'vue/mustache-interpolation-spacing': [
-			'error',
-			'always'
-		],
 		'vue/script-indent': ['off']
-	}
-});
+	},
+})
