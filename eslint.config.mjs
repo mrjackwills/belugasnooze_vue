@@ -22,12 +22,8 @@ export default vuetify({
 			'error',
 			'type'
 		],
+		"@typescript-eslint/unified-signatures": "off",
 		'no-console': 'error',
-		'vue/script-indent': ['error', 'tab', {
-			baseIndent: 0,
-			switchCase: 0,
-			ignores: [],
-		}],
 		'vue/html-indent': [
 			'error',
 			'tab',

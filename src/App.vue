@@ -1,5 +1,8 @@
 <template>
-	<v-app id='belugasnooze' class='ma-0 pa-0'>
+	<v-app
+		id='belugasnooze'
+		class='ma-0 pa-0'
+	>
 		<v-main>
 			<RouterView />
 			<AppSnackbar />
