@@ -1,5 +1,5 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import Home from '@/Views/HomeView.vue';
+import { createRouter, createWebHistory } from 'vue-router'
+import Home from '@/Views/HomeView.vue'
 
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,14 +7,14 @@ const router = createRouter({
 		{
 			path: '/',
 			name: 'home',
-			component: Home
+			component: Home,
 		},
 		{
 			path: '/:pathMatch(.*)*',
 			name: 'not-found',
-			redirect: { name: 'home' }
-		}
-	]
-});
+			redirect: { name: 'home' },
+		},
+	],
+})
 
-export default router;
+export default router

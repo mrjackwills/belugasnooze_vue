@@ -1,39 +1,39 @@
-import type { TDayOptions } from '@/types';
+import type { TDayOptions } from '@/types'
 
 export const dayOptions: ReadonlyArray<TDayOptions> = [
 	{
 		value: 0,
-		text: 'Mon'
+		text: 'Mon',
 	},
 	{
 		value: 1,
-		text: 'Tue'
+		text: 'Tue',
 	},
 	{
 		value: 2,
-		text: 'Wed'
+		text: 'Wed',
 	},
 	{
 		value: 3,
-		text: 'Thu'
+		text: 'Thu',
 	},
 	{
 		value: 4,
-		text: 'Fri'
+		text: 'Fri',
 	},
 	{
 		value: 5,
-		text: 'Sat'
+		text: 'Sat',
 	},
 	{
 		value: 6,
-		text: 'Sun'
-	}
-];
+		text: 'Sun',
+	},
+]
 
-export const numToDay = (num: number): string => {
+export function numToDay (num: number): string {
 	// fix for Sunday as both first and last day of the week, is always 0, but presented to user as 7 via pinia getter
-	const data = num === 7 ? 0 : num;
-	const index = dayOptions.findIndex((i) => i.value === data);
-	return dayOptions[index]?.text ?? 'NULL';
-};
+	const data = num === 7 ? 0 : num
+	const index = dayOptions.findIndex(i => i.value === data)
+	return dayOptions[index]?.text ?? 'NULL'
+}

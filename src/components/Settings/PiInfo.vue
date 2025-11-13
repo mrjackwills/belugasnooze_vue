@@ -1,12 +1,20 @@
 <template>
-	<v-col cols='12' class=''>
+	<v-col class='' cols='12'>
 		<v-row v-if='mobile' align='center' class='no-gutters' justify='center'>
-			<v-col cols='auto' class='pa-0'>
-				<v-btn @click='visible = !visible' :color='infoColor' :dark='!loading' :disabled='loading'
-					:size='mobile ? `small` : `default`' class='fab-fix elevation-0' min-width='30vw' rounded>
-					<v-icon style='vertical-align: middle;' class='mr-1' size='small' :icon='mdiIpNetwork' />
+			<v-col class='pa-0' cols='auto'>
+				<v-btn
+					class='fab-fix elevation-0'
+					:color='infoColor'
+					:dark='!loading'
+					:disabled='loading'
+					min-width='30vw'
+					rounded
+					:size='mobile ? `small` : `default`'
+					@click='visible = !visible'
+				>
+					<v-icon class='mr-1' :icon='mdiIpNetwork' size='small' style='vertical-align: middle;' />
 					info
-					<v-icon style='vertical-align: middle;' class='ml-1' size='small' :icon='computedInfoIcon' />
+					<v-icon class='ml-1' :icon='computedInfoIcon' size='small' style='vertical-align: middle;' />
 				</v-btn>
 			</v-col>
 		</v-row>
@@ -24,29 +32,29 @@
 </template>
 
 <script setup lang='ts'>
-import { mdiChevronDown, mdiChevronUp, mdiIpNetwork } from '@mdi/js';
-import { useDisplay } from 'vuetify';
+import { mdiChevronDown, mdiChevronUp, mdiIpNetwork } from '@mdi/js'
+import { useDisplay } from 'vuetify'
 
-const { mdAndUp, mobile } = useDisplay();
+const { mdAndUp, mobile } = useDisplay()
 
-const [loadingStore, piStatusStore] = [loadingModule(), piStatusModule()];
+const [loadingStore, piStatusStore] = [loadingModule(), piStatusModule()]
 
 onBeforeMount(() => {
-	visible.value = mdAndUp.value;
-});
+	visible.value = mdAndUp.value
+})
 
-const computedInfoIcon = computed(() => visible.value ? mdiChevronUp : mdiChevronDown);
-const infoColor = computed(() => visible.value ? 'danger' : 'black');
-const piOnline = computed(() => piStatusStore.online);
+const computedInfoIcon = computed(() => visible.value ? mdiChevronUp : mdiChevronDown)
+const infoColor = computed(() => visible.value ? 'danger' : 'black')
+const piOnline = computed(() => piStatusStore.online)
 const loading = computed({
 	get (): boolean {
-		return loadingStore.loading;
+		return loadingStore.loading
 	},
 	set (b: boolean): void {
-		loadingStore.set_loading(b);
-	}
-});
+		loadingStore.set_loading(b)
+	},
+})
 
-const visible = ref(false);
+const visible = ref(false)
 
 </script>

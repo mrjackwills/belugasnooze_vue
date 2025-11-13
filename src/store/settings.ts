@@ -1,5 +1,5 @@
-import { ModuleName } from '@/types/const_module';
-import { defineStore } from 'pinia';
+import { defineStore } from 'pinia'
+import { ModuleName } from '@/types'
 
 export const settingsModule = defineStore(ModuleName.Settings, {
 
@@ -7,7 +7,7 @@ export const settingsModule = defineStore(ModuleName.Settings, {
 
 	actions: {
 		set_expanded (value: boolean) {
-			this.expanded = value;
-		}
-	}
-});
+			this.expanded = value
+		},
+	},
+})

@@ -1,15 +1,17 @@
-import { env } from '@/services/env';
+import { env } from '@/services/env'
 
 class CreateWs {
-	ws?: WebSocket;
+	ws?: WebSocket
 
 	get connection (): undefined | WebSocket {
-		return userModule().authenticated ? this.ws : undefined;
+		return userModule().authenticated ? this.ws : undefined
 	}
 
 	openWs (token: string): void {
-		if (userModule().authenticated) this.ws = new WebSocket(`${env.domain_wss}/${token}`);
+		if (userModule().authenticated) {
+			this.ws = new WebSocket(`${env.domain_wss}/${token}`)
+		}
 	}
 }
 
-export const ws = new CreateWs();
+export const ws = new CreateWs()

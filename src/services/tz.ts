@@ -1,20 +1,20 @@
-const Africa = 'Africa';
-const America = 'America';
-const Antarctica = 'Antarctica';
-const Arctic = 'Arctic';
-const Asia = 'Asia';
-const Atlantic = 'Atlantic';
-const Australia = 'Australia';
-const Europe = 'Europe';
-const Indian = 'Indian';
-const Pacific = 'Pacific';
+const Africa = 'Africa'
+const America = 'America'
+const Antarctica = 'Antarctica'
+const Arctic = 'Arctic'
+const Asia = 'Asia'
+const Atlantic = 'Atlantic'
+const Australia = 'Australia'
+const Europe = 'Europe'
+const Indian = 'Indian'
+const Pacific = 'Pacific'
 
-const _parents = [];
+const _parents = []
 
 for (const i of [Africa, America, Antarctica, Arctic, Asia, Atlantic, Australia, Europe, Indian, Pacific]) {
-	_parents.push(i);
+	_parents.push(i)
 }
-export const parents: ReadonlyArray<string> = [..._parents];
+export const parents: ReadonlyArray<string> = [..._parents]
 
 const africaZones = [
 	'Abidjan',
@@ -68,8 +68,8 @@ const africaZones = [
 	'Sao_Tome',
 	'Tripoli',
 	'Tunis',
-	'Windhoek'
-];
+	'Windhoek',
+]
 
 const americaZones = [
 	'Anchorage',
@@ -215,8 +215,8 @@ const americaZones = [
 	'Whitehorse',
 	'Winnipeg',
 	'Yakutat',
-	'Yellowknife'
-];
+	'Yellowknife',
+]
 
 const antarcticaZones = [
 	'Casey',
@@ -229,8 +229,8 @@ const antarcticaZones = [
 	'Rothera',
 	'Syowa',
 	'Vostok',
-	'Longyearbyen'
-];
+	'Longyearbyen',
+]
 
 const asiaZones = [
 	'Aden',
@@ -308,8 +308,8 @@ const asiaZones = [
 	'Vladivostok',
 	'Yakutsk',
 	'Yekaterinburg',
-	'Yerevan'
-];
+	'Yerevan',
+]
 
 const atlanticZones = [
 	'Azores',
@@ -321,8 +321,8 @@ const atlanticZones = [
 	'Reykjavik',
 	'South_Georgia',
 	'St_Helena',
-	'Stanley'
-];
+	'Stanley',
+]
 
 const australiaZones = [
 	'Adelaide',
@@ -334,8 +334,8 @@ const australiaZones = [
 	'Lindeman',
 	'Melbourne',
 	'Perth',
-	'Sydney'
-];
+	'Sydney',
+]
 
 const europeZones = [
 	'Amsterdam',
@@ -397,8 +397,8 @@ const europeZones = [
 	'Warsaw',
 	'Zagreb',
 	'Zaporozhye',
-	'Zurich'
-];
+	'Zurich',
+]
 
 const indianZones = [
 	'Antananarivo',
@@ -411,8 +411,8 @@ const indianZones = [
 	'Maldives',
 	'Mauritius',
 	'Mayotte',
-	'Reunion'
-];
+	'Reunion',
+]
 
 const pacificZones = [
 	'Apia',
@@ -445,19 +445,37 @@ const pacificZones = [
 	'Tongatapu',
 	'Truk',
 	'Wake',
-	'Wallis'
-];
-const _zones = [];
+	'Wallis',
+]
+const _zones = []
 
-for (const i of africaZones) _zones.push(`${Africa}/${i}`);
-for (const i of americaZones) _zones.push(`${America}/${i}`);
-for (const i of antarcticaZones) _zones.push(`${Antarctica}/${i}`);
-for (const i of asiaZones) _zones.push(`${Asia}/${i}`);
+for (const i of africaZones) {
+	_zones.push(`${Africa}/${i}`)
+}
+for (const i of americaZones) {
+	_zones.push(`${America}/${i}`)
+}
+for (const i of antarcticaZones) {
+	_zones.push(`${Antarctica}/${i}`)
+}
+for (const i of asiaZones) {
+	_zones.push(`${Asia}/${i}`)
+}
 
-for (const i of atlanticZones) _zones.push(`${Atlantic}/${i}`);
-for (const i of australiaZones) _zones.push(`${Australia}/${i}`);
-for (const i of europeZones) _zones.push(`${Europe}/${i}`);
-for (const i of indianZones) _zones.push(`${Indian}/${i}`);
-for (const i of pacificZones) _zones.push(`${Pacific}/${i}`);
+for (const i of atlanticZones) {
+	_zones.push(`${Atlantic}/${i}`)
+}
+for (const i of australiaZones) {
+	_zones.push(`${Australia}/${i}`)
+}
+for (const i of europeZones) {
+	_zones.push(`${Europe}/${i}`)
+}
+for (const i of indianZones) {
+	_zones.push(`${Indian}/${i}`)
+}
+for (const i of pacificZones) {
+	_zones.push(`${Pacific}/${i}`)
+}
 
-export const zones: ReadonlyArray<string> = [..._zones];
+export const zones: ReadonlyArray<string> = [..._zones]

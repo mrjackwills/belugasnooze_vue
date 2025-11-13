@@ -1,18 +1,18 @@
-import { createApp } from 'vue';
-import { createHead } from '@vueuse/head';
-import { createPinia } from 'pinia';
-import App from './App.vue';
-import router from './router';
-import vuetify from './plugins/vuetify';
+import { createHead } from '@vueuse/head'
+import { createPinia } from 'pinia'
+import { createApp } from 'vue'
+import App from './App.vue'
+import vuetify from './plugins/vuetify'
+import router from './router'
 
-const head = createHead();
+const head = createHead()
 
-const app = createApp(App);
-const pinia = createPinia();
+const app = createApp(App)
+const pinia = createPinia()
 
-app.
-	use(head).
-	use(router).
-	use(pinia).
-	use(vuetify).
-	mount('#app');
+app
+	.use(head)
+	.use(router)
+	.use(pinia)
+	.use(vuetify)
+	.mount('#app')
