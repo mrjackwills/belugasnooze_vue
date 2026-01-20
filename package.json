@@ -1,6 +1,6 @@
 {
   "name": "belugasnooze",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -47,5 +47,5 @@
     "vite": "^7.3.1",
     "vue-tsc": "^3.2.2"
   },
-  "buildDate": "Thu 13 2025 November 06:20:13 GMT"
+  "buildDate": "Tue 20 2026 January 17:22:32 GMT"
 }
