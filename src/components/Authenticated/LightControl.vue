@@ -1,8 +1,8 @@
 <template>
 	<v-card-text class=''>
-		<v-row class=' text-center' justify='center'>
+		<v-row class='text-center justify-center'>
 			<v-col class='pt-0' cols='6' md='4'>
-				<v-row align='center' class='no-gutters' justify='center'>
+				<v-row class='align-center justify-center' density='compact'>
 					<v-col class='pt-0' cols='auto'>
 						<v-btn
 							class='elevation-0'

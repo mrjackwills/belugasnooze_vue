@@ -1,6 +1,6 @@
 <template>
 	<v-col class='' cols='12'>
-		<v-row align='center' class='' justify='center'>
+		<v-row class='align-center justify-center'>
 			<v-col class='' cols='auto'>
 				<v-btn
 					class='fab-fix elevation-0'

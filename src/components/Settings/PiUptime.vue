@@ -1,16 +1,16 @@
 <template>
 	<section>
 		<section v-for='(item, index) in uptimeNameAndValues' :key='index'>
-			<v-row align='center' justify='center' no-gutters>
+			<v-row class='align-center justify-center' density='compact'>
 				<v-col class=' ' cols='11' sm='8'>
-					<v-row align='center' class='unselectable' justify='space-around' no-gutters>
+					<v-row class='align-center unselectable justify-space-around' density='compact'>
 						<v-col class=' ma-0 pa-0' cols='5'>
-							<div class='text-overline font-weight-bold text-left' :class='computedColor'>
+							<div class='text-label-small font-weight-bold text-left' :class='computedColor'>
 								<span :class='computedFontSize'>{{ item.name }}</span>
 							</div>
 						</v-col>
 						<v-col class='ma-0 pa-0' cols='7'>
-							<div class='text-body-1 text-right' :class='computedColor'>
+							<div class='text-body-large text-right' :class='computedColor'>
 								<span class='mono-numbers' :class='computedFontSize'>{{ item.value }}</span>
 							</div>
 						</v-col>
@@ -20,10 +20,8 @@
 
 			<v-row
 				v-if='index + 1 !== uptimeNameAndValues.length'
-				align='center'
-				class='ma-0 pa-0'
-				justify='center'
-				no-gutters
+				class='ma-0 pa-0 justify-center align-center'
+				density='compact'
 			>
 				<v-col ckass='ma-0 pa-0' cols='11' sm='8'>
 					<v-divider />

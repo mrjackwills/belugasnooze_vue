@@ -1,6 +1,6 @@
 <template>
-	<v-col class='' cols='12'>
-		<v-row align='center' class='no-gutters mb-2' justify='center'>
+	<v-col class='mb-n3' cols='12'>
+		<v-row class='align-center justify-center' density='compact'>
 			<v-col class='pa-0' cols='auto'>
 				<v-btn
 					class='fab-fix elevation-0'
@@ -20,14 +20,14 @@
 		</v-row>
 		<v-expand-transition>
 			<section v-if='visible'>
-				<v-row align='center' class='no-gutters' justify='space-around'>
+				<v-row class='align-center justify-space-around' density='compact'>
 					<v-col cols='auto'>
 						<p class='text-center' :class='confirmFont'>{{ computedTimezoneText }}</p>
-						<p v-if='timeZone' class='text-center'>current timezone: {{ timeZone }}</p>
+						<p v-if='timeZone' class='mt-n3 text-center'>current timezone: {{ timeZone }}</p>
 					</v-col>
 				</v-row>
 				<v-form autocomplete='off' method='post' @submit.prevent>
-					<v-row align='center' justify='space-around' no-gutters>
+					<v-row class='align-center justify-space-around' density='compact'>
 						<v-col class='' cols='10' sm='5'>
 							<v-select
 								v-model='timeZoneRegion'
@@ -54,9 +54,9 @@
 							/>
 						</v-col>
 					</v-row>
-					<v-row align='center' justify='space-around' no-gutters>
+					<v-row class='align-center justify-space-around mt-n3' density='compact'>
 						<v-col cols='auto'>
-							<v-row class='' justify='space-around'>
+							<v-row class='justify-space-around' density='compact'>
 								<v-col class='' cols='auto'>
 									<v-btn
 										class='elevation-0'
@@ -158,8 +158,8 @@ const computedTimezoneText = computed(() => timeZoneRegion.value
 		: 'Now select a city')
 	: 'To change time zone, first select a region')
 const confirmFont = computed(() => mobile.value
-	? 'text-caption'
-	: 'text-body-1')
+	? 'text-body-small'
+	: 'text-body-large')
 
 const loading = computed({
 	get (): boolean {

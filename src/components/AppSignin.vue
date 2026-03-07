@@ -1,6 +1,6 @@
 <template>
 	<section>
-		<v-row align='center' class='ma-0 pa-0' justify='center'>
+		<v-row class='align-center ma-0 pa-0 justify-center'>
 			<v-col class='ma-0 pa-0' cols='11' lg='6' md='8'>
 				<v-card-text>
 					<v-form method='post' @submit.prevent>
@@ -22,7 +22,7 @@
 				</v-card-text>
 			</v-col>
 		</v-row>
-		<v-row align='center' class='ma-0 pa-0' justify='center'>
+		<v-row class='align-center ma-0 pa-0 justify-center'>
 			<v-col class='ma-0 pa-0' cols='auto'>
 				<v-btn
 					class='elevation-0 font-weight-bold'
@@ -31,7 +31,7 @@
 					:variant='buttonDisabled ? "outlined" : "flat"'
 					@click='signin'
 				>
-					<span :class='{ "text-white": !buttonDisabled }'>Sign In</span>
+					<span :class='{ "text-white": !buttonDisabled }'>sign in</span>
 				</v-btn>
 			</v-col>
 		</v-row>

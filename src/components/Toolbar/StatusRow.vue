@@ -1,6 +1,6 @@
 <template>
 	<section v-if='piTimeValid && piInit'>
-		<v-row align='center' class='mr-2' justify='center'>
+		<v-row class='align-center mr-2 justify-center'>
 			<v-col class='pa-0' cols='auto'>
 				<div>
 					<span
@@ -44,7 +44,7 @@ const { mobile } = useDisplay()
 const piStatusStore = piStatusModule()
 
 const computedAnimation = computed(() => piOnline.value ? '' : 'pulse-animation')
-const computedFontSize = computed(() => mobile.value ? 'text-subtitle-1' : 'text-h5')
+const computedFontSize = computed(() => mobile.value ? 'text-body-large' : 'text-headline-medium')
 const computedIcon = computed(() => piOnline.value ? mdiWifi : mdiWifiOff)
 const computedIconColor = computed(() => piOnline.value ? 'white' : 'serious')
 const computedTextColor = computed(() => piOnline.value ? 'text-white' : 'text-serious')

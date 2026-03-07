@@ -1,8 +1,8 @@
 <template>
-	<v-row align='center' class='' justify='center'>
+	<v-row class='align-center justify-center' density='compact'>
 		<v-col cols='12'>
-			<v-row align='center' justify='center'>
-				<v-col cols='auto '>
+			<v-row class='align-center justify-center' density='compact'>
+				<v-col cols='auto'>
 					<v-btn
 						class='elevation-0 '
 						:color='buttonColor'
@@ -18,16 +18,14 @@
 				</v-col>
 			</v-row>
 		</v-col>
-		<v-col cols='12'>
+		<v-col class='ma-0 pa-0' cols='12'>
 			<v-expand-transition>
 				<section v-if='expandedSettings'>
-					<v-row justify='center'>
+					<v-row class='justify-center ma-0 pa-0' density='compact'>
 
 						<RefreshData @pi-status='send_pi_status' />
 						<TimeZone />
-
 						<PiInfo />
-
 						<PiRestart />
 					</v-row>
 					<SignOut />
@@ -45,7 +43,7 @@ const [loadingStore, piStatusStore, settingsStore, wsStore] = [loadingModule(), 
 
 const buttonColor = computed(() => expandedSettings.value ? 'red' : 'primary')
 const buttonIcon = computed(() => expandedSettings.value ? mdiClose : mdiCog)
-const buttonText = computed(() => expandedSettings.value ? 'close settings' : 'Settings')
+const buttonText = computed(() => expandedSettings.value ? 'cancel' : 'settings')
 
 const expandedSettings = computed({
 	get (): boolean {
