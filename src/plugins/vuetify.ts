@@ -12,6 +12,7 @@ export default createVuetify({
 	},
 
 	theme: {
+		defaultTheme: 'light',
 		themes: {
 			light: {
 				colors: {

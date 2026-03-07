@@ -1,6 +1,6 @@
 <template>
 	<v-col class='' cols='12'>
-		<v-row v-if='mobile' align='center' class='no-gutters' justify='center'>
+		<v-row v-if='mobile' class='align-center justify-center' density='compact'>
 			<v-col class='pa-0' cols='auto'>
 				<v-btn
 					class='fab-fix elevation-0'

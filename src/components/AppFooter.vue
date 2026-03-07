@@ -1,8 +1,8 @@
 <template>
 	<v-footer id='footer' absolute app color='transparent'>
-		<v-row align='center' class='no-gutters ma-0 pa-0' justify='center'>
+		<v-row class='ma-0 pa-0 align-center justify-center' density='compact'>
 
-			<v-col class='no-gutters unselectable ma-0 pa-0' cols='auto'>
+			<v-col class='unselectable ma-0 pa-0' cols='auto' density='compact'>
 
 				<v-chip
 					color='offwhite'
@@ -18,7 +18,7 @@
 					</section>
 
 					<section v-else>
-						<a class='text-caption' :href rel='noopener noreferrer' target='_blank'>
+						<a class='text-body-small' :href rel='noopener noreferrer' target='_blank'>
 							<v-icon class='mr-2' color='black' href='' :icon='mdiGithub' />
 						</a>
 						<span class='' @click='buildInfo'>

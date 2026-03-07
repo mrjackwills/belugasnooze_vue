@@ -3,11 +3,7 @@
 		class='fill-height'
 		fluid
 	>
-		<v-row
-			align='center'
-			class='fill-height'
-			justify='center'
-		>
+		<v-row class='fill-height align-center justify-center'>
 			<v-col cols='10' md='8'>
 				<v-card transition='fade-transition'>
 					<AppToolbar />

@@ -30,7 +30,7 @@ const authenticated = computed(() => userStore.authenticated)
 const loading = computed(() => loadingStore.loading)
 const maxWidth = computed(() => mobile.value ? '2rem' : '3rem')
 const progressHeight = computed(() => mobile.value ? '4' : '8')
-const fontSize = computed(() => mobile.value ? 'text-subtitle-1' : 'text-h5')
+const fontSize = computed(() => mobile.value ? 'text-body-large' : 'text-headline-medium')
 const toolbarHeight = computed(() => mobile.value ? '56' : '70')
 
 </script>

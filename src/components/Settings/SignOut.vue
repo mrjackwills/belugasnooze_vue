@@ -1,5 +1,5 @@
 <template>
-	<v-row class='my-2' justify='end'>
+	<v-row class='my-2 justify-end'>
 		<v-col cols='auto'>
 			<v-btn
 				class='elevation-0'

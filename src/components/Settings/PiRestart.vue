@@ -22,12 +22,12 @@
 		<v-expand-transition>
 			<div v-if='expandedReset' class=''>
 				<section>
-					<v-row class='' justify='center'>
+					<v-row class='justify-center ma-0 pa-0 my-2' density='compact'>
 						<v-col class='text-center' cols='auto'>
-							<span :class='restartFont'>Are you sure you want to restart the pi and the server?</span>
+							<span class='text-body-large'>Are you sure you want to restart the application?</span>
 						</v-col>
 					</v-row>
-					<v-row class='' justify='center'>
+					<v-row class='justify-center ma-0 pa-0' density='compact'>
 						<v-col class='' cols='auto'>
 							<v-btn
 								class='elevation-0 '
@@ -49,8 +49,6 @@
 
 <script setup lang='ts'>
 import { mdiClose, mdiRestartAlert } from '@mdi/js'
-import { useDisplay } from 'vuetify'
-const { mobile } = useDisplay()
 
 const [loadingStore, userStore, wsStore] = [loadingModule(), userModule(), wsModule()]
 
@@ -68,8 +66,6 @@ const loading = computed({
 		loadingStore.set_loading(b)
 	},
 })
-const restartFont = computed(() => mobile.value ? 'text-caption' : 'text-h6')
-
 const expandedReset = ref(false)
 const localLoading = ref(false)
 

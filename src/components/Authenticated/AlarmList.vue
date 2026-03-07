@@ -1,7 +1,7 @@
 <template>
 	<v-expand-transition>
 		<section v-if='alarms.length > 0'>
-			<v-row fill-height justify='space-around' wrap>
+			<v-row class='justify-space-around' fill-height wrap>
 				<v-col class='' cols='8' lg='4'>
 					<v-fade-transition group tag='v-list'>
 						<v-list-item
@@ -12,7 +12,7 @@
 							density='compact'
 							rounded
 						>
-							<v-row align='center' class='ma-1 pa-0' justify='space-between'>
+							<v-row class='align-center ma-1 pa-0 justify-space-between'>
 								<v-col class='ma-0 pa-0' cols='auto'>
 									<span class='clock-font'>{{ numToDay(item.day) }} - </span>
 									<span class='clock-font'>{{ zeroPad(item.hour) }}</span>
@@ -33,7 +33,7 @@
 					</v-fade-transition>
 				</v-col>
 			</v-row>
-			<v-row class='mt-2' justify='center' no-gutters>
+			<v-row class='mt-2 justify-center' density='compact'>
 				<v-col class='text-center mb-4'>
 					<v-btn
 						class='elevation-0'
@@ -49,7 +49,7 @@
 							:icon='mdiDeleteSweep'
 							style='vertical-align: middle;'
 						/>
-						<span :class='{ "text-white": piOnline }'>Delete All</span>
+						<span :class='{ "text-white": piOnline }'>delete all</span>
 					</v-btn>
 				</v-col>
 			</v-row>

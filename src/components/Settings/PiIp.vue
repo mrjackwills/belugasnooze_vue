@@ -1,16 +1,16 @@
 <template>
 	<section class='mt-4'>
 		<section v-for='(item, index) in namesAndValues' :key='index'>
-			<v-row align='center' justify='center' no-gutters>
+			<v-row class='align-center justify-center' density='compact'>
 				<v-col class='cl' cols='11' sm='8'>
-					<v-row align='center' :class='item.class' justify='space-around'>
+					<v-row class='align-center justify-space-around' :class='item.class'>
 						<v-col class=' ' cols='5'>
-							<div class='text-overline font-weight-bold text-left unselectable' :class='computedColor'>
+							<div class='text-label-small font-weight-bold text-left unselectable' :class='computedColor'>
 								<span :class='computedFontSize'>{{ item.name }}</span>
 							</div>
 						</v-col>
 						<v-col cols='7'>
-							<div class='text-body-1 text-right cl' :class='computedColor' @click='showInternalTooltip'>
+							<div class='text-body-large text-right cl' :class='computedColor' @click='showInternalTooltip'>
 								<span class='mono-numbers' :class='computedFontSize'>{{ item.value }}</span>
 								<v-tooltip
 									v-model='showInternal'
@@ -29,10 +29,8 @@
 
 			<v-row
 				v-if='piOnline || !piOnline && index === 0'
-				align='center'
-				class='ma-0 pa-0'
-				justify='center'
-				no-gutters
+				class='ma-0 pa-0 justify-center align-center'
+				density='compact'
 			>
 				<v-col cols='11' sm='8'>
 					<v-divider />

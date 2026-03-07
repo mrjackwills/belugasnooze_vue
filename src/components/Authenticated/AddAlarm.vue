@@ -1,6 +1,6 @@
 <template>
-	<v-card-text class='text-center'>
-		<v-row align='center' class='mb-2' justify='center' no-gutters>
+	<v-card-text class='ma-0 pa-0 text-center'>
+		<v-row class='mb-2 align-center justify-center' density='compact'>
 			<v-col cols='auto'>
 				<v-btn
 					class='elevation-0'
@@ -14,11 +14,9 @@
 					@click='expandMethod'
 				>
 					<v-row
-						align='center'
-						class=''
+						class='align-center justify-center'
+						density='compact'
 						fill-height
-						justify='center'
-						no-gutters
 					>
 						<v-col cols='auto'>
 							<v-icon
@@ -37,10 +35,10 @@
 		</v-row>
 		<v-expand-transition>
 			<div v-if='expandedAdd' class=''>
-				<v-row fill-height justify='center'>
+				<v-row class='ma-0 pa-0 justify-center' fill-height>
 					<v-col class='' cols='12'>
-						<v-row justify='center'>
-							<v-col cols='12' md='5'>
+						<v-row class='justify-center ma-0 pa-0' density='compact'>
+							<v-col class='ma-0 pa-0' cols='12' md='5'>
 								<v-select
 									v-model='chosenHour'
 									color='primary'
@@ -50,7 +48,7 @@
 									variant='outlined'
 								/>
 							</v-col>
-							<v-col cols='12' md='5'>
+							<v-col class='ma-0 pa-0' cols='12' md='5'>
 								<v-select
 									v-model='chosenMinute'
 									color='primary'
@@ -61,12 +59,12 @@
 								/>
 							</v-col>
 						</v-row>
-						<v-row align='center' justify='space-around'>
+						<v-row class='ma-0 pa-0 align-center justify-space-around' density='compact'>
 							<v-checkbox
 								v-for='i in dayOptions'
 								:key='i.value'
 								v-model='daysSelected'
-								class='days mb-n3 pa-0'
+								class='days mb-n6 pa-0'
 								color='primary'
 								:label='i.text'
 								:value='i.value'
@@ -99,7 +97,7 @@
 							</v-col>
 							<v-col class='pa-0 ma-0' cols='12'>
 								<v-expand-transition>
-									<v-row v-if='messagesDays' justify='center'>
+									<v-row v-if='messagesDays' class='justify-center'>
 										<v-col cols='12'>
 											<span class='v-messages'>{{ messagesDays }}</span>
 										</v-col>
@@ -109,7 +107,7 @@
 						</v-row>
 					</v-col>
 				</v-row>
-				<v-row align='center' class='' justify='center'>
+				<v-row class='ma-0 pa-0 align-center justify-center'>
 					<v-col class=''>
 						<v-btn
 							class='elevation-0'
@@ -120,7 +118,7 @@
 							@click='addAlarm'
 						>
 							<v-icon class='mr-2' color='white' :icon='mdiAlarmPlus' style='vertical-align: middle;' />
-							<span class='text-white'>Add</span>
+							<span class='text-white'>add</span>
 						</v-btn>
 					</v-col>
 					<v-col cols='12'>

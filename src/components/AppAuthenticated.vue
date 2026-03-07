@@ -1,5 +1,5 @@
 <template>
-	<v-row align='center' justify='center' no-gutters>
+	<v-row class='align-center justify-center' density='compact'>
 		<v-col class=''>
 			<v-expand-transition>
 				<section v-if='!expandedSettings'>
