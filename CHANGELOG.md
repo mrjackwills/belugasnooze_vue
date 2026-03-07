@@ -1,5 +1,8 @@
+# <a href='https://github.com/mrjackwills/belugasnooze_vue/releases/tag/v0.3.9'>v0.3.9</a>
+### 2026-03-07
+
 ### Chores
-+ dependencies updated, [0a0fe09acddaba1990118555abadeedbd4484781]
++ dependencies updated, [0a0fe09a](https://github.com/mrjackwills/belugasnooze_vue/commit/0a0fe09acddaba1990118555abadeedbd4484781)
 
 # <a href='https://github.com/mrjackwills/belugasnooze_vue/releases/tag/v0.3.8'>v0.3.8</a>
 ### 2026-01-20
