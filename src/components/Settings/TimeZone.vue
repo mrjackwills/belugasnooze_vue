@@ -1,5 +1,5 @@
 <template>
-	<v-col class='mb-n3' cols='12'>
+	<v-col class='' cols='12'>
 		<v-row class='align-center justify-center' density='compact'>
 			<v-col class='pa-0' cols='auto'>
 				<v-btn
@@ -108,7 +108,6 @@
 </template>
 
 <script setup lang='ts'>
-import type { Ref } from 'vue'
 import type { su, TComputedCity } from '@/types'
 import {
 	mdiChevronDown,

@@ -40,7 +40,7 @@
 
 <script setup lang='ts'>
 import { mdiEye, mdiEyeOff, mdiLock } from '@mdi/js'
-import { axiosRequests } from '@/services/axios'
+import { fetchRequests } from '@/services/fetch'
 import { snackReset } from '@/services/snack'
 
 const loadingStore = loadingModule()
@@ -70,7 +70,7 @@ async function signin (): Promise<void> {
 	if (!password.value) return
 	passwordVisible.value = false
 	loading.value = true
-	const response = await axiosRequests.wsAuth_post(password.value)
+	const response = await fetchRequests.wsAuth_post(password.value)
 	password.value = ''
 	loading.value = false
 	if (response) snackReset()
