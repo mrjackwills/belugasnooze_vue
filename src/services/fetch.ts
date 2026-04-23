@@ -40,19 +40,28 @@ class FetchRequests {
 
 	@wrap
 	async wsAuth_post (password: string): Promise<boolean> {
-		const data = await this.#post<{ response: string | null }>('', {
+		const data = await this.#post<{ response: string }>('', {
 			key: env.api_key,
 			password,
 		})
-		if (data.response) {
+		if (data && data.response) {
 			snackReset()
 			userModule().set_authenticated(true)
 			wsModule().openWS(data?.response)
+			return true
 		}
-		return !!data.response
+		return false
 	}
 
-	async #post<T>(path: string, body: unknown): Promise<T> {
+	async parse_json (res: Response) {
+		try {
+			return await res.json()
+		} catch {
+			return null
+		}
+	}
+
+	async #post<T>(path: string, body: unknown): Promise<T | null> {
 		let response: Response
 
 		try {
@@ -66,7 +75,7 @@ class FetchRequests {
 		}
 
 		if (!response.ok) {
-			const data = await response.json().catch(() => null)
+			const data = await this.parse_json(response)
 			const error = Object.assign(new Error(response.statusText), {
 				status: response.status,
 				data,
@@ -74,7 +83,7 @@ class FetchRequests {
 			throw error
 		}
 
-		return response.json()
+		return await this.parse_json(response)
 	}
 }
 

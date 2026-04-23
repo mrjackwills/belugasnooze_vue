@@ -7,6 +7,7 @@
 export {}
 declare global {
   const EffectScope: typeof import('vue').EffectScope
+  const actions: typeof import('./store/websocket').actions
   const alarmModule: typeof import('./store/alarms').alarmModule
   const computed: typeof import('vue').computed
   const createApp: typeof import('vue').createApp
@@ -17,6 +18,7 @@ declare global {
   const getCurrentInstance: typeof import('vue').getCurrentInstance
   const getCurrentScope: typeof import('vue').getCurrentScope
   const getCurrentWatcher: typeof import('vue').getCurrentWatcher
+  const getters: typeof import('./store/alarms').getters
   const h: typeof import('vue').h
   const inject: typeof import('vue').inject
   const isProxy: typeof import('vue').isProxy
