@@ -131,8 +131,8 @@
 </template>
 
 <script setup lang='ts'>
-import type { Ref } from 'vue'
 import type { su } from '@/types'
+import type { Ref } from 'vue'
 import { mdiAlarmPlus, mdiAlert, mdiClose, mdiPlus } from '@mdi/js'
 import { dayOptions } from '@/services/dayOptions'
 import { snackError } from '@/services/snack'
